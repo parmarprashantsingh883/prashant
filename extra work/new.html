@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .category-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+}
+
+.category {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.category.large {
+  grid-row: span 2;
+  flex-direction: row;
+  align-items: center;
+}
+
+.category .content {
+  z-index: 2;
+  max-width: 60%;
+}
+
+.category h2, .category h3 {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: #111;
+}
+
+.category p {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.category a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid red;
+}
+
+.category img {
+  max-width: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: auto;
+}
+
+</style>
+<body>
+  <div class="category-grid">
+  <div class="category large" style="background-color: #ffe5dc;">
+    <div class="content">
+      <h2>Women’s fashion</h2>
+      <p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <a href="#">SHOP NOW</a>
+    </div>
+    <img src="images/women.png" alt="Women's Fashion">
+  </div>
+
+  <div class="category" style="background-color: #c6f0e2;">
+    <div class="content">
+      <h3>Men’s fashion</h3>
+      <p>358 items</p>
+      <a href="#">SHOP NOW</a>
+    </div>
+    <img src="images/men.png" alt="Men's Fashion">
+  </div>
+
+  <div class="category" style="background-color: #dcd7f7;">
+    <div class="content">
+      <h3>Kid’s fashion</h3>
+      <p>273 items</p>
+      <a href="#">SHOP NOW</a>
+    </div>
+    <img src="images/kids.png" alt="Kid's Fashion">
+  </div>
+
+  <div class="category" style="background-color: #fde2e2;">
+    <div class="content">
+      <h3>Cosmetics</h3>
+      <p>159 items</p>
+      <a href="#">SHOP NOW</a>
+    </div>
+    <img src="images/cosmetics.png" alt="Cosmetics">
+  </div>
+
+  <div class="category" style="background-color: #d3ecff;">
+    <div class="content">
+      <h3>Accessories</h3>
+      <p>792 items</p>
+      <a href="#">SHOP NOW</a>
+    </div>
+    <img src="images/accessories.png" alt="Accessories">
+  </div>
+</div>
+
+  
+</body>
+</html>

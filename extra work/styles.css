@@ -78,4 +78,10 @@ textarea{
     width: 60%;
 }
 
+
+body{
+    background-image: url("body.avif");
+   
+    background-color: #fbe9e9;
+}
     

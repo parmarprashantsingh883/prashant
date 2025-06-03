@@ -7,8 +7,10 @@
 
 body {
     
-  
+  overflow-x: hidden;
 }
+
+    
 
     a{
         text-decoration: none;
@@ -51,7 +53,7 @@ body {
         outline: none;
         transition: all 0.3s ease;
         box-shadow: 0cqh 0 10px rgba(0, 0, 0, 0.1);
-        margin-right: 40px;
+        
 
     }
     
@@ -122,8 +124,8 @@ body {
         box-shadow:0cqh;
 
     }
-        
-h1{
+
+  .hero-text1 h1{
     font-size: 80px;
     color: rgb(0, 0, 0);
     text-align: center;
@@ -135,7 +137,7 @@ h1{
     left: 50%;
      
 } 
-h2{
+.hero-text1 h2{
     font-size: 80px;
     color: rgb(83, 79, 79);
     text-align: center;
@@ -146,7 +148,7 @@ h2{
     top: 40%;
     left: 60%;
 }
-h3{
+.hero-text1 h3{
     font-size: 80px;
     color: rgb(156, 144, 144);
     text-align: center;
@@ -157,8 +159,8 @@ h3{
     top: 50%;
     left: 60%;
 }
-   
-h4{
+
+.hero-text1 h4{
     font-size: 80px;
     color: rgb(122, 111, 111);
     text-align: center;
@@ -257,7 +259,7 @@ h4{
 .hero-text {
     height: 300px;
     width: 300px;
-    background-color:rgb(201, 116, 76);
+    background: linear-gradient(to right bottom, #f5f5f5, #e4b6c0,#c18c94);
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -605,257 +607,131 @@ pre{
         font-weight: bold;
         margin-bottom: 20px;
     }
-------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clothing website</title>
-    <link rel="stylesheet" href="hexashop.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
-<body>
-    <header>
+    .streetwear-section {
         
-            <div class="logo">
-               
-            <img src="logo.png"alt="logo">
-            </div>
+        position: relative;
+    }
 
-            <nav align="left">
-            <a href="home>">Home</a>
-            <a href="about">About</a>   
-            <a href="c">Contact</a>
-            <a href="login.html">Login</a>
-            <a href="cart">Cart <i class="fa-solid fa-cart-shopping"></i></a> 
-           
-    </nav>
-
-            <div class="search">
-                <input type="search" placeholder="Search...">
-                <button type="submit">Search</button>
-            </div>
-            
-    </header>
-<div class="hero">
-    <img src="new banner.jpg" alt="Hero Image">
-    
-    </div>
-
-    <div class="hero-text">
-         
-    </div>
+  .streetwear-container {
+    padding: 40px;
+    background: linear-gradient(to right bottom, #e73737, #cd8989,#e4dcdc);
+    height: 650px;
+    width:100%;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
    
-<h1>GET</h1>
-<h2>YOURSELF</h2>
-<h3>INTO THE</h3>
-<h4>RIGHT GEAR</h4>
-<button id="box1">Shop More</button>
+}
 
-    </div>
-<!---- -------------------------------------------------------------------------------------------------------------------------------------------->
-  <div class="headline">
-    <div class="headline1">
-<i class="fa-solid fa-headset"></i>
-<pre>24/7 Support</pre>
-<p>Dedicated support</p>
-    </div>
-    <div class="headline2"> 
-<i class="fa-solid fa-truck"></i>
-<pre>Free Shipping</pre>
-<p>On all orders over $50</p>
-    </div>
-    <div class="headline3">
- <i class="fa-solid fa-credit-card"></i>
-<pre>Secure Payment</pre>
-<p>100% secure payment</p>
-    </div>
-    <div class="headline4">
-<i class="fa-solid fa-rotate"></i>
-<pre>Easy Returns</pre>
-<p>Hassle-free returns</p>
-    </div>
+.streetwear-button {
+     position: absolute;
+    top: 80%;
+    right: 30%;
+    background-color: rgb(147, 43, 43);
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.streetwear-button:hover {
+     background-color: rgb(0, 0, 0);
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-  </div>
+.streetwear-subtitle {
+    color: #2e2727;
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'lobster', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position: absolute; 
+    top: 10%;
+    right: 15%;
 
- <!---- -------------------------------------------------------------------------------------------------------------------------------------------->
+}
+.streetwear-head {
+    color: #181717;
+    font-size: 60px;
+    margin: 20px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 10%;
+    right: 40%;
+}
+.streetwear-description {
+    color: #fdf9f9;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', cursive; /* Cursive font */
+    position: absolute;
+    top: 60%;
+    right: 10%;
+}
+.streetwear-design{
+    height: 220px;
+    width: 220px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    position: absolute;
+    top: 40%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+     border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      overflow: visible;
+}
+.streetwear-design .summer-text {
+    font-family: 'Brush Script MT', cursive;
+      font-size: 60px;
+      color: #d11b1b;
+      position: absolute;
+      top: 50px; /* move text below the circle */
+      right: 20px;
+      white-space: nowrap;
+      margin: 10px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        margin-left: 20px;
+}
+.streetwear-design p {
+    color: #a8a8a8;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: relative; 
+    top: -70px; /* move text below the circle */
+    left: -15px;
+    }
 
-  <!-- Product Section -->
-  <section class="product-section">
-    <h2 style="text-align:center; margin: 40px 0;"></h2>
-    <div class="card-container" >
-      <div class="card">
-        <img src="shirt.webp" alt="Product 1">
-        <div class="card-content">
-          
-          
-          <button>EXPLORE</button>
-        </div>
-      </div>
-      <div class="card">
-        <img src="jacket.jpg" alt="Product 2">
-        <div class="card-content">
-          <h3></h3>
-          
-          <button>EXPLORE</button>
-        </div>
-      </div>
-      <div class="card">
-        <img src="shoes.jpg" alt="Product 3">
-        <div class="card-content">
-          <h3></h3>
-          
-          <button>EXPLORE</button>
-        </div>
-      </div>
-      <div class="card">
-        <img src="jeans.jpg" alt="" >
-        <div class="card-content">
-          <h3></h3>
-          
-          <button>EXPLORE</button>
-        </div>
-        </div>
-        <div class="card">
-        <img src="check shirt.jpg" alt="" >
-        <div class="card-content">
-          <h3></h3>
-          
-          <button>EXPLORE</button>
-        </div>
-        </div>
-        <div class="card">
-        <img src="machine.jpg" alt="" >
-        <div class="card-content">
-          <h3></h3>
-          
-          <button>EXPLORE</button>
-        </div>
-        </div>
-        <div class="card">
-        <img src="phone.jpg" alt="" >
-        <div class="card-content">
-          <h3></h3>
-          
-          <button>EXPLORE</button>
-        </div>
-        </div>
-        <div class="card">
-        <img src="bag.jpg" alt="" >
-        <div class="card-content">
-          <h3></h3>
-          
-          <button>EXPLORE</button>
-        </div>
-        </div>
-        <div class="card">
-        <img src="track.webp" alt="" >
-        <div class="card-content">
-          <h3></h3>
-          
-          <button>EXPLORE</button>
-        </div>
-        </div>
-        <div class="card">
-        <img src="airbuds.webp" alt="" >
-        <div class="card-content">
-          <h3></h3>
-          
-          <button>EXPLORE</button>
-        </div>
-        </div>
+    .small-text {
+        font-size: 25px;
+        color: #000;
+        position: absolute;
+        top: 150px;
+        left: 28%;
+        white-space: nowrap;
+        justify-content: center;
+        align-items: center;
+        word-spacing: 10px;
+    }
+    .streetwear-image img {
+        width: 50%;
+        height: 90%;
+        border-radius: 10px;
+        object-fit: contain;
         
-        
-      </div>
-    </div>
-  </section>
-    <!-- Footer Section -->
-    <div class="footer">
-       
-        <div class="footer-social">
-           <strong>CONTACT INFO.</strong> <br>
-           
-           <i class="fa-solid fa-phone-volume" > <pre>9574028096</pre></i><br>
+        position: absolute;
+        top: 20px;
 
-           <i class="fa-solid fa-envelope"><span style="text-transform: lowercase;"><pre>prashant@gamil.com</pre></i>
-              <br>
-              <i class="fa-solid fa-location-dot"><pre> 123, Main Street, City, Country</pre></i>
-           
-            </div>
-        <div class="footer-links">
-            <strong>QUICK LINKS</strong> 
-            <div class="">
-
-            
-            <i class="fa-brands fa-instagram"></i>
-            <br>
-            <br>
-            <i class="fa-brands fa-facebook"></i>
-            <br>    
-            <br>
-            <i class="fa-brands fa-youtube"></i>
-            <br>
-            <br>
-            <i class="fa-brands fa-whatsapp"></i>
-            <br>
-            <br>   <br>
-            
-          </div> 
-        </div>
-        <div class="footer-contact">
-            <strong>SUPPORT</strong> <br>
-            <b>product info</b><br>
-            <br>
-            <b>returns & exchanges</b><br>
-            <br>
-            <b>payment methods</b><br>
-            <br>
-            <b>shipping info</b><br>
-            <br>
-            <b>terms & conditions</b><br>
-            </div>
-
-            <div class="com-info">
-
-            <strong>ABOUT US</strong> <br><p>Our mission is to empower individuals through fashion, offering a wide range of clothing options for every occasion.</p>
-            </div>
-        
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2023 Hexashop. All rights reserved.</p>
-        <p>Designed by <a href="prashant">Prashant</a></p>
-        <p>Follow us on social media for the latest updates!</p>    
-        
-            
-          </div>
-          </div>
-
-          <!-- Hidden checkbox toggle -->
-<input type="checkbox" id="sidebarToggle">
-
-<!-- Label acts as open button -->
-<label for="sidebarToggle" class="menu-btn">☰ </label>
-
-<!-- Sidebar menu -->
-<div class="sidebar">
-  <h1>Categories</h1>
-  <a href="#">Men</a>
-  <a href="#">Women</a>
-  <a href="#">Children</a>
-  <a href="#">Accessories</a>
-  <a href="#">Bags</a>
-  <a href="#">Shoes</a>
-  <a href="#">Electronics</a> 
-  <a href="#">Sportswear</a>
-</div>
-
-<!-- Overlay (click anywhere to close) -->
-<label for="sidebarToggle" class="overlay"></label>
-    
-</body>
-</html>
+    }
