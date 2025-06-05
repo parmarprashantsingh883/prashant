@@ -80,8 +80,6 @@ textarea{
 
 
 body{
-    background-image: url("body.avif");
-   
+    background-image: url("/images/body.avif");
     background-color: #fbe9e9;
 }
-    
