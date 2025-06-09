@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-1 { width: 8.33%; }
+.col-2 { width: 16.66%; }
+.col-3 { width: 25%; }
+.col-4 { width: 33.33%; }
+.col-5 { width: 41.66%; }
+.col-6 { width: 50%; }
+.col-7 { width: 58.33%; }
+.col-8 { width: 66.66%; }
+.col-9 { width: 75%; }
+.col-10 { width: 83.33%; }
+.col-11 { width: 91.66%; }
+.col-12 { width: 100%; }
+
+.header {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  color: white;
+  padding: 12px 0 0 12px;
+  position: sticky;
+}
+
+.logo {
+  height: 35px;
+  margin: 5px 0px 0px 5px   ;
+}
+.location{
+  display: flex;
+}
+.location i{
+  color: aliceblue;
+  font-size: 18px;
+  position: relative;
+  top: 15px;
+}
+.location p{
+  color:azure;
+  font-size: 13px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.location h6{
+  font-size: 12px;
+  position: relative;
+  left: -95px;;
+}
+select{
+  position: relative;
+  right: 80px;
+  top: -5px;
+  height: 45px;
+  width: 100px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-color:  rgb(204, 177, 177);
+  font-size: 15px;
+  border: none;
+  outline: none;
+}
+input[type="search"] {
+  height: 45px;
+  width: 600px;
+  position: relative;
+  top:-5px;
+  left:-85px;
+  font-size: 15px;
+  border:none;
+  outline: none;
+  
+ 
+}
+.search-btn{
+  background-color: rgb(230, 133, 23);
+  height: 45px;
+  width: 50px;
+  position: relative;
+  left:-90px ;
+  top: -5.5px;
+  border: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.search-btn i{
+  font-size: 15px; 
+}
+.search-btn:hover{
+  background-color: rgb(244, 91, 9);
+}
+
+.navbar{
+  background-color: rgb(120, 21, 21);
+  gap: 20px;
+  padding: 15px;
+  font-size: 15px;
+  
+}
+.navbar a{
+  color: aliceblue;
+  text-decoration: none;
+  margin: 12px;
+  
+}
+.navbar2{
+  color: black;
+  padding: 10px;
+  background-color: rgb(159, 116, 116);
+  font-size: 13px;
+}
+.navbar2 a{
+  text-decoration: none;
+  margin-left: 45px;
+  color: black;
+  font-weight: lighter;
+}
+.electronics{
+  font-size: 16px; 
+  font-weight: bolder;
+}
+.sidebar{
+  background-color: rgb(214, 218, 224);
+  padding: 20px;
+  text-align: left;
+  
+}
+ul {
+  list-style-type: none;
+  padding-left: 0; /* Optional: removes indentation */
+}
+.mainbar{
+  background-color:rgb(250, 247, 247);
+  padding: 0px;
+}
+.computer{
+
+  width: 100%;
+  height: 250px;
+  padding: 0px 10px 0px 10px;
+
+}
+.heading{
+  background-color:rgb(250, 247, 247);
+  width: 100%;
+  display: flex;
+  gap: 450px;
+  padding: 0px 50px 0px 200px;
+}
+ .heading span{
+  font-size: 25px;
+  font-family: cursive;
+  justify-content: space-between;
+
+}
+.mainbar2{
+    background-color:rgb(250, 247, 247);
+
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px 0;
+  justify-content: space-evenly;
+  
+}
+.card{
+  width: 180px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.card img {
+   width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+.card p {
+  font-size: 14px;
+  color: #555;
+}
+.card h4 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+.card button {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 10px 0 15px;
+  cursor: pointer;
+  border-radius: 4px;}
+  .card button:hover{
+    background-color: crimson;
+  }
+  .footer {
+  color: rgb(253, 246, 246);
+  background-color: black;
+  }
+  .footer1{
+    background-color: black;
+    color: #ccc;
+    text-align: center;
+  }
+  .footer2{
+    background-color: black;
+    color: #ccc;
+    text-align: center;
+  }
+  .footer3{
+    background-color: black;
+    color: #ccc;
+    text-align: center;
+  }
+  .footer4{
+    background-color: black;
+    color: #ccc;
+    text-align: center;
+  }
+
+  pre{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+  }
