@@ -1,79 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .container{
-            border: 3px solid red;
-            height: 80vh;
-            display: flex;
-            justify-content: center;
-           align-items: center; 
-           flex-direction: column;
-           flex-wrap: wrap;
-           align-content: center;
-        }
-        .iteam:hover{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row-reverse;
-            background-color: blue;
-        }
-        .iteam{
-            height: 62px;
-            width: 60px;
-            background-color: brown;
-            margin: 5px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Multiple Info Boxes</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <div class="iteam">
+<style>
+  body {
+  font-family: Arial, sans-serif;
+}
 
-        </div>
-        <div class="iteam">1</div>
-        <div class="iteam">2</div>
-        <div class="iteam">3</div>
-        <div class="iteam">4</div>
-        <div class="iteam">5</div>
-        <div class="iteam">6</div>
-       <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-        <div class="iteam">7</div>
-        <div class="iteam">8</div>
-       
+.navbar {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  background-color: #eee;
+  position: relative;
+}
+
+.nav-item {
+  position: relative;
+   padding-bottom: 20px;
+  cursor: pointer;
+  
+
+}
+.nav-item:hover{
+  border-bottom: #1c1b1b solid 4px;
+   transition:  0.6s ease-in-out;
+}
+
+All info boxes start from the same absolute position */
+/* .info-box { */
+  /* display: none;
+  position: absolute;
+  top: 0px;  /* SAME starting top */
+  /* left: 50px;    /* SAME starting left */
+  /* width: 700px;
+  height: 200px;
+  background-color: #fff; */
+  /* border: 1px solid #833b3b; */
+  /* padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100; */ 
+  /* border-radius: 0px;
+}
+.info-box:hover {
+  display: block;
+}
+
+/* Show each box when hovering on its parent nav item */
+/* Underline animation setup */
+
+
+/* underline setup */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* this is fixed height */
+  background-color: #1c1b1b;
+
+  /* this ensures horizontal scaling only */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* animate on hover */
+.nav-item:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* Info Box Styling */
+.info-box {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  float: left;
+}
+
+.nav-item:hover .info-box {
+  display: block;
+  
+}
+.info-box2 {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: 1350px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  float: left;
+}
+.nav-item:hover .info-box2 {
+  display: block;
+  
+}
+.box1 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   justify-content: center;
+}
+.box1 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+
+}
+.box3 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   
+}
+.box3 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+.box2 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+.box2 {
+   width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   justify-content: center;
+}
+
+
+.box3 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+   font-weight: lighter;
+}
+   .box1 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+   font-weight: lighter;
+
+}
+
+   
+
+
+.box2 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2; 
+  font-weight: lighter;
+}
+.box4 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   
+}
+.box4 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.box4 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-weight: lighter;
+}
+.box5 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   
+}
+.box5 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+.box5 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-weight: lighter;
+}
+.box6 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   
+}
+.box6 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+.box6 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-weight: lighter;
+}
+.box7 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   
+}
+.box7 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+.box7 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-weight: lighter;
+}
+.box8 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   
+}
+.box8 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+.box8 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-weight: lighter;
+}
+li:hover{
+  color: #d54114;
+}
+.poster {
+
+  width: 700px;
+  height: 300px;
+  position: absolute;
+  right: 20px;
+
+}
+.poster-img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+ 
+}
+
+</style>
+<body>
+
+<nav class="navbar">
+  <div class="nav-item">Home
+    <div class="info-box2">
+      <div class="box1">
+        <p>means</p>
+        <ul>
+          <li></li>T-shirt</li>
+          <li>Shorts</li>
+          <li>Tracksuit</li>
+          <li>Trackpant</li>
+          <li>Training Bibs</li>
+          <li>Compression</li>
+          <li>Jackets</li>
+          <li>Wind Cheater</li>
+          <li>Sweatshirts</li>
+          <li>Brief</li>
+          <li>Rainwear</li>
+        </ul>
+      </div>
+      .<div class="box2">
+        <p>womens</p>
+        <ul>
+          <li></li>T-shirt</li>
+          <li>Shorts</li>
+          <li>Tracksuit</li>
+          <li>Trackpant</li>
+          <li>Training Bibs</li>
+          <li>Compression</li>
+          <li>Jackets</li>
+          <li>Wind Cheater</li>
+          <li>Sweatshirts</li>
+          <li>Brief</li>
+          <li>Rainwear</li>
+          <li>capri</li>
+          <li>sports bra</li>
+
+        </ul>
+     </div>
+      <div class="box3">
+        <p>team wear</p>
+        <ul>
+          <li>cricket</li>
+          <li>volleyball</li>
+          <li>basketball</li>
+          <li>football</li>
+          <li>running</li>
+          <li>badminton</li>
+          <li>turf</li>
+         <li>goalkeeper</li>
+         <li>tracksuit</li>
+        </ul>
+      </div>
+      
+     <div class="poster">
+      <img src="/images/Apparel_nav.webp" alt="" class="poster-img">
+      </div>
+     </div>
     </div>
+  </div>
+
+  <div class="nav-item">About
+    <div class="info-box">
+    <div class="box1">
+      <p>football</p>
+    <img src="/images/volleyball-icon_nav01.jpg" alt="">
+    <ul>
+    <li>Balls</li>
+    <li>Footwear</li>
+    <li>Bags</li>
+    <li>Teamwear</li>
+    <li>Goalkeeper Gloves</li>
+    <li>Shin-guards</li>
+    <li>Stockings</li>
+    <li>Training Equipments</li>
+    <li>Accessories</li>
+  </ul>
+  
+   
+
+    
+    </div>
+    <div class="box2">
+      <p>other game
+
+      </p>
+      <img src="/images/other-sports-icon_nav01.jpg" alt="">
+      <ul>
+    <li>Track & Field</li>
+    <li>Tennis</li>
+    <li>Throwball</li>
+    <li>Korfbal</li>
+    <li>Handball</li>
+    <li>Netball</li>
+    <li>Swimming</li>
+    <li>Shooting Ball</li>
+    <li>Pickleball</li>
+    </ul>
+
+    </div>
+    <div class="box3">
+    <p>running</p>
+    <img src="/images/running-icon_nav01.jpg" alt="">
+    <ul>
+    <li>Shoes</li>
+    <li>Bags</li>
+    <li>Apparels</li>
+    <li>Socks</li>
+    <li>Accessories</li>
+  </ul>
+    </div>
+    <div class="box4">
+      <p>turf</p>
+        <img src="/images/turf-icon_nav01.jpg" alt="">
+        <ul>
+        <li>Balls</li>
+    <li>Footwear</li>
+    <li>Bags</li>
+    <li>Goalkeeper Gloves</li>
+    <li>Stockings</li>
+    <li>Teamwear</li>
+    </ul>
+    </div>
+    <div class="box5">
+      <p>cricket</p>
+      <img src="/images/cricket-icon_nav01.avif" alt="">
+      <ul>
+        <li>Bats</li>
+        <li>Ball</li>
+        <li>Protective Gear</li>
+        <li>Clothing</li>
+        <li>Footwear</li>
+      </ul>
+    </div>
+    <div class="box6">
+      <p>basketball</p>
+      <img src="/images/basketball-icon_nav01.avif" alt="">
+      <ul>
+        <li></li>Balls</li>
+        <li>Footwear</li>
+        <li>Bags</li>
+        <li>Teamwear</li>
+        <li>Socks</li>
+        <li>Equipments</li>
+        <li>Accessories</li>
+      </ul>
+      
+    </div>
+    <div class="box7">
+      <p>badminton</p>
+      <img src="/images/badminton-icon_nav01.avif" alt="">
+      <ul>
+        <li>Rackets</li>
+        <li>Shuttlecocks</li>
+        <li>Footwear</li>
+        <li>Bags</li>
+        <li>Apparels</li>
+        <li>Accessories</li>
+      </ul>
+    </div>
+    <div class="box8">
+      <p>volleyball</p>
+      <img src="/images/volleyball-icon_nav01.avif" alt="">
+      <ul>
+        <li>Balls</li>
+        <li>Footwear</li>
+        <li>Bags</li>
+        <li>Teamwear</li>
+        <li>Socks</li>
+        <li>Equipments</li>
+        <li>Accessories</li>
+      </ul>   
+    </div>
+  </div>
+  </div>
+
+  <div class="nav-item">Services
+    <div class="info-box">
+      <p>This is the Services info box.</p>
+    </div>
+  </div>
+</nav>
+
 </body>
 </html>

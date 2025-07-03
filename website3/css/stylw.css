@@ -226,32 +226,8 @@ a:hover{
 ;
 }
 .box1{
-    background-color: rgb(165, 86, 86);
-    height: 140px;
-    width: 250px;
-    margin-top: 10px;
-    position: absolute;
-    top: 800px;
-    left: 600px;
-    text-align: center;
-}
-.box1 p{
-    font-size: 60px;
-    color: azure;
-    font-weight: bolder;
-    margin-top: 10px;
-}
-.box1 b{
-    margin-top: -500;
-    color: rgb(218, 27, 27);
-    object-fit: cover;
-}
-
-.box2{
-   background-color: rgb(165, 86, 86);
-    height: 140px;
-    width: 250px;
-    position: absolute;
-     top: 812px;
-    left: 900px;
+    height: 100px;
+    width: 200px;
+    background-color: brown;
+    color: black;
 }
