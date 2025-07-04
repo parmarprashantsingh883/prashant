@@ -115,6 +115,26 @@ All info boxes start from the same absolute position */
   display: block;
   
 }
+  .info-box3 {
+  display: flex;
+  visibility: hidden;
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: 1350px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  
+  }
+
+.nav-item:hover .info-box3 {
+  visibility: visible;
+}
 .box1 {
   width: 150px;
   height: auto;
@@ -288,11 +308,12 @@ li:hover{
   color: #d54114;
 }
 .poster {
-
+  
   width: 700px;
   height: 300px;
-  position: absolute;
+   position: absolute;
   right: 20px;
+  top: 10px;
 
 }
 .poster-img {
@@ -301,7 +322,159 @@ li:hover{
   object-fit: cover;
  
 }
+.banner {
+  background-color: #f0f0f0;
+  width: 700px;
+  height: 300px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  
 
+}
+ .banner img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+ 
+}
+
+.info-box4 {
+  display: flex;
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: 1350px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  visibility: hidden
+  }
+
+.nav-item:hover .info-box4 {
+visibility: visible;
+}
+  .info-box4 .box1, .info-box4 .box2, .info-box4 .box3 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+  margin-left: 20px;
+  display: block;
+  }
+  .content-img {
+  width: 700px;
+  height: 300px;
+  object-fit: cover;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+.info-box5 {
+  display: flex;
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: 1350px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  visibility: hidden
+  }
+
+.nav-item:hover .info-box5 {
+visibility: visible;
+}
+.info-box6 {
+  display: flex;
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: 1350px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  visibility: hidden
+  }
+
+.nav-item:hover .info-box6 {
+visibility: visible;
+}
+.info-box7 {
+  display: flex;
+  position: fixed;
+  top: 70px;
+  right: 750px;
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+  text-align: center;
+ margin-left: 20px;
+  visibility: hidden;
+  color: #a82020;
+  font-weight: bold;
+  }
+
+.nav-item:hover .info-box7 {
+visibility: visible;
+}
+.info-box8 {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 70px;
+  left: 50px;
+  width:max-content;
+  height: 150px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  float: left;
+  }
+
+.nav-item:hover .info-box8 {
+display: block;
+}
+
+ 
+
+.info-box8 .box1, .info-box8 .box2, .info-box8 .box3, .info-box8 .box4, .info-box8 .box5, .info-box8 .box6, .info-box8 .box7 {
+  width: 200px;
+  height: 145px;
+  background-color: white;
+  float: left;
+  margin-left: 20px;
+  display: block;
+  flex-wrap: nowrap;
+
+}
+.club-logo {
+  width: 50px;
+  height: 50px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
 </style>
 <body>
 
@@ -364,6 +537,48 @@ li:hover{
      </div>
     </div>
   </div>
+
+  
+  <div class="nav-item">fitness
+    <div class="info-box4">
+      <div class="box1">
+        <p>gym</p>
+          <ul>
+<li>Gym wear
+<li>Gloves</li>
+<li>Weight belts</li>
+<li>Gym bags</li>
+<li>Sippers & Shakers</li>
+<li>Gymballs</li>
+<li>Push-up Bars</li>
+          </ul>
+        
+      </div>
+      <div class="box2">
+        <p>yoga</p>
+          <ul>
+            <li>Yoga mats</li>
+            <li>Blocks</li>
+            <li>Straps</li>
+            <li>Clothing</li>
+            <li>Accessories</li>
+          </ul>
+      </div>
+      <div class="box3">
+        <p>home fitness</p>
+          <ul>
+            <li>Weights</li>
+            <li>Resistance Bands</li>
+            <li>Skipping Ropes</li>
+            <li>Exercise Bikes</li>
+            <li>Treadmills</li>
+            <li>Rowing Machines</li>
+            <li>Ellipticals</li>
+          </ul>
+      </div>
+      <img src="/images/Fitness_nav.webp" alt="" class="content-img">
+      </div>
+      </div>
 
   <div class="nav-item">About
     <div class="info-box">
@@ -481,11 +696,173 @@ li:hover{
   </div>
 
   <div class="nav-item">Services
-    <div class="info-box">
-      <p>This is the Services info box.</p>
+    <div class="info-box3">
+    <div class="box1">
+      <p>means</p>
+      <ul>
+       <li> Football</li>
+       <li> Futsal/Turf Shoe</li>
+       <li> Badminton</li>
+       <li> Cricket</li>
+       <li> Tennis</li>
+       <li> Basketball</li>
+       <li> Running</li>
+       <li> Volleyball</li>
+       <li> Squash</li>
+       <li> Track & Field</li>
+      </ul>
     </div>
+    <div class="box2">
+      <p>children</p>
+      <ul>
+       <li> Football</li>
+       <li> Futsal/Turf Shoe</li>
+       <li> Badminton</li>
+       <li> Cricket</li>
+       <li> Tennis</li>
+       <li> Basketball</li>
+       <li> Running</li>
+       <li> Volleyball</li>
+       <li> Squash</li>
+       <li> Track & Field</li>
+      </ul>
+       <div class="banner">
+      <img src="/images/Footwear_nav.webp" alt="" >
+      </div>
+      </div>
+      </div>
+      </div>
+
+       <div class="nav-item">muscles support
+    <div class="info-box5">
+    <div class="box1">
+      <p>means</p>
+      <ul>
+       <li> Football</li>
+       <li> Futsal/Turf Shoe</li>
+       <li> Badminton</li>
+       <li> Cricket</li>
+       <li> Tennis</li>
+       <li> Basketball</li>
+       <li> Running</li>
+       <li> Volleyball</li>
+       <li> Squash</li>
+       <li> Track & Field</li>
+      </ul>
+    </div>
+    <div class="box2">
+      <p>children</p>
+      <ul>
+       <li> Football</li>
+       <li> Futsal/Turf Shoe</li>
+       <li> Badminton</li>
+       <li> Cricket</li>
+       <li> Tennis</li>
+       <li> Basketball</li>
+       <li> Running</li>
+       <li> Volleyball</li>
+       <li> Squash</li>
+       <li> Track & Field</li>
+      </ul>
+       <div class="banner">
+      <img src="/images/Muscle_Support_nav.webp" alt="" ">
+      </div>
+      </div>
+      
+    </div>
+    </div>
+     <div class="nav-item">Accessories
+    <div class="info-box6">
+    <div class="box1">
+      <p>means</p>
+      <ul>
+       <li> Football</li>
+       <li> Futsal/Turf Shoe</li>
+       <li> Badminton</li>
+       <li> Cricket</li>
+       <li> Tennis</li>
+       <li> Basketball</li>
+       <li> Running</li>
+       <li> Volleyball</li>
+       <li> Squash</li>
+       <li> Track & Field</li>
+      </ul>
+    </div>
+    <div class="box2">
+      <p>children</p>
+      <ul>
+       <li> Football</li>
+       <li> Futsal/Turf Shoe</li>
+       <li> Badminton</li>
+       <li> Cricket</li>
+       <li> Tennis</li>
+       <li> Basketball</li>
+       <li> Running</li>
+       <li> Volleyball</li>
+       <li> Squash</li>
+       <li> Track & Field</li>
+      </ul>
+       <div class="banner">
+      <img src="/images/Accessories_nav.webp" alt="" >
+      </div>
+      </div>
+    </div>
+    </div>
+      <div class="nav-item">offers
+    <div class="info-box7">
+    <div class="box1">
+      <p>clearance</p>
+      </div>
+    </div>
+    </div>
+    </div>
+     <div class="nav-item">clubs
+    <div class="info-box8">
+    <div class="box1">
+     <p>Chennaiyin FC</p>
+     <div class="club-logo">
+     
+      <img src="/images/ChennaiyinFC_clublogo1.webp" alt="">
+     </div>
+     </div>
+      <div class="box2">
+        <p>Bhutan National Team</p>
+      <div class="club-logo">
+        
+      
+      <img src="/images/Bhutan_club-logo1.webp" alt="">
+      </div>
+    </div>
+    <div class="box3">
+      <p>Jamshedpur FC</p>
+      <div class="club-logo">
+      <img src="/images/JamshedpurFC_club-logo1.webp" alt="">
+      </div>
+    </div>
+    <div class="box4">
+      <p>Mohun Bagan Super Giant</p>
+      <div class="club-logo">
+      <img src="/images/ATKMohunBagan_club-newlogo (1).webp" alt="">
+      </div>
+  </div>
+  <div class="box5">
+    <p>Sreenidhi Deccan FC</p>
+    <div class="club-logo">
+      <img src="/images/SreenidhiDeccanFC_club-logo1.webp" alt="">
+  </div>
+  </div>
+  <div class="box6">
+    <p>Real Kashmir FC</p>
+    <div class="club-logo">
+      <img src="/images/RealKashmirFC_club-logo1.webp" alt="">
+  </div>
+  </div>
+  <div class="box7">
+    <p>Churchill</p>
+    <div class="club-logo">
+      <img src="/images/Churchill_club-logo1.webp" alt="">
   </div>
 </nav>
 
 </body>
-</html>
+</html> 

@@ -1,6 +1,5 @@
 
 
-
 body {
   margin: 0;
   padding: 0;
@@ -94,70 +93,254 @@ body {
         object-fit: cover;
     }
     
-    .cart-section{
-        background-color: #b84912;
-        
-       
-    }
-    
-        
-        
-    
-    .container {
-        width: 100%;
-        position: relative;
-        height: 400px;
+    .container{
+        background-image: url(/images/logo_shaded_cropped.png);
+        background-repeat: inherit;
+        height: 450px;
         display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        border: 5px solid #149842; 
-        top: 20px;
-        gap: 30px;
-        /* ; */
+        padding-left:50px;
+        flex-wrap: nowrap;
+        gap: 20px;
+        border: 2px solid  red;
+        z-index: 10;
+
+
     }
-    .cart{
-        background-color: #b73232;
-        height: 300px;
-        width: 206px;
-        /* Removed invalid position properties */
-        top: 10px;
-        left: 40px;
-        border-radius: 5px;
-        /* If positioning is needed, uncomment and set position: relative or absolute */
-        /* position: relative; */
+    .card{
+        height: 350px;
+        width: 220px;
+        background-color: #e76a30;
+        margin-top: 50px;
+        /* margin-left: 10px; */
+        /* margin-right: ; */
+z-index: 40;
     }
-    .cart img{
+    img{
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 5px;
+        overflow-y: hidden;
     }
-    
-    .title  {
+    .title{
+        background-color:transparent;
+        color:whitesmoke;
+        height: 50px;
+        width: 220px;
+        font-size: 30px;
+        font-weight: 600;
+         font-family: 'Montserrat', sans-serif;
+         text-align: center;
+         position: relative;
+         margin-top:-55px;
+         z-index: 50;
+         border-bottom: 2px solid rgb(216, 28, 28);
+    }
 
-        height:40px;
-        width: 190px;
-        color: whitesmoke;
-        font-size: 20px;
-        font-weight: 500;
-        text-align: center;
-        /* Removed incomplete position property */
-        /* If positioning is needed, uncomment and set position: relative or absolute */
-        /* position: relative; */
-        bottom: 0px;
-        left: 0%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #322f2f;
-      
-        border-top: 4px solid #850f0f;
-    }
-    .footer {
-        background-color: #090909;
-        padding: 20px;
-        text-align: center;
-        color: whitesmoke;
-        font-weight: lighter;
-        font-size: small;
-    }
+
+ .container2{
+    height: 350px;
+    background-color:whitesmoke;
+    display: flex;
+    padding: 20px 20px 5px 20px ;
+    gap: 50px;
+ }
+ .iteam1{
+   display: block;
+    background-color: white;
+    height:300px;
+    width: 500px;
+ 
+ }
+ .iteam1 h1{
+    font-size: 50px;
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 800;
+     margin-top: 100px;
+     margin-left: 50px;
+ }
+ .iteam1 p{
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: -20px;
+ }
+.iteam1 a{
+    margin-left: 50px;
+    font-size: 20px ;
+    font-weight: bolder;
+    color: #000;
+}
+.iteam1 a:hover{
+    color: #e76a30;
+}
+ 
+ .iteam1 a{
+    text-decoration: none;
+ }
+ .iteam2{
+    background-color: rgb(49, 50, 50);
+    height: 300px;
+    
+    
+ }
+ .iteam3{
+    /* background-color: rgb(201, 88, 13); */
+    height: 300px;
+ }
+ .iteam3{
+    /* background-color: rgb(195, 39, 111); */
+    height: 300px;
+ }
+ .iteam4{
+    /* background-color: rgb(35, 58, 142); */
+    height: 300px;
+ }
+ 
+.cont3{
+    display: flex;
+    gap: 30px;
+    padding:60px;
+}
+.arrivals{
+    /* padding: 100px; */
+    background-color: #000;
+    padding-top: 70px;
+    text-align: left;
+    padding-bottom: 70px;
+    margin-bottom: 50px;
+}
+.arrivals span{
+    font-size: 50px;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: Px;
+    font-weight: bolder;
+    color: rgb(5, 5, 5);
+    background-color: red;
+    margin-left: 30px;
+}
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  bottom: 0px;
+  height: 5px;
+  width: 200%;
+  background-color: red; /* or black */
+}
+.arrivals h1{
+    color: aliceblue;
+    font-size: 90px;
+    line-height: -30;
+    margin-top: -20px;
+    margin-bottom: 25px;
+    margin-left: 30px;
+}
+.arrivals a{
+    text-decoration: none;
+    border: 2px solid whitesmoke;
+    padding: 10px;
+    color: aliceblue;
+    margin-top: -50px;
+    margin-left: 30px; 
+    
+    
+}
+.arrivals2{
+    background-color: #791212;
+display: flex;
+margin-bottom: 50px;
+}
+.arr{
+    background-color: #e76a30;
+    height: 50px;
+}
+.arr2{
+    background-color: #4c4846;
+    height: 50px;
+}
+.a1{
+    height: 350px;
+    width: 250px;
+    
+}
+.a3{
+    height: 350px;
+    width: 250px;
+    
+}
+.a2{
+    height: 350px;
+    width: 250px;
+    
+}
+.a4{
+    height: 350px;
+    width: 250px;
+    
+}
+.impact-banner {
+  background-image: url(/images/impact-banner-desktop.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 275px;
+  margin-bottom: 60px;
+}
+.logoes{
+    height: 200px;
+    background-color: whitesmoke;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 60px;
+}
+.logo1 {
+    height: 126px;
+    width: 126px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+
+}
+.heading{
+    font-size: 35px;
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Montserrat', sans-serif;
+}
+.videos{
+    display: flex;
+    height: 400px;
+    background-color:whitesmoke;
+    gap: 40px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+video{
+    border-radius: 20px;
+    width: px;
+}
+.footer{
+    background-color: #000;
+    height: 400px;
+    display: block;
+}
+.footer h1{
+    font-size: 30px;
+    color: aliceblue;
+    padding-left: 10px;
+}
+input[type="text"] {
+  border: none;
+  font-size: 20px;
+  background-color: #000;
+  border-bottom: 2px solid #613030
+}
+
