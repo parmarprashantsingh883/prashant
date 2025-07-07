@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     details {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    summary::before {
+      content: "▶";
+      display: inline-block;
+      margin-right: 8px;
+      transition: transform 0.2s ease;
+      font-size: 10px;
+    }
+
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .price-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 10px;
+    }
+
+    .price-options label {
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: normal;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .price-options input[type="checkbox"] {
+      display: none;
+    }
+
+    .price-options input[type="checkbox"]:checked + span {
+      background-color: #000;
+      color: #fff;
+      border-color: #000;
+    }
+
+    .price-box {
+      display: inline-block;
+    }
+
+    
+</style>
+<body>
+    <details>
+  <summary>price</summary>
+  <div class="price-options">
+    <label class="price-box"><input type="checkbox"><span>999</span></label>
+    <label class="price-box"><input type="checkbox"><span>2000</span></label>
+    <label class="price-box"><input type="checkbox"><span>1500</span></label>
+    <label class="price-box"><input type="checkbox"><span>800</span></label>
+    <label class="price-box"><input type="checkbox"><span>3000</span></label>
+    <label class="price-box"><input type="checkbox"><span>5000</span></label>
+     <label class="price-box"><input type="checkbox"><span>5000</span></label>
+      <label class="price-box"><input type="checkbox"><span>5000</span></label>
+       <label class="price-box"><input type="checkbox"><span>5000</span></label>
+        <label class="price-box"><input type="checkbox"><span>5000</span></label>
+         <label class="price-box"><input type="checkbox"><span>5000</span></label>
+  </div>
+</details>
+</body>
+</html>

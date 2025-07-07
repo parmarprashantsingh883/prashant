@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      height: 70vh;
+      width: 100%;
+      border: 2px solid red; /* Fixed spelling */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      transition: ease-in-out 1s;
+    }
+    .box1 {
+      height: 250px;
+      width: 200px;
+    }
+    .box1 img { /* Apply styles directly to img inside .box1 */
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+    .box1 img:hover{
+      transform:scale(1.2,1.2);
+      opacity: .8;
+      border: 3px solid brown;
+      border-radius: 5px;
+      filter: drop-shadow(5px 5px 5px grey) blur(2px);
+      
+    }
+    p{
+      visibility: hidden;
+      border: 3px solid black;
+    }
+    .box1 p:hover{
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1">
+      <img src="/images/shoes6.webp" alt="Shoe">
+      <p>hello</p>
+
+    </div>
+    <div class="box1">
+      <img src="/images/shoes6.webp" alt="Shoe">
+    </div>
+    <div class="box1">
+      <img src="/images/shoes6.webp" alt="Shoe">
+    </div>
+    <div class="box1">
+      <img src="/images/shoes6.webp" alt="Shoe">
+    </div>
+    <div class="box1">
+      <img src="/images/shoes6.webp" alt="Shoe">
+    </div>
+  </div>
+</body>
+</html>

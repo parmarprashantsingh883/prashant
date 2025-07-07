@@ -1,4 +1,6 @@
-
+*{
+    box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -38,17 +40,17 @@ body {
         background-color:whitesmoke;
         padding: 0px;
         text-align: center;
-        color: whitesmoke;
         display: flex;
         height: 63px;
-        border: 3px solid #090909;
+        /* border: 3px solid #090909; */
 
       
     }
      .logo img{
         height: 60px;
-        width: 80px;
-        padding-left: 50px;
+        width: 100px;
+        padding:5px;
+        margin-left: 30px;
     }
     nav {
         display: flex;
@@ -111,9 +113,10 @@ body {
         width: 220px;
         background-color: #e76a30;
         margin-top: 50px;
+        transition: .5s ease-in-out;
         /* margin-left: 10px; */
         /* margin-right: ; */
-z-index: 40;
+        z-index: 40;
     }
     img{
         width: 100%;
@@ -141,12 +144,12 @@ z-index: 40;
     height: 350px;
     background-color:whitesmoke;
     display: flex;
-    padding: 20px 20px 5px 20px ;
+    padding: 20px 20px 10px 20px ;
     gap: 50px;
  }
  .iteam1{
    display: block;
-    background-color: white;
+    background-color:whitesmoke;
     height:300px;
     width: 500px;
  
@@ -199,6 +202,10 @@ z-index: 40;
     display: flex;
     gap: 30px;
     padding:60px;
+    background-color: whitesmoke;
+    border: 2px solid blue;
+    margin-top: 100px;
+
 }
 .arrivals{
     /* padding: 100px; */
@@ -331,6 +338,7 @@ video{
     background-color: #000;
     height: 400px;
     display: block;
+    text-align: center;
 }
 .footer h1{
     font-size: 30px;
@@ -343,4 +351,57 @@ input[type="text"] {
   background-color: #000;
   border-bottom: 2px solid #613030
 }
+
+.footer p {
+    color: aliceblue;
+}
+
+.footer h2 {
+    color: aliceblue;
+    
+}
+.footer i {
+    color: aliceblue;
+}
+.footer button{
+    background-color: #e76a30;
+    width: 85px;
+    border-radius: 10px;
+}
+.footer button:hover{
+    background-color: #791212;
+    color: aliceblue;
+}
+hr{
+border: 2px solid rgb(100, 4, 4);
+width: 800px;
+}
+.footer2 img{
+    height: 50px;
+    width:  100px;
+}
+.footer p{
+    margin-right: 100px;
+}
+.footer2{
+    display: flex;
+    background-color: #000;
+}
+ .container2 img:hover{
+    transform: scaleX(-1);
+    /* transition: .8s; */
+}
+
+
+.card img {
+  /* transition: transform 0.3s ease;  Enables smooth animation */
+}
+
+ .card:hover {
+  transform: scale(1.2,1.2);              /* Resets scale to normal on hover */
+}
+
+
+         /* Resets scale to normal on hover */
+
 
