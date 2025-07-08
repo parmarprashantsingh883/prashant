@@ -1,87 +1,84 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-     details {
+  
+  <title>Page Using &lt;sidebar&gt; </title>
+  <style>
+    body {
       font-family: Arial, sans-serif;
-      font-size: 18px;
-      font-weight: 600;
-      border-bottom: 1px solid #ccc;
-      padding: 10px 0;
+      margin: 0;
+      padding: 0;
     }
 
-    summary {
-      list-style: none;
-      cursor: pointer;
+    header, footer {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    main {
       display: flex;
-      align-items: center;
+      padding: 20px;
     }
 
-    summary::before {
-      content: "▶";
-      display: inline-block;
-      margin-right: 8px;
-      transition: transform 0.2s ease;
-      font-size: 10px;
+    section {
+      flex: 3;
+      padding-right: 20px;
     }
 
-    details[open] summary::before {
-      transform: rotate(90deg);
+    sidebar {
+      flex: 1;
+      background-color: #f0f0f0;
+      padding: 15px;
+      /* Make sure sidebar behaves like a block */
+      display: block;
     }
 
-    .price-options {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding-top: 10px;
+    footer {
+      margin-top: 20px;
     }
-
-    .price-options label {
-      border: 1px solid #ccc;
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: normal;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .price-options input[type="checkbox"] {
-      display: none;
-    }
-
-    .price-options input[type="checkbox"]:checked + span {
-      background-color: #000;
-      color: #fff;
-      border-color: #000;
-    }
-
-    .price-box {
-      display: inline-block;
-    }
-
-    
-</style>
+  </style>
+</head>
 <body>
-    <details>
-  <summary>price</summary>
-  <div class="price-options">
-    <label class="price-box"><input type="checkbox"><span>999</span></label>
-    <label class="price-box"><input type="checkbox"><span>2000</span></label>
-    <label class="price-box"><input type="checkbox"><span>1500</span></label>
-    <label class="price-box"><input type="checkbox"><span>800</span></label>
-    <label class="price-box"><input type="checkbox"><span>3000</span></label>
-    <label class="price-box"><input type="checkbox"><span>5000</span></label>
-     <label class="price-box"><input type="checkbox"><span>5000</span></label>
-      <label class="price-box"><input type="checkbox"><span>5000</span></label>
-       <label class="price-box"><input type="checkbox"><span>5000</span></label>
-        <label class="price-box"><input type="checkbox"><span>5000</span></label>
-         <label class="price-box"><input type="checkbox"><span>5000</span></label>
-  </div>
-</details>
+
+  <header>
+    <h1>My Simple HTML Page</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Welcome!</h2>
+      <p>This is a paragraph with some basic text to show how content appears on a webpage.</p>
+
+      <h3>My To-Do List</h3>
+      <ul>
+        <li>Buy groceries</li>
+        <li>Finish project</li>
+        <li>Call mom</li>
+      </ul>
+
+      <h3>Steps to Complete</h3>
+      <ol>
+        <li>Plan the task</li>
+        <li>Work on it</li>
+        <li>Review and submit</li>
+      </ol>
+
+      <p>
+        Visit <a href="https://www.google.com" target="_blank">Google</a> in a new tab.
+      </p>
+    </section>
+
+    <sidebar>
+      <h3>Sidebar</h3>
+      <p>This is a sidebar section using the &lt;sidebar&gt; tag (non-standard).</p>
+    </sidebar>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Simple Webpage. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
+
