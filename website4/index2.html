@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -61,5 +61,168 @@
       <img src="/images/shoes6.webp" alt="Shoe">
     </div>
   </div>
+</body>
+ </html> -->
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nivia Sports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .header1 {
+      background: #f44336;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .header2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: white;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .logo img {
+      max-height: 50px;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav.nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav.nav-links a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
+
+    .icon i {
+      margin-left: 15px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* Hide menu toggle checkbox */
+    #menu-toggle {
+      display: none;
+    }
+
+    /* Hamburger icon */
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* Responsive navbar for tablets/mobiles */
+    @media (max-width: 768px) {
+      nav.nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+
+      #menu-toggle:checked + .menu-icon + nav.nav-links {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+        color: black;
+      }
+
+      .nav-container {
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 100%;
+      }
+
+      .icon {
+        margin-left: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Strip -->
+  <div class="row">
+    <div class="col-12 header1">
+      <header>
+        <p>Get 15% Off on purchases above ₹2500 or Get 30% Off on purchases above ₹5000</p>
+      </header>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="row">
+    <div class="col-12 header2">
+      <div class="logo">
+        <img src="/images/Nivia-Logo-Black-SVG_2_1.svg" alt="Nivia Logo">
+      </div>
+
+      <div class="nav-container">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+
+        <nav class="nav-links">
+          <a href="#">ALL SPORTS</a>
+          <a href="#">APPAREL</a>
+          <a href="#">FOOTWEAR</a>
+          <a href="#">FITNESS</a>
+          <a href="#">MUSCLE SPORTS</a>
+          <a href="#">ACCESSORIES</a>
+          <a style="color: red;" href="#">OFFERS</a>
+          <a href="#">CLUB</a>
+        </nav>
+
+        <div class="icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-regular fa-user"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Placeholder -->
+  <div style="padding: 30px; text-align: center;">
+    <h2>Welcome to Nivia Sports</h2>
+    <p>Your homepage content goes here...</p>
+    <img src="/images/Pickleball_Hompage_Banner_Web_1.webp" alt="Banner" style="width: 100%; max-width: 800px; margin-top: 20px;">
+  </div>
+
 </body>
 </html>

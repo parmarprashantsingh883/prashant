@@ -88,7 +88,7 @@ body {
    .bg-image {
     height: 400px;
     width: 100%;
-    background-image: url("../images/Dominator_Football_Banner_desktop.webp");
+    background-image: url("/images/Turf_Main_Banner_Desk_01July.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -146,7 +146,7 @@ align-items: center;
     margin-bottom: 40px;
  }
  .img1{
-    height: 288px;
+    height: 300px;
     width: 260px;
     
  }
@@ -160,8 +160,8 @@ align-items: center;
  }
  .img-poster {
     width: 100%;
-    height: 300px; /* or use 100% depending on the parent */
-    background-image: url(/images/ISL_Banner.webp);
+    height: 400px; /* or use 100% depending on the parent */
+    background-image: url(/images/Basketball-genric-banner.webp);
     background-size: cover;
     /* background-position: center; */
   margin: 50px;
