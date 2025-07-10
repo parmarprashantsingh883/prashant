@@ -4,160 +4,844 @@
   <meta charset="UTF-8">
   <title>Multiple Info Boxes</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body { font-family: Arial, sans-serif; }
-    .navbar {
-      display: flex;
-      gap: 40px;
-      padding: 20px;
-      background-color: #eee;
-    }
-    .nav-item {
-      position: relative;
-      padding-bottom: 20px;
-      cursor: pointer;
-    }
-    .nav-item:hover {
-      border-bottom: #1c1b1b solid 4px;
-      transition: 0.6s ease-in-out;
-    }
-    .nav-item::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: #1c1b1b;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease-in-out;
-    }
-    .nav-item:hover::after {
-      transform: scaleX(1);
-    }
-    .info-box-common {
-      display: none;
-      position: fixed;
-      top: 70px;
-      left: 50px;
-      width: 1350px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      padding: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      z-index: 100;
-      flex-wrap: wrap;
-    }
-    .nav-item:hover .info-box-common {
-      display: flex;
-    }
-    .box {
-      width: 150px;
-      background-color: white;
-      margin-left: 20px;
-    }
-    .box img {
-      width: 50px;
-      height: 60px;
-      object-fit: cover;
-    }
-    .box ul {
-      list-style: none;
-      padding: 0;
-      line-height: 2;
-      font-weight: lighter;
-    }
-    li:hover {
-      color: #d54114;
-    }
-    .poster, .banner, .content-img {
-      width: 700px;
-      height: 300px;
-      position: absolute;
-      right: 20px;
-      top: 10px;
-    }
-    .poster img, .banner img, .content-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .club-logo {
-      width: 50px;
-      height: 50px;
-    }
-  </style>
 </head>
+<style>
+  body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  background-color: #eee;
+  position: relative;
+}
+
+.nav {
+  position: relative;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.nav:hover {
+  /* removed border-bottom to prevent pushing header down */
+  transition: 0.6s ease-in-out;
+}
+
+/* All info boxes start from the same absolute position */
+
+.nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* this is fixed height */
+  background-color: #1c1b1b;
+
+  /* this ensures horizontal scaling only */
+  transform: scaleX(0);  /* changed to start from 0 */
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* animate on hover */
+.nav:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* Info Box Styling */
+.info-box {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  float: left;
+}
+
+.nav:hover .info-box {
+  display: block;
+  
+}
+.info-box2 {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: 1350px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  float: left;
+}
+.nav:hover .info-box2 {
+  display: block;
+  
+}
+  .info-box3 {
+  display: flex;
+  visibility: hidden;
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: 1350px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  
+  }
+
+.nav:hover .info-box3 {
+  visibility: visible;
+}
+.box1 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   justify-content: center;
+}
+.box1 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+
+}
+.box3 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   
+}
+.box3 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+.box2 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+.box2 {
+   width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   justify-content: center;
+}
+
+
+.box3 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+   font-weight: lighter;
+}
+   .box1 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+   font-weight: lighter;
+
+}
+
+   
+
+
+.box2 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2; 
+  font-weight: lighter;
+}
+.box4 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   
+}
+.box4 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.box4 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-weight: lighter;
+}
+.box5 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   
+}
+.box5 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+.box5 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-weight: lighter;
+}
+.box6 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   
+}
+.box6 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+.box6 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-weight: lighter;
+}
+.box7 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   
+}
+.box7 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+.box7 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-weight: lighter;
+}
+.box8 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+   margin-left: 20px;
+   display: block;
+   
+}
+.box8 img {
+  width: 50px;
+  height: 60px;
+  object-fit: cover;
+}
+.box8 ul{
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  font-weight: lighter;
+}
+li:hover{
+  color: #d54114;
+}
+.poster {
+  
+  width: 700px;
+  height: 300px;
+   position: absolute;
+  right: 20px;
+  top: 10px;
+
+}
+.poster-img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+ 
+}
+.banner {
+  background-color: #f0f0f0;
+  width: 700px;
+  height: 300px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  
+
+}
+ .banner img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+ 
+}
+
+.info-box4 {
+  display: flex;
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: 1350px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  visibility: hidden
+  }
+
+.nav:hover .info-box4 {
+visibility: visible;
+}
+  .info-box4 .box1, .info-box4 .box2, .info-box4 .box3 {
+  width: 150px;
+  height: auto;
+  background-color: white;
+  float: left;
+  margin-left: 20px;
+  display: block;
+  }
+  .content-img {
+  width: 700px;
+  height: 300px;
+  object-fit: cover;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+.info-box5 {
+  display: flex;
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: 1350px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  visibility: hidden
+  }
+
+.nav:hover .info-box5 {
+visibility: visible;
+}
+.info-box6 {
+  display: flex;
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: 1350px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  visibility: hidden
+  }
+
+.nav:hover .info-box6 {
+visibility: visible;
+}
+.info-box7 {
+  display: flex;
+  position: fixed;
+  top: 70px;
+  right: 750px;
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+  text-align: center;
+ margin-left: 20px;
+  visibility: hidden;
+  color: #a82020;
+  font-weight: bold;
+  }
+
+.nav:hover .info-box7 {
+visibility: visible;
+}
+.info-box8 {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 70px;
+  left: 50px;
+  width:max-content;
+  height: 150px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+ margin-left: 20px;
+  float: left;
+  }
+
+.nav:hover .info-box8 {
+display: block;
+}
+
+ 
+
+.info-box8 .box1, .info-box8 .box2, .info-box8 .box3, .info-box8 .box4, .info-box8 .box5, .info-box8 .box6, .info-box8 .box7 {
+  width: 200px;
+  height: 145px;
+  background-color: white;
+  float: left;
+  margin-left: 20px;
+  display: block;
+  flex-wrap: nowrap;
+
+}
+.club-logo {
+  width: 50px;
+  height: 50px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+</style>
 <body>
-  <nav class="navbar">
-    <div class="nav-item">Home
-      <div class="info-box-common">
-        <div class="box">
-          <p>Mens</p>
+
+
+            
+<nav class="navbar">
+  <div class="nav">Home
+    <div class="info-box2">
+      <div class="box1">
+        <p>means</p>
+        <ul>
+          <li></li>T-shirt</li>
+          <li>Shorts</li>
+          <li>Tracksuit</li>
+          <li>Trackpant</li>
+          <li>Training Bibs</li>
+          <li>Compression</li>
+            <li>Jackets</li>
+          <li>Wind Cheater</li>
+          <li>Sweatshirts</li>
+          <li>Brief</li>
+          <li>Rainwear</li>
+        </ul>
+      </div>
+      .<div class="box2">
+        <p>womens</p>
+        <ul>
+          <li></li>T-shirt</li>
+          <li>Shorts</li>
+          <li>Tracksuit</li>
+          <li>Trackpant</li>
+          <li>Training Bibs</li>
+          <li>Compression</li>
+          <li>Jackets</li>
+          <li>Wind Cheater</li>
+          <li>Sweatshirts</li>
+          <li>Brief</li>
+          <li>Rainwear</li>
+          <li>capri</li>
+          <li>sports bra</li>
+
+        </ul>
+     </div>
+      <div class="box3">
+        <p>team wear</p>
+        <ul>
+          <li>cricket</li>
+          <li>volleyball</li>
+          <li>basketball</li>
+          <li>football</li>
+          <li>running</li>
+          <li>badminton</li>
+          <li>turf</li>
+         <li>goalkeeper</li>
+         <li>tracksuit</li>
+        </ul>
+      </div>
+      
+     <div class="poster">
+      <img src="/images/Apparel_nav.webp" alt="" class="poster-img">
+      </div>
+     </div>
+    </div>
+  </div>
+
+  
+  <div class="nav">fitness
+    <div class="info-box4">
+      <div class="box1">
+        <p>gym</p>
           <ul>
-            <li>T-shirt</li><li>Shorts</li><li>Tracksuit</li>
+<li>Gym wear
+<li>Gloves</li>
+<li>Weight belts</li>
+<li>Gym bags</li>
+<li>Sippers & Shakers</li>
+<li>Gymballs</li>
+<li>Push-up Bars</li>
           </ul>
-        </div>
-        <div class="box">
-          <p>Womens</p>
+        
+      </div>
+      <div class="box2">
+        <p>yoga</p>
           <ul>
-            <li>Sports Bra</li><li>Trackpant</li>
+            <li>Yoga mats</li>
+            <li>Blocks</li>
+            <li>Straps</li>
+            <li>Clothing</li>
+            <li>Accessories</li>
           </ul>
-        </div>
-        <div class="poster">
-          <img src="/images/Apparel_nav.webp" alt="">
-        </div>
       </div>
-    </div>
+      <div class="box3">
+        <p>home fitness</p>
+          <ul>
+            <li>Weights</li>
+            <li>Resistance Bands</li>
+            <li>Skipping Ropes</li>
+            <li>Exercise Bikes</li>
+            <li>Treadmills</li>
+            <li>Rowing Machines</li>
+            <li>Ellipticals</li>
+          </ul>
+      </div>
+      <img src="/images/Fitness_nav.webp" alt="" class="content-img">
+      </div>
+      </div>
 
-    <div class="nav-item">Fitness
-      <div class="info-box-common">
-        <div class="box">
-          <p>Gym</p>
-          <ul><li>Gloves</li><li>Gym Bags</li></ul>
-        </div>
-        <div class="box">
-          <p>Yoga</p>
-          <ul><li>Mats</li><li>Clothing</li></ul>
-        </div>
-        <div class="content-img">
-          <img src="/images/Fitness_nav.webp" alt="">
-        </div>
-      </div>
-    </div>
+  <div class="nav">About
+    <div class="info-box">
+    <div class="box1">
+      <p>football</p>
+    <img src="/images/volleyball-icon_nav01.jpg" alt="">
+    <ul>
+    <li>Balls</li>
+    <li>Footwear</li>
+    <li>Bags</li>
+    <li>Teamwear</li>
+    <li>Goalkeeper Gloves</li>
+    <li>Shin-guards</li>
+    <li>Stockings</li>
+    <li>Training Equipments</li>
+    <li>Accessories</li>
+  </ul>
+  
+   
 
-    <div class="nav-item">About
-      <div class="info-box-common">
-        <div class="box">
-          <p>Football</p>
-          <img src="/images/volleyball-icon_nav01.jpg" alt="">
-          <ul><li>Balls</li><li>Footwear</li></ul>
-        </div>
-        <div class="box">
-          <p>Running</p>
-          <img src="/images/running-icon_nav01.jpg" alt="">
-          <ul><li>Shoes</li><li>Socks</li></ul>
-        </div>
-      </div>
+    
     </div>
+    <div class="box2">
+      <p>other game
 
-    <div class="nav-item">Clubs
-      <div class="info-box-common">
-        <div class="box">
-          <p>Chennaiyin FC</p>
-          <div class="club-logo">
-            <img src="/images/ChennaiyinFC_clublogo1.webp" alt="">
-          </div>
-        </div>
-        <div class="box">
-          <p>Jamshedpur FC</p>
-          <div class="club-logo">
-            <img src="/images/JamshedpurFC_club-logo1.webp" alt="">
-          </div>
-        </div>
+      </p>
+      <img src="/images/other-sports-icon_nav01.jpg" alt="">
+      <ul>
+    <li>Track & Field</li>
+    <li>Tennis</li>
+    <li>Throwball</li>
+    <li>Korfbal</li>
+    <li>Handball</li>
+    <li>Netball</li>
+    <li>Swimming</li>
+    <li>Shooting Ball</li>
+    <li>Pickleball</li>
+    </ul>
+
+    </div>
+    <div class="box3">
+    <p>running</p>
+    <img src="/images/running-icon_nav01.jpg" alt="">
+    <ul>
+    <li>Shoes</li>
+    <li>Bags</li>
+    <li>Apparels</li>
+    <li>Socks</li>
+    <li>Accessories</li>
+  </ul>
+    </div>
+    <div class="box4">
+      <p>turf</p>
+        <img src="/images/turf-icon_nav01.jpg" alt="">
+        <ul>
+        <li>Balls</li>
+    <li>Footwear</li>
+    <li>Bags</li>
+    <li>Goalkeeper Gloves</li>
+    <li>Stockings</li>
+    <li>Teamwear</li>
+    </ul>
+    </div>
+    <div class="box5">
+      <p>cricket</p>
+      <img src="/images/cricket-icon_nav01.avif" alt="">
+      <ul>
+        <li>Bats</li>
+        <li>Ball</li>
+        <li>Protective Gear</li>
+        <li>Clothing</li>
+        <li>Footwear</li>
+      </ul>
+    </div>
+    <div class="box6">
+      <p>basketball</p>
+      <img src="/images/basketball-icon_nav01.avif" alt="">
+      <ul>
+        <li></li>Balls</li>
+        <li>Footwear</li>
+        <li>Bags</li>
+        <li>Teamwear</li>
+        <li>Socks</li>
+        <li>Equipments</li>
+        <li>Accessories</li>
+      </ul>
+      
+    </div>
+    <div class="box7">
+      <p>badminton</p>
+      <img src="/images/badminton-icon_nav01.avif" alt="">
+      <ul>
+        <li>Rackets</li>
+        <li>Shuttlecocks</li>
+        <li>Footwear</li>
+        <li>Bags</li>
+        <li>Apparels</li>
+        <li>Accessories</li>
+      </ul>
+    </div>
+    <div class="box8">
+      <p>volleyball</p>
+      <img src="/images/volleyball-icon_nav01.avif" alt="">
+      <ul>
+        <li>Balls</li>
+        <li>Footwear</li>
+        <li>Bags</li>
+        <li>Teamwear</li>
+        <li>Socks</li>
+        <li>Equipments</li>
+        <li>Accessories</li>
+      </ul>   
+    </div>
+  </div>
+  </div>
+
+  <div class="nav">Services
+    <div class="info-box3">
+    <div class="box1">
+      <p>means</p>
+      <ul>
+       <li> Football</li>
+       <li> Futsal/Turf Shoe</li>
+       <li> Badminton</li>
+       <li> Cricket</li>
+       <li> Tennis</li>
+       <li> Basketball</li>
+       <li> Running</li>
+       <li> Volleyball</li>
+       <li> Squash</li>
+       <li> Track & Field</li>
+      </ul>
+    </div>
+    <div class="box2">
+      <p>children</p>
+      <ul>
+       <li> Football</li>
+       <li> Futsal/Turf Shoe</li>
+       <li> Badminton</li>
+       <li> Cricket</li>
+       <li> Tennis</li>
+       <li> Basketball</li>
+       <li> Running</li>
+       <li> Volleyball</li>
+       <li> Squash</li>
+       <li> Track & Field</li>
+      </ul>
+       <div class="banner">
+      <img src="/images/Footwear_nav.webp" alt="" >
+      </div>
+      </div>
+      </div>
+      </div>
+
+       <div class="nav">muscles support
+    <div class="info-box5">
+    <div class="box1">
+      <p>means</p>
+      <ul>
+       <li> Football</li>
+       <li> Futsal/Turf Shoe</li>
+       <li> Badminton</li>
+       <li> Cricket</li>
+       <li> Tennis</li>
+       <li> Basketball</li>
+       <li> Running</li>
+       <li> Volleyball</li>
+       <li> Squash</li>
+       <li> Track & Field</li>
+      </ul>
+    </div>
+    <div class="box2">
+      <p>children</p>
+      <ul>
+       <li> Football</li>
+       <li> Futsal/Turf Shoe</li>
+       <li> Badminton</li>
+       <li> Cricket</li>
+       <li> Tennis</li>
+       <li> Basketball</li>
+       <li> Running</li>
+       <li> Volleyball</li>
+       <li> Squash</li>
+       <li> Track & Field</li>
+      </ul>
+       <div class="banner">
+      <img src="/images/Muscle_Support_nav.webp" alt="" ">
+      </div>
+      </div>
+      
+    </div>
+    </div>
+     <div class="nav">Accessories
+    <div class="info-box6">
+    <div class="box1">
+      <p>means</p>
+      <ul>
+       <li> Football</li>
+       <li> Futsal/Turf Shoe</li>
+       <li> Badminton</li>
+       <li> Cricket</li>
+       <li> Tennis</li>
+       <li> Basketball</li>
+       <li> Running</li>
+       <li> Volleyball</li>
+       <li> Squash</li>
+       <li> Track & Field</li>
+      </ul>
+    </div>
+    <div class="box2">
+      <p>children</p>
+      <ul>
+      <li>Football</li>
+       <li> Futsal/Turf Shoe</li>
+       <li> Badminton</li>
+       <li> Cricket</li>
+       <li> Tennis</li>
+       <li> Basketball</li>
+       <li> Running</li>
+       <li> Volleyball</li>
+       <li> Squash</li>
+       <li> Track & Field</li>
+      </ul>
+       <div class="banner">
+      <img src="/images/Accessories_nav.webp" alt="" >
+      </div>
       </div>
     </div>
-  </nav>
+    </div>
+      <div class="nav">offers
+    <div class="info-box7">
+    <div class="box1">
+      <p>clearance</p>
+      </div>
+    </div>
+    </div>
+    </div>
+     <div class="nav">clubs
+    <div class="info-box8">
+    <div class="box1">
+     <p>Chennaiyin FC</p>
+     <div class="club-logo">
+     
+      <img src="/images/ChennaiyinFC_clublogo1.webp" alt="">
+     </div>
+     </div>
+      <div class="box2">
+        <p>Bhutan National Team</p>
+      <div class="club-logo">
+        
+      
+      <img src="/images/Bhutan_club-logo1.webp" alt="">
+      </div>
+    </div>
+    <div class="box3">
+      <p>Jamshedpur FC</p>
+      <div class="club-logo">
+      <img src="/images/JamshedpurFC_club-logo1.webp" alt="">
+      </div>
+    </div>
+    <div class="box4">
+      <p>Mohun Bagan Super Giant</p>
+      <div class="club-logo">
+      <img src="/images/ATKMohunBagan_club-newlogo (1).webp" alt="">
+      </div>
+  </div>
+  <div class="box5">
+    <p>Sreenidhi Deccan FC</p>
+    <div class="club-logo">
+      <img src="/images/SreenidhiDeccanFC_club-logo1.webp" alt="">
+  </div>
+  </div>
+  <div class="box6">
+    <p>Real Kashmir FC</p>
+    <div class="club-logo">
+      <img src="/images/RealKashmirFC_club-logo1.webp" alt="">
+  </div>
+  </div>
+  <div class="box7">
+    <p>Churchill</p>
+    <div class="club-logo">
+      <img src="/images/Churchill_club-logo1.webp" alt="">
+  </div>
+</nav>
+
 </body>
-</html>
+</html> 

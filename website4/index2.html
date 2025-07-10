@@ -1,183 +1,128 @@
-<!-- <!DOCTYPE html> 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .container {
-      height: 70vh;
-      width: 100%;
-      border: 2px solid red; /* Fixed spelling */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      transition: ease-in-out 1s;
-    }
-    .box1 {
-      height: 250px;
-      width: 200px;
-    }
-    .box1 img { /* Apply styles directly to img inside .box1 */
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-    }
-    .box1 img:hover{
-      transform:scale(1.2,1.2);
-      opacity: .8;
-      border: 3px solid brown;
-      border-radius: 5px;
-      filter: drop-shadow(5px 5px 5px grey) blur(2px);
-      
-    }
-    p{
-      visibility: hidden;
-      border: 3px solid black;
-    }
-    .box1 p:hover{
-      visibility: visible;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="box1">
-      <img src="/images/shoes6.webp" alt="Shoe">
-      <p>hello</p>
-
-    </div>
-    <div class="box1">
-      <img src="/images/shoes6.webp" alt="Shoe">
-    </div>
-    <div class="box1">
-      <img src="/images/shoes6.webp" alt="Shoe">
-    </div>
-    <div class="box1">
-      <img src="/images/shoes6.webp" alt="Shoe">
-    </div>
-    <div class="box1">
-      <img src="/images/shoes6.webp" alt="Shoe">
-    </div>
-  </div>
-</body>
- </html> -->
-
-
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nivia Sports</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Montserrat', sans-serif;
     }
 
     .header1 {
-      background: #f44336;
-      color: white;
-      padding: 10px;
+      background-color: #f2f2f2;
       text-align: center;
+      padding: 10px;
+    }
+
+    .header1 p {
+      font-size: 14px;
     }
 
     .header2 {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
-      background-color: white;
+      padding: 15px 30px;
+      background-color: #fff;
       position: relative;
-      z-index: 1000;
     }
 
     .logo img {
-      max-height: 50px;
+      width: 100px;
     }
 
-    .nav-container {
+    .icon {
       display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    nav.nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    nav.nav-links a {
-      text-decoration: none;
-      color: black;
-      font-weight: 500;
-    }
-
-    .icon i {
-      margin-left: 15px;
+      gap: 15px;
       font-size: 18px;
+      color: #000;
+    }
+
+    /* MENU TOGGLE */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
       cursor: pointer;
     }
 
-    /* Hide menu toggle checkbox */
-    #menu-toggle {
+    #menu-checkbox {
       display: none;
     }
 
-    /* Hamburger icon */
-    .menu-icon {
-      display: none;
-      font-size: 26px;
-      cursor: pointer;
+    /* SIDEBAR NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      height: 100%;
+      width: 250px;
+      background-color: #fff;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      padding: 60px 20px;
+      transition: right 0.3s ease;
+      z-index: 999;
     }
 
-    /* Responsive navbar for tablets/mobiles */
-    @media (max-width: 768px) {
-      nav.nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 0;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-      }
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
 
-      #menu-toggle:checked + .menu-icon + nav.nav-links {
-        display: flex;
-      }
+    #menu-checkbox:checked ~ nav {
+      right: 0;
+    }
 
-      .menu-icon {
+    /* OVERLAY BACKGROUND */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.4);
+      display: none;
+      z-index: 998;
+    }
+
+    #menu-checkbox:checked ~ .overlay {
+      display: block;
+    }
+
+    /* Responsive: Show menu icon on small screens */
+    @media (max-width: 1024px) {
+      .menu-toggle {
         display: block;
-        color: black;
-      }
-
-      .nav-container {
-        flex-direction: row;
-        justify-content: flex-end;
-        width: 100%;
       }
 
       .icon {
-        margin-left: 10px;
+        display: none;
+      }
+
+      nav {
+        padding-top: 100px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Strip -->
+  <!-- Promo Banner -->
   <div class="row">
     <div class="col-12 header1">
       <header>
@@ -186,42 +131,42 @@
     </div>
   </div>
 
-  <!-- Navbar -->
+  <!-- Header & Menu Button -->
   <div class="row">
     <div class="col-12 header2">
       <div class="logo">
-        <img src="/images/Nivia-Logo-Black-SVG_2_1.svg" alt="Nivia Logo">
+        <img src="/images/Nivia-Logo-Black-SVG_2_1.svg" alt="Nivia Logo" />
       </div>
 
-      <div class="nav-container">
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+      <!-- Hamburger Button -->
+      <label for="menu-checkbox" class="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </label>
 
-        <nav class="nav-links">
-          <a href="#">ALL SPORTS</a>
-          <a href="#">APPAREL</a>
-          <a href="#">FOOTWEAR</a>
-          <a href="#">FITNESS</a>
-          <a href="#">MUSCLE SPORTS</a>
-          <a href="#">ACCESSORIES</a>
-          <a style="color: red;" href="#">OFFERS</a>
-          <a href="#">CLUB</a>
-        </nav>
+      <input type="checkbox" id="menu-checkbox" />
 
-        <div class="icon">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <i class="fa-regular fa-user"></i>
-          <i class="fa-solid fa-cart-shopping"></i>
-        </div>
+      <!-- Sidebar Menu -->
+      <nav>
+        <a href="#">ALL SPORTS</a>
+        <a href="appereal.html">APPAREL</a>
+        <a href="footwear.html">FOOTWEAR</a>
+        <a href="ContactUs">FITNESS</a>
+        <a href="MUSCLE">MUSCLE SPORTS</a>
+        <a href="accessories">ACCESSORIES</a>
+        <a style="color: red;" href="cart">OFFERS</a>
+        <a href="club.html">CLUB</a>
+      </nav>
+
+      <!-- Sidebar Overlay -->
+      <label for="menu-checkbox" class="overlay"></label>
+
+      <!-- Icons (hidden on mobile) -->
+      <div class="icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
       </div>
     </div>
-  </div>
-
-  <!-- Main Content Placeholder -->
-  <div style="padding: 30px; text-align: center;">
-    <h2>Welcome to Nivia Sports</h2>
-    <p>Your homepage content goes here...</p>
-    <img src="/images/Pickleball_Hompage_Banner_Web_1.webp" alt="Banner" style="width: 100%; max-width: 800px; margin-top: 20px;">
   </div>
 
 </body>

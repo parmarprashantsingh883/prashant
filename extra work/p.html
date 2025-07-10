@@ -18,43 +18,20 @@
   position: relative;
 }
 
-.nav-item {
+.nav {
   position: relative;
-   padding-bottom: 20px;
+  padding-bottom: 20px;
   cursor: pointer;
-  
-
-}
-.nav-item:hover{
-  border-bottom: #1c1b1b solid 4px;
-   transition:  0.6s ease-in-out;
 }
 
-All info boxes start from the same absolute position */
-/* .info-box { */
-  /* display: none;
-  position: absolute;
-  top: 0px;  /* SAME starting top */
-  /* left: 50px;    /* SAME starting left */
-  /* width: 700px;
-  height: 200px;
-  background-color: #fff; */
-  /* border: 1px solid #833b3b; */
-  /* padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  z-index: 100; */ 
-  /* border-radius: 0px;
-}
-.info-box:hover {
-  display: block;
+.nav:hover {
+  /* removed border-bottom to prevent pushing header down */
+  transition: 0.6s ease-in-out;
 }
 
-/* Show each box when hovering on its parent nav item */
-/* Underline animation setup */
+/* All info boxes start from the same absolute position */
 
-
-/* underline setup */
-.nav-item::after {
+.nav::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -64,13 +41,13 @@ All info boxes start from the same absolute position */
   background-color: #1c1b1b;
 
   /* this ensures horizontal scaling only */
-  transform: scaleX(0);
+  transform: scaleX(0);  /* changed to start from 0 */
   transform-origin: left;
   transition: transform 0.4s ease-in-out;
 }
 
 /* animate on hover */
-.nav-item:hover::after {
+.nav:hover::after {
   transform: scaleX(1);
 }
 
@@ -92,7 +69,7 @@ All info boxes start from the same absolute position */
   float: left;
 }
 
-.nav-item:hover .info-box {
+.nav:hover .info-box {
   display: block;
   
 }
@@ -111,7 +88,7 @@ All info boxes start from the same absolute position */
  margin-left: 20px;
   float: left;
 }
-.nav-item:hover .info-box2 {
+.nav:hover .info-box2 {
   display: block;
   
 }
@@ -132,7 +109,7 @@ All info boxes start from the same absolute position */
   
   }
 
-.nav-item:hover .info-box3 {
+.nav:hover .info-box3 {
   visibility: visible;
 }
 .box1 {
@@ -355,7 +332,7 @@ li:hover{
   visibility: hidden
   }
 
-.nav-item:hover .info-box4 {
+.nav:hover .info-box4 {
 visibility: visible;
 }
   .info-box4 .box1, .info-box4 .box2, .info-box4 .box3 {
@@ -390,7 +367,7 @@ visibility: visible;
   visibility: hidden
   }
 
-.nav-item:hover .info-box5 {
+.nav:hover .info-box5 {
 visibility: visible;
 }
 .info-box6 {
@@ -409,7 +386,7 @@ visibility: visible;
   visibility: hidden
   }
 
-.nav-item:hover .info-box6 {
+.nav:hover .info-box6 {
 visibility: visible;
 }
 .info-box7 {
@@ -431,7 +408,7 @@ visibility: visible;
   font-weight: bold;
   }
 
-.nav-item:hover .info-box7 {
+.nav:hover .info-box7 {
 visibility: visible;
 }
 .info-box8 {
@@ -452,7 +429,7 @@ visibility: visible;
   float: left;
   }
 
-.nav-item:hover .info-box8 {
+.nav:hover .info-box8 {
 display: block;
 }
 
@@ -478,8 +455,10 @@ display: block;
 </style>
 <body>
 
+
+            
 <nav class="navbar">
-  <div class="nav-item">Home
+  <div class="nav">Home
     <div class="info-box2">
       <div class="box1">
         <p>means</p>
@@ -490,7 +469,7 @@ display: block;
           <li>Trackpant</li>
           <li>Training Bibs</li>
           <li>Compression</li>
-          <li>Jackets</li>
+            <li>Jackets</li>
           <li>Wind Cheater</li>
           <li>Sweatshirts</li>
           <li>Brief</li>
@@ -539,7 +518,7 @@ display: block;
   </div>
 
   
-  <div class="nav-item">fitness
+  <div class="nav">fitness
     <div class="info-box4">
       <div class="box1">
         <p>gym</p>
@@ -580,7 +559,7 @@ display: block;
       </div>
       </div>
 
-  <div class="nav-item">About
+  <div class="nav">About
     <div class="info-box">
     <div class="box1">
       <p>football</p>
@@ -695,7 +674,7 @@ display: block;
   </div>
   </div>
 
-  <div class="nav-item">Services
+  <div class="nav">Services
     <div class="info-box3">
     <div class="box1">
       <p>means</p>
@@ -733,7 +712,7 @@ display: block;
       </div>
       </div>
 
-       <div class="nav-item">muscles support
+       <div class="nav">muscles support
     <div class="info-box5">
     <div class="box1">
       <p>means</p>
@@ -771,7 +750,7 @@ display: block;
       
     </div>
     </div>
-     <div class="nav-item">Accessories
+     <div class="nav">Accessories
     <div class="info-box6">
     <div class="box1">
       <p>means</p>
@@ -791,7 +770,7 @@ display: block;
     <div class="box2">
       <p>children</p>
       <ul>
-       <li> Football</li>
+      <li>Football</li>
        <li> Futsal/Turf Shoe</li>
        <li> Badminton</li>
        <li> Cricket</li>
@@ -808,7 +787,7 @@ display: block;
       </div>
     </div>
     </div>
-      <div class="nav-item">offers
+      <div class="nav">offers
     <div class="info-box7">
     <div class="box1">
       <p>clearance</p>
@@ -816,7 +795,7 @@ display: block;
     </div>
     </div>
     </div>
-     <div class="nav-item">clubs
+     <div class="nav">clubs
     <div class="info-box8">
     <div class="box1">
      <p>Chennaiyin FC</p>
