@@ -1,173 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nivia Sports</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nivia sports</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <a href="vollyball.html"></a>
+    <style>
+        /* Hidden by default */
+    .overlay,
+    .login-popup {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
     }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
+    /* Show after delay using animation */
+    .show {
+      animation: showPopup 0s 3s forwards;
     }
 
-    .header1 {
-      background-color: #f2f2f2;
-      text-align: center;
-      padding: 10px;
+    @keyframes showPopup {
+      to {
+        opacity: 1;
+        pointer-events: auto;
+      }
     }
 
-    .header1 p {
-      font-size: 14px;
-    }
-
-    .header2 {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background-color: #fff;
-      position: relative;
-    }
-
-    .logo img {
-      width: 1px;
-    }
-
-    .icon {
-      display: flex;
-      gap: 15px;
-      font-size: 18px;
-      color: #000;
-    }
-
-    /* MENU TOGGLE */
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    #menu-checkbox {
-      display: none;
-    }
-
-    /* SIDEBAR NAVIGATION */
-    nav {
-      position: fixed;
-      top: 0;
-      right: -250px;
-      height: 100%;
-      width: 250px;
-      background-color: #fff;
-      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
-      padding: 60px 20px;
-      transition: right 0.3s ease;
-      z-index: 999;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #000;
-      font-weight: 500;
-      font-size: 16px;
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    #menu-checkbox:checked ~ nav {
-      right: 0;
-    }
-
-    /* OVERLAY BACKGROUND */
     .overlay {
       position: fixed;
       top: 0;
       left: 0;
-      height: 100vh;
-      width: 100vw;
-      background: rgba(0, 0, 0, 0.4);
-      display: none;
-      z-index: 998;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 5;
     }
 
-    #menu-checkbox:checked ~ .overlay {
+    .login-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      z-index: 10;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    fieldset {
+      background-color: rgba(255, 255, 255, 0.95);
+      border: none;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: red;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2em;
+      color: #333;
+    }
+
+    form {
+      background-color: #555;
+      padding: 25px 20px;
+      border-radius: 10px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .input-box {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-box i {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: whitesmoke;
+    }
+
+    .input-box input {
+      width: 80%;
+      padding: 10px 10px 10px 35px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    button {
+      width: 80%;
+      padding: 12px;
+      background-color: #c02626;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #a91e1e;
+    }
+
+    a {
       display: block;
+      margin-top: 15px;
+      color: #eee;
+      font-size: 14px;
+      text-decoration: none;
     }
 
-    /* Responsive: Show menu icon on small screens */
-    @media (max-width: 1024px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      .icon {
-        display: none;
-      }
-
-      nav {
-        padding-top: 100px;
-      }
+    a:hover {
+      color: #fff;
+      text-decoration: underline;
     }
-  </style>
+
+    .separator {
+      margin: 15px 0;
+      color: #ddd;
+      font-size: 14px;
+    }
+    </style>
+
+    <script>
+    // Add "show" class after 10 seconds to reveal popup and overlay
+    window.onload = function () {
+      setTimeout(() => {
+        document.querySelector('.overlay').classList.add('show');
+        document.querySelector('.login-popup').classList.add('show');
+      }, 3000);
+    };
+
+    // Close popup on cancel
+    function closePopup() {
+      document.querySelector('.overlay').classList.remove('show');
+      document.querySelector('.login-popup').classList.remove('show');
+    }
+  </script>
 </head>
+
 <body>
-
-  <!-- Promo Banner -->
-  <div class="row">
-    <div class="col-12 header1">
-      <header>
-        <p>Get 15% Off on purchases above ₹2500 or Get 30% Off on purchases above ₹5000</p>
-      </header>
+    <div class="row">
+        <div class="col-12 header1">
+            <header>
+                <p>Get 15% Off on purchases above ₹2500 or Get 30% Off on purchases above ₹5000</p>
+            </header>
+        </div>
     </div>
-  </div>
-
-  <!-- Header & Menu Button -->
-  <div class="row">
-    <div class="col-12 header2">
-      <div class="logo">
-        <img src="/images/Nivia-Logo-Black-SVG_2_1.svg" alt="Nivia Logo" />
-      </div>
-
-      <!-- Hamburger Button -->
-      <label for="menu-checkbox" class="menu-toggle">
-        <i class="fa-solid fa-bars"></i>
-      </label>
-
-      <input type="checkbox" id="menu-checkbox" />
-
-      <!-- Sidebar Menu -->
-      <nav>
-        <a href="#">ALL SPORTS</a>
-        <a href="appereal.html">APPAREL</a>
-        <a href="footwear.html">FOOTWEAR</a>
-        <a href="ContactUs">FITNESS</a>
-        <a href="MUSCLE">MUSCLE SPORTS</a>
-        <a href="accessories">ACCESSORIES</a>
-        <a style="color: red;" href="cart">OFFERS</a>
-        <a href="club.html">CLUB</a>
-      </nav>
-
-      <!-- Sidebar Overlay -->
-      <label for="menu-checkbox" class="overlay"></label>
-
-      <!-- Icons (hidden on mobile) -->
-      <div class="icon">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <i class="fa-regular fa-user"></i>
-        <i class="fa-solid fa-cart-shopping"></i>
-      </div>
+    <div class="row">
+        <div class="col-12 header2">
+            <div class="logo">
+                <img src="/images/Nivia-Logo-Black-SVG_2_1.svg" alt="">
+            </div>
+            <nav>
+                <a href="">ALL SPORTS</a>
+                <a href="appereal.html">APPAREL</a>
+                <a href="footwear.html">FOOTWEAR</a>
+                <a href="ContactUs">FITNESS</a>
+                <a href="MUSCLE"> MUSCLE SPORTS</a>
+                <a href="accessories">ACCESSORIES</a>
+                <a style="color: red;" href="cart">OFFERS </a>
+                <a href="club.html">CLUB</a>
+            </nav>
+            <div class="icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
     </div>
-  </div>
 
+    <div class="row">
+        <div class="col-12 main">
+            <img src="/images/Pickleball_Hompage_Banner_Web_1.webp" alt="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 container">
+            <div class="card">
+                <a href="badmintion.html">
+                    <img src="/images/Badminton_251319b7-7ae9-4e12-ae73-63e2480456bb (1).webp" alt="Badminton">
+                </a>
+
+                <div class="title">Badminton</div>
+            </div>
+
+            <div class="card">
+                <a href="basketbal.html">
+                <img src="/images/Basketball_a6f2b8c0-f842-48df-8b53-1f3896df5704.webp" alt="">
+                </a>
+                <div class="title">Basketball</div>
+            </div>
+            <div class="card">
+                <a href="turf.html">
+                <img src="/images/Turf_a0f3876a-9b32-4464-9889-27bebd8e0f6b.jpg" alt="">
+                <div class="title">truf</div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="football.htm">
+                <img src="/images/football.webp" alt="">
+            </a>
+                <div class="title">Football</div>
+            </div>
+            <div class="card">
+                <a href="vollyball.html">
+                <img src="/images/Volleyball_7016e73d-aa21-4a7b-9434-32ba920ec172.jpg" alt="">
+                </a>
+                <div class="title">vollyball</div>
+            
+            </div>
+            <div class="card">
+                <a href="running.html">
+                <img src="/images/Running_cc8978ba-c4ff-4842-9376-4ba476b94365.jpg" alt="">
+                </a>
+                <div class="title">Running</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 container2">
+
+            <div class="col-3 iteam1">
+                <h1>Best Sellers</h1>
+                <p>Sports Gear, Footwear & Accessories</p>
+                <a href="">EXPLORE ALL</a>
+            </div>
+            <div class="col-3 iteam2">
+                <img src="/images/shous.webp" alt="">
+                <span style="font-size: 15px; text-align: center;">Safari Men's Football Shoes</span><br>
+                <span style="color: rgb(214, 14, 14);">₹1,499</span>
+
+            </div>
+            <div class="col-3 iteam3">
+                <img src="images/shous2.webp" alt="">
+                <span style="font-size: 15px; text-align: center;">Nivia Criks 1000-2.0 cricket shoues</span><br>
+                <span style="color: rgb(214, 14, 14);">₹27,49</span>
+
+            </div>
+            <div class="col-3 iteam4">
+                <img src="/images/shous3.webp" alt="">
+                <span style="font-size: 15px; text-align: center;">Nivia Dagger Means Football Studs </span><br>
+                <span style="color: rgb(214, 14, 14);">₹1799 </span> <del>₹1799</del><span>10% off</span>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 container2">
+
+            <div class="col-3 iteam1">
+                <h1>Clearence</h1>
+
+            </div>
+            <div class="col-3 iteam2">
+                <img src="/images/shoues4.webp" alt="">
+                <span style="font-size: 15px; text-align: center;">Safari Men's Football Shoes</span><br>
+                <span style="color: rgb(214, 14, 14);">₹1,499</span>
+
+            </div>
+            <div class="col-3 iteam3">
+                <img src="images/shoues5.webp" alt="">
+                <span style="font-size: 15px; text-align: center;">Nivia Criks 1000-2.0 cricket shoues</span><br>
+                <span style="color: rgb(214, 14, 14);">₹27,49</span>
+
+            </div>
+            <div class="col-3 iteam4">
+                <img src="/images/shoes6.webp" alt="">
+                <span style="font-size: 15px; text-align: center;">Nivia Dagger Means Football Studs </span><br>
+                <span style="color: rgb(214, 14, 14);">₹1799 </span> <del>₹1799</del><span>10% off</span>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="cont3">
+            <div class="col-6">
+                <img src="/images/Rule_The_Court-10oct24.webp" alt="">
+            </div>
+            <div class="col-6">
+                <img src="/images/DOMINATE_THE_PITCH-10oct24.webp" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-5 arrivals">
+            <span>NEW</span>
+            <h2 class="section-title">Best Sellers</h2>
+            <h1>ARRIVALS</h1>
+            <a href="">EXPLORE</a>
+        </div>
+
+        <div class="col-7 arrivals2">
+            <div class="a1">
+                <img src="/images/Nitro_New_Arrival.webp" alt="">
+            </div>
+            <div class="a2">
+                <img src="/images/Skyrush.webp" alt="">
+            </div>
+            <div class="a3">
+                <img src="/images/Powerstrike_4.0.webp" alt="">
+            </div>
+            <div class="a4">
+                <img src="/images/Street_Art_400x563_8d1f06d0-bbc6-4377-a69c-a354f95bc268.webp" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="impact-banner">
+
+            </div>
+        </div>
+    </div>
+    <p class="heading">Our Association</p>
+    <div class="row">
+        <div class="col-12">
+            <div class="logoes">
+
+                <div class="logo1">
+                    <img src="/images/ATKMohunBagan_club-newlogo (1).webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/ChennaiyinFC_clublogo1.webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/RealKashmirFC_club-logo1.webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/Churchill_club-logo1.webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/JamshedpurFC_club-logo1.webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/SreenidhiDeccanFC_club-logo1.webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/Bhutan_club-logo1.webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/ATKMohunBagan_club-newlogo (1).webp" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="heading"> Follow Us On <i style="font-size: 40px;" class="fa-brands fa-instagram"></i></p>
+    <div class="row">
+        <div class="col-12">
+            <div class="videos">
+                <div class="videos">
+                    <video src="/images/1.mp4" autoplay muted loop playsinline></video>
+                </div>
+
+                <div class="videos">
+                    <video src="/images/2.mp4" autoplay muted loop playsinline></video>
+                </div>
+
+                <div class="videos">
+                    <video src="/images/3.mp4" autoplay muted loop playsinline></video>
+                </div>
+
+                <div class="videos">
+                    <video src="/images/4.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <div class="videos">
+                    <video src="/images/5.mp4" autoplay muted loop playsinline></video>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-3 footer1 ">
+            <h2 style="color: aliceblue;">#MoveUp by signing up</h2>
+            <input type="email" placeholder="Enter your Email">
+            <input type="submit">
+            <hr>
+            <div class="contact">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-square-x-twitter"></i>
+            </div>
+        </div>
+        <div class="col-3 footer1">
+            <h3>COMPANY INFORMATION</h3>
+            <p> About Us </p>
+            <p> Contact</p>
+            <p> Terms And Conditions</p>
+            <p> Privacy Policy</p>
+            <p> Exchange & Return Policy</p>
+            <p> Track Order</p>
+            <p> Blogs</p>
+            <p> Catalogues</p>
+            <p> CSR Policy</p>
+        </div>
+        <div class="col-3 footer1">
+            <h3>NIVIA AFFILIATIONS</h3>
+            <p>AIFF</p>
+            <p>ISL</p>
+            <p>Bhutan Football Federation</p>
+            <p>Srilankan Football Federation</p>
+            <p></p>
+            <p>CFI</p>
+            <p>VFI</p>
+        </div>
+        <div class="col-3 footer1">
+            <h3>CONNECT WITH US</h3>
+            <p><i class="fa-solid fa-phone"></i>+91-9115497521</p>
+            <p><i class="fa-solid fa-envelope"></i>contact@nivia.in</p>
+            <p>(Mon-Sat, 10:00am till 6:00pm)</p>
+        </div>
+    </div>
+    <hr class="line">
+    <div class="row">
+        <div class="col-12 footer2">
+            <img src="/images/nivia-logo-white-svg.svg" alt="">
+            <p>© 2024 Niviasports, All Rights Reserved
+
+
+
+
+            </p>
+
+        </div>
+    </div>
+    <div class="overlay"></div>
+
+  <div class="login-popup">
+    <fieldset>
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h1>Log In</h1>
+      <form>
+        <div class="input-box">
+          <i class="fa-regular fa-user"></i>
+          <input type="text" name="username" placeholder="Username" required>
+        </div>
+        <div class="input-box">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit">Log In</button>
+        <a href="#">Forget your password?</a>
+        <div class="separator">or</div>
+        <button type="submit">Sign Up</button>
+      </form>
+    </fieldset>
+  </div>
 </body>
+
 </html>
