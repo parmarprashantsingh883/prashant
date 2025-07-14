@@ -2,122 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>My Blog Post</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>layouts
-  </title>
-  <style> 
-.header1{
-  height: 100px;
-  width: 100%;
-  background-color: brown;
-  float:left
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar{
-  height: 60px;
-  width: 100%;
-  background-color: aqua;
-  float: left;
-}
-.header2{
-  height: 50px;
-  width: 100%;
-  background-color: blueviolet;
-  float: left;
-}
-.sidebar{
-  height: 400px;
-  width: 15%;
-  float: left;
-}
-.main{
-  height: 400px;
-  width: 70%;
-  background-color: aquamarine;
-  float: left;
-}
-.sidebar2{
-  height: 400px;
-  width: 15%;
-  float: left;
-}
-.footer{
-  height: 50px;
-  width: 100%;
-  background-color: rgb(24, 24, 24);
-  float: left;
-}
-.box1{
-  height: 100px;
-  width: 25%;
-  float: left;
-  background-color: crimson;
-}
-.box2{
-  height: 100px;
-  width: 25%;
-  background-color: dimgrey;
-  float: left;
-}
-.box3{
-  height: 100px;
-  width: 25%;
-  background-color: goldenrod;
-  float: left;
-}
-.box4{
-  height: 100px;
-  width: 25%;
-  background-color: brown;
-  float: left;
-}
-  </style>
-  
-</head>
-<body>
-<div class="header1">
-
-</div>
-<div class="navbar">
-
-</div>
-<div class="header2">
-
-</div>
-<div class="sidebar">
-
-</div>
-<div class="main">
-
-</div>
-<div class="sidebar2">
-
-</div>
-<div class="footer">
-
-footer1
-</div>
-
-
-</div>
-<div class="box1">box1</div>
-<div class="box2">box2</div>
-<div class="box3">box3</div>
-<div class="box4">box4</div>
-
-  
-</body>
-</html>
-/* Default (light mode) styles */
 body {
-  background-color: white;
-  color: black;
+  background: #f5f5f5;
+  font-family: 'Open Sans', sans-serif;
+  padding: 20px;
 }
 
-/* Dark mode styles */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #ffffff;
+/* Blog Container */
+.blog-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.blog-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+/* Subtitle */
+.blog-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Body */
+.blog-body {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Responsive Text */
+@media (max-width: 768px) {
+  .blog-title {
+    font-size: 28px;
+  }
+
+  .blog-subtitle {
+    font-size: 18px;
+  }
+
+  .blog-body {
+    font-size: 16px;
+  }
+
+  .blog-container {
+    padding: 20px;
   }
 }
+
+  </style>
+</head>
+<body>
+
+  <div class="blog-container">
+    <h1 class="blog-title">The Art of Simplicity</h1>
+    <h2 class="blog-subtitle">Why Less is Often More</h2>
+    <p class="blog-body">
+      In today's fast-paced digital world, simplicity has become a powerful design philosophy. Whether it's in architecture, writing, or web development, stripping away the unnecessary helps us focus on what truly matters.
+    </p>
+    <p class="blog-body">
+      Clean layouts, focused messaging, and deliberate use of space can enhance user experience and improve readability. As creators, embracing simplicity not only makes our work more effective but also more memorable.
+    </p>
+  </div>
+
+</body>
+</html>
