@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        .main-content {
+            padding: 50px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer {
+            background-color: #2f3030;
+            padding: 40px 20px 0;
+            color: whitesmoke;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            padding-bottom: 30px;
+        }
+
+        .footer-section h1 {
+            color: lightgreen;
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-section hr {
+            border: none;
+            height: 2px;
+            background-color: #444;
+            margin-bottom: 20px;
+        }
+
+        .footer1 p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer1 i {
+            color: lightgreen;
+            width: 20px;
+        }
+
+        .footer2 a {
+            display: block;
+            text-decoration: none;
+            color: whitesmoke;
+            margin-bottom: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 5px 0;
+        }
+
+        .footer2 a:hover {
+            color: lightgreen;
+            padding-left: 10px;
+        }
+
+        .footer-bottom {
+            background-color: #3e3d3d;
+            padding: 20px;
+        }
+
+        .footer-bottom-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-platform {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .social-platform i {
+            font-size: 24px;
+            padding: 12px;
+            border-radius: 50%;
+            background-color: #555;
+            color: #efeeee;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-platform i:hover {
+            background-color: lightgreen;
+            transform: translateY(-3px);
+        }
+
+        .email-subscription {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .email-subscription input[type="email"] {
+            height: 45px;
+            width: 250px;
+            border: 1px solid #555;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-right: none;
+            padding: 0 15px;
+            background-color: #444;
+            color: whitesmoke;
+            font-size: 14px;
+        }
+
+        .email-subscription input[type="email"]:focus {
+            outline: none;
+            border-color: lightgreen;
+        }
+
+        .email-subscription button {
+            height: 45px;
+            width: 100px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background-color: lightgreen;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .email-subscription button:hover {
+            background-color: #5cb85c;
+        }
+
+        .copyright {
+            background-color: #2f3030;
+            padding: 20px;
+            text-align: center;
+            color: #f2f2f2;
+            font-size: 14px;
+            border-top: 1px solid #444;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .footer-section h1 {
+                font-size: 24px;
+            }
+
+            .footer1 p {
+                justify-content: center;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+            }
+
+            .social-platform {
+                justify-content: center;
+                order: 2;
+            }
+
+            .email-subscription {
+                order: 1;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            .email-subscription input[type="email"] {
+                width: 100%;
+                max-width: 300px;
+                border-radius: 10px;
+                border: 1px solid #555;
+                margin-bottom: 10px;
+            }
+
+            .email-subscription button {
+                width: 100%;
+                max-width: 300px;
+                border-radius: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 30px 15px 0;
+            }
+
+            .footer-content {
+                gap: 25px;
+            }
+
+            .footer-section h1 {
+                font-size: 20px;
+            }
+
+            .footer1 p, .footer2 a {
+                font-size: 14px;
+            }
+
+            .social-platform i {
+                font-size: 20px;
+                padding: 10px;
+            }
+
+            .email-subscription input[type="email"] {
+                height: 40px;
+                font-size: 13px;
+            }
+
+            .email-subscription button {
+                height: 40px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Demo content -->
+    <div class="main-content">
+        <h1>ZAY Shop - Responsive Footer Demo</h1>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer1">
+                <h1>ZAY Shop</h1>
+                <hr>
+                <p><i class="fa-solid fa-phone"></i>9853952652</p>
+                <p><i class="fa-solid fa-location-dot"></i>123 Main Street, City, State 12345</p>
+                <p><i class="fa-solid fa-envelope"></i>info@zayshop.com</p>
+            </div>
+            
+            <div class="footer-section footer2">
+                <h1>Products</h1>
+                <hr>
+                <a href="">Luxury</a>
+                <a href="">Sport Wear</a>
+                <a href="">Men's Shoes</a>
+                <a href="">Women's Shoes</a>
+                <a href="">Popular Dress</a>
+                <a href="">Gym Accessories</a>
+                <a href="">Sport Shoes</a>
+            </div>
+            
+            <div class="footer-section footer2">
+                <h1>Further Info</h1>
+                <hr>
+                <a href="">Home</a>
+                <a href="">About Us</a>
+                <a href="">FAQ</a>
+                <a href="">Shop Location</a>
+                <a href="">Contact</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="social-platform">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-square-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+                
+                <div class="email-subscription">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Submit</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>Copyright © 2021 Company Name | Designed by TemplateMo</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Products Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Categories Section */
+        .main {
+            background-color: whitesmoke;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .main h2 {
+            font-size: 40px;
+            font-weight: lighter;
+            text-transform: capitalize;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .main p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .product {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #fff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .box1, .box2, .box3 {
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .box1,
+        .card:hover .box2,
+        .card:hover .box3 {
+            transform: scale(1.05);
+        }
+
+        .box1 {
+            background-image: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1524805444973-d9dfe0a4a67b?w=400&h=400&fit=crop');
+        }
+
+        .box2 {
+            background-image: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=400&fit=crop');
+        }
+
+        .box3 {
+            background-image: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop');
+        }
+
+        .card p {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .card button {
+            height: 50px;
+            width: 180px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #90EE90, #32CD32);
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card button:hover {
+            background: linear-gradient(135deg, #32CD32, #228B22);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(50, 205, 50, 0.4);
+        }
+
+        /* Featured Products Section */
+        .main2 {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .main2 h2 {
+            font-size: 45px;
+            font-weight: lighter;
+            text-transform: capitalize;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .main2 p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .product2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .card1 {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: #000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card1:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card1 img {
+            height: 280px;
+            width: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .card1:hover img {
+            transform: scale(1.05);
+        }
+
+        .content {
+            text-align: left;
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .content h2 {
+            margin: 0 0 15px 0;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main h2 {
+                font-size: 32px;
+            }
+
+            .main2 h2 {
+                font-size: 36px;
+            }
+
+            .product {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px 15px;
+            }
+
+            .product2 {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 0 15px;
+            }
+
+            .card {
+                padding: 25px 15px;
+            }
+
+            .box1, .box2, .box3 {
+                height: 200px;
+                width: 200px;
+            }
+
+            .card p {
+                font-size: 20px;
+            }
+
+            .card button {
+                width: 160px;
+                height: 45px;
+                font-size: 16px;
+            }
+
+            .card1 img {
+                height: 240px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .content h2 {
+                font-size: 24px;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main, .main2 {
+                padding: 40px 0;
+            }
+
+            .main h2 {
+                font-size: 28px;
+            }
+
+            .main2 h2 {
+                font-size: 32px;
+            }
+
+            .product, .product2 {
+                padding: 20px 10px;
+                gap: 25px;
+            }
+
+            .card {
+                padding: 20px 10px;
+            }
+
+            .box1, .box2, .box3 {
+                height: 180px;
+                width: 180px;
+            }
+
+            .card p {
+                font-size: 18px;
+            }
+
+            .card button {
+                width: 140px;
+                height: 40px;
+                font-size: 14px;
+            }
+
+            .card1 img {
+                height: 220px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .content h2 {
+                font-size: 20px;
+            }
+
+            .content p {
+                font-size: 13px;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 320px) {
+            .product {
+                grid-template-columns: 1fr;
+            }
+
+            .product2 {
+                grid-template-columns: 1fr;
+            }
+
+            .box1, .box2, .box3 {
+                height: 150px;
+                width: 150px;
+            }
+
+            .card button {
+                width: 120px;
+                height: 35px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-12 main">
+            <h2>Categories of The Month</h2>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+            <p>mollit anim id est laborum.</p>
+        </div>
+        <div class="col-12 product">
+            <div class="card">
+                <div class="box1">
+                    <!-- Watches image -->
+                </div>
+                <p>Watches</p>
+                <button>Shop Now</button>
+            </div>
+
+            <div class="card">
+                <div class="box2">
+                    <!-- Shoes image -->
+                </div>
+                <p>Shoes</p>
+                <button>Shop Now</button>
+            </div>
+
+            <div class="card">
+                <div class="box3">
+                    <!-- Accessories image -->
+                </div>
+                <p>Accessories</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 main2">
+            <h2>Featured Product</h2>
+            <p>Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>Excepteur sint occaecat cupidatat non proident.</p>
+
+            <div class="product2">
+                <div class="card1">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="Gym Weight">
+                    <div class="content">
+                        <h2>Gym Weight</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+
+                <div class="card1">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Sports Shoes">
+                    <div class="content">
+                        <h2>Sports Shoes</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+
+                <div class="card1">
+                    <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400&h=300&fit=crop" alt="Professional Camera">
+                    <div class="content">
+                        <h2>Professional Camera</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

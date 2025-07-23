@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Zay-Shop</title>
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <div class="col-12 header1">
+                <div class="contact1">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span> info@company.com</span>
+                    <i class="fa-solid fa-phone-flip"></i>
+                    <span>010-020-0340</span>
+                </div>
+
+                <div class="contact2">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <div class="row">
+                <div class="col-12 navbar">
+                    <div class="logo">
+                        <h1>Zay</h1>
+                    </div>
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="nav" id="navLinks">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Shop</a>
+                        <a href="#">Contact</a>
+                    </div>
+
+                    <div class="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-12">
+                <div class="slider">
+                    <div class="slides" id="slides">
+                        <!-- Slide 1 -->
+                        <div class="slide">
+                            <div class="text slide-in-left">
+                                <h1>Zay eCommerce</h1>
+                                <h3>Tiny and Perfect eCommerce Template</h3>
+                                <p>Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta
+                                    1). This template is 100% free provided by TemplateMo website. Image credits go to
+                                    Freepik Stories, Unsplash and Icons 8.</p>
+                            </div>
+                            <div class="image slide-in-right">
+                                <img src="images/banner_img_01.jpg" alt="Lamp">
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="slide">
+                            <div class="text">
+                                <h1>Proident occaecat</h1>
+                                <h3>Aliquip ex ea commodo consequat</h3>
+                                <p>You are permitted to use this Zay CSS template for your commercial websites. You are
+                                    not permitted to re-distribute the template ZIP file in any kind of template
+                                    collection websites.</p>
+                            </div>
+                            <div class="image">
+                                <img src="images/banner_img_02.jpg" alt="Design">
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="slide">
+                            <div class="text">
+                                <h1>Repr in voluptate</h1>
+                                <h3>Ullamco laboris nisi ut</h3>
+                                <p>We bring you 100% free CSS templates for your websites. If you wish to support
+                                    TemplateMo, please make a small contribution via PayPal or tell your friends about
+                                    our website. Thank you.</p>
+                            </div>
+                            <div class="image">
+                                <img src="images/banner_img_03.jpg" alt="Modern">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrows -->
+                    <div class="arrow arrow-left" onclick="prevSlide()">&#10094;</div>
+                    <div class="arrow arrow-right" onclick="nextSlide()">&#10095;</div>
+
+                    <!-- Dots -->
+                    <div class="dots">
+                        <span class="dot active" onclick="goToSlide(0)"></span>
+                        <span class="dot" onclick="goToSlide(1)"></span>
+                        <span class="dot" onclick="goToSlide(2)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Products -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="categories fade-in">
+                    <h2>Categories of The Month</h2>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                        est laborum.</p>
+
+                    <div class="category-grid">
+                        <div class="category-card pop-up">
+                            <img src="images/category_img_01.jpg" alt="Watches">
+                            <h3>Watches</h3>
+                            <a href="#">Go Shop</a>
+                        </div>
+                        <div class="category-card pop-up">
+                            <img src="images/category_img_02.jpg" alt="Shoes">
+                            <h3>Shoes</h3>
+                            <a href="#">Go Shop</a>
+                        </div>
+                        <div class="category-card pop-up">
+                            <img src="images/category_img_03.jpg" alt="Accessories">
+                            <h3>Accessories</h3>
+                            <a href="#">Go Shop</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories product Ends Here -->
+
+        <div class="row">
+            <div class="col-12">
+                <section class="featured-section fade-in">
+                    <h2>Featured Product</h2>
+                    <p>Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>
+                        Excepteur sint occaecat cupidatat non proident.</p>
+
+                    <div class="product-grid">
+
+                        <!-- Product 1 -->
+                        <div class="product-card pop-up">
+                            <img src="images/feature_prod_01.jpg" alt="Gym Weight">
+                            <div class="product-info">
+                                <div class="stars">★ ★ ★ ☆ ☆</div>
+                                <div class="product-title">Gym Weight</div>
+                                <div class="product-price">$240.00</div>
+                                <div class="product-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
+                                    in culpa qui officia deserunt.</div>
+                                <div class="review-text">Reviews (24)</div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card pop-up">
+                            <img src="images/feature_prod_02.jpg" alt="Cloud Nike Shoes">
+                            <div class="product-info">
+                                <div class="stars">★ ★ ★ ☆ ☆</div>
+                                <div class="product-title">Cloud Nike Shoes</div>
+                                <div class="product-price">$480.00</div>
+                                <div class="product-desc">Aenean gravida dignissim finibus. Nulla ipsum diam, posuere
+                                    vitae pharetra sed, commodo ullamcorper.</div>
+                                <div class="review-text">Reviews (48)</div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card pop-up">
+                            <img src="images/feature_prod_03.jpg" alt="Camera">
+                            <div class="product-info">
+                                <div class="stars">★ ★ ★ ★ ★</div>
+                                <div class="product-title">Summer Addides Shoes</div>
+                                <div class="product-price">$360.00</div>
+                                <div class="product-desc">Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar
+                                    sagittis diam, et scelerisque ipsum lobortis nec.</div>
+                                <div class="review-text">Reviews (74)</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Starts Here -->
+
+    <footer class="footer fade-in">
+        <div class="footer-container">
+
+            <!-- Zay Shop -->
+            <div class="footer-box">
+                <h1 class="footer-title green">Zay Shop</h1>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Consectetur at ligula 10660</p>
+                <p><i class="fas fa-phone"></i> 010-020-0340</p>
+                <p><i class="fas fa-envelope"></i> info@company.com</p>
+            </div>
+
+            <!-- Products -->
+            <div class="footer-box">
+                <h3 class="footer-title">Products</h3>
+                <ul>
+                    <li><a href="#">Luxury</a></li>
+                    <li><a href="#">Sport Wear</a></li>
+                    <li><a href="#">Men's Shoes</a></li>
+                    <li><a href="#">Women's Shoes</a></li>
+                    <li><a href="#">Popular Dress</a></li>
+                    <li><a href="#">Gym Accessories</a></li>
+                    <li><a href="#">Sport Shoes</a></li>
+                </ul>
+            </div>
+
+            <!-- Further Info -->
+            <div class="footer-box">
+                <h3 class="footer-title">Further Info</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Shop Locations</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Social and Subscribe -->
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-copy">
+            <p>Copyright © 2021 Company Name | Designed by <a href="https://templatemo.com">TemplateMo</a></p>
+        </div>
+    </footer>
+</body>
+
+<script>
+    const slides = document.getElementById("slides");
+    const dots = document.querySelectorAll(".dot");
+    let index = 0;
+    const totalSlides = dots.length;
+
+    function showSlide(i) {
+        index = i;
+        slides.style.transform = `translateX(-${i * 100}vw)`;
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[i].classList.add("active");
+    }
+
+    function nextSlide() {
+        index = (index + 1) % totalSlides;
+        showSlide(index);
+    }
+
+    function prevSlide() {
+        index = (index - 1 + totalSlides) % totalSlides;
+        showSlide(index);
+    }
+
+    function goToSlide(i) {
+        showSlide(i);
+    }
+
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('show');
+    }
+    setInterval(nextSlide, 3000);
+</script>
+
+</html>
