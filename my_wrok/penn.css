@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+	.col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+
+body {
+  font-family: 'Mulish', sans-serif;
+  font-size: 22px;
+}
+
+.nav {
+      background-color: whitesmoke;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 100px;
+      padding: 20px;
+      flex-wrap: wrap;
+      padding-right: 30px;
+      padding-left: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      gap: 42px;
+      margin-left: 20px;
+      
+    }
+
+    .nav-wrapper a {
+      color: rgb(18, 17, 17);
+      text-decoration: none;
+      text-transform: capitalize;
+      font-size: large;
+      font-weight: bold;
+    }
+
+    .nav-wrapper a:hover {
+color: #34d399;
+    }
+    .icon-wrapper {
+      position: relative;
+      font-size: 30px;
+      color: darkblue;
+      
+     
+      
+    }
+
+   
+ 
+
+    .badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #34d399;
+  color: white;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  
+  line-height: 1;
+  padding: 0;
+}
+
+.icon-bar{
+
+    display: flex;
+    gap: 50px;
+}
+.action button{
+    width: 100px;
+    border-radius: 20px;
+    background:#34d399;
+    height: 45px;
+    border: none;
+    font-size: 14px;
+    color: whitesmoke;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    
+}
+.action{
+margin-left: 30px;
+    display: flex;
+    gap: 40px;
+    
+}
+.action button:hover{
+background-color: rgb(23, 23, 24);
+    
+}
+.action button:nth-of-type(2) {
+  color: rgb(10, 10, 10);
+  background-color: #34d399;
+}
+.section{
+  width: 100vw;
+  background-color: azure;
+  background: linear-gradient(to right, #c4f3f3, #823c3c);
+  height: 900px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 100px;
+  padding: 60px 5%;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+
+}
+.hero-text{
+  margin-left:  0 0 20px;
+  line-height: 3em;
+  position: relative;
+  top: -60px;
+  
+}
+ .hero-text h1{
+  font-size: 80px;
+  color: darkblue;
+   line-height: 1.5em;
+  font-weight: 800;
+ }
+ .hero-text span{
+
+color: #34d399;
+ }
+ .hero-image{
+  margin-left: 40px;
+  position: relative;
+
+ }
+ .hero-image img{
+  width:100%;
+  height: auto;
+  /* min-height: 400px; */
+  margin-left: 40px;
+  object-fit: cover;
+  background-size: cover;
+ }
+
+ #menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: rgb(18, 17, 17);
+  cursor: pointer;
+  position: relative;
+  top: 20px ;
+  left: 50px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-wrapper {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    background-color: #444;
+    padding-bottom: 10px;
+  }
+  .nav-wrapper a :hover{
+background-color: #f4f4f4;
+color: black;
+}
+
+  #menu-toggle:checked + .hamburger + .nav-wrapper {
+    display: flex;
+    /* flex-direction: column; */
+    
+
+  }
+  .nav {
+     background-color: #fcfbfb;
+  padding: 10px 20px;
+  position: relative;
+}
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Section with Background Shapes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #e6f6f6, #fff0f0);
+      overflow-x: hidden;
+    }
+
+    .hero-section {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 5%;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
+    .hero-text {
+      max-width: 600px;
+      z-index: 2;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      line-height: 1.3;
+      color: #1a1a1a;
+    }
+
+    .hero-text h1 span {
+      color: #00b87b;
+    }
+
+    .hero-text p {
+      margin-top: 15px;
+      color: #555;
+      font-size: 16px;
+    }
+
+    .hero-img-wrapper {
+      position: relative;
+      max-width: 400px;
+      z-index: 1;
+    }
+
+    .hero-img-wrapper img {
+      width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Background circles */
+    .hero-img-wrapper::before,
+    .hero-img-wrapper::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .hero-img-wrapper::before {
+      width: 300px;
+      height: 300px;
+      background: #FFDDD9;
+      top: 20%;
+      left: -40%;
+      z-index: 0;
+    }
+
+    .hero-img-wrapper::after {
+      width: 250px;
+      height: 250px;
+      background: #00D08E;
+      bottom: -10%;
+      left: -25%;
+      z-index: 0;
+    }
+
+    .badge {
+      position: absolute;
+      background: white;
+      border-radius: 16px;
+      padding: 15px 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      z-index: 5;
+      text-align: center;
+      width: 150px;
+    }
+
+    .badge h2 {
+      color: #1a1a1a;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .badge p {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .badge-course {
+      top: 60px;
+      right: 80px;
+    }
+
+    .badge-student {
+      bottom: 60px;
+      left: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text {
+        max-width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .hero-img-wrapper {
+        margin: 0 auto;
+        max-width: auto;
+      }
+
+      .badge-course {
+        top: 20px;
+        right: 20px;
+      }
+
+      .badge-student {
+        bottom: 20px;
+        left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero-section">
+    <!-- Left text -->
+    <div class="hero-text">
+      <h1>
+        <span>Better Learning</span><br />
+        Future Starts<br />
+        With Penn
+      </h1>
+      <p>It is a long established fact that a reader will be distracted by readable content of a page when looking at its layout.</p>
+    </div>
+
+    <!-- Right image with background shapes -->
+    <div class="hero-img-wrapper">
+      <img src="home-image.png" alt="Hero Woman">
+    </div>
+
+    <!-- Top-right badge -->
+    <div class="badge badge-course">
+      <h2>4500+</h2>
+      <p>Online Course</p>
+    </div>
+
+    <!-- Bottom-left badge -->
+    <div class="badge badge-student">
+      <h2>7500+</h2>
+      <p>Active Student</p>
+    </div>
+  </section>
+
+</body>
+</html>
