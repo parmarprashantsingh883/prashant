@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+img{
+    height: 65px ;
+    width: 75px;
+}
+.nav{
+    display: flex;
+    gap: 30px;
+    
+}
+.nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+
+/* Show dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: -5px; /* smooth dropdown spacing */
+   color: #e14013;
+
+}
+
+/* Optional: Remove button background & border for cleaner nav look */
+.dropdown .btn {
+  background: none;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.dropdown .btn:hover {
+  color: #0056b3;
+}
+.dropdown-menu li:hover{
+    color: #e14013;
+    margin-top: 10px;
+}
