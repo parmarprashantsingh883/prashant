@@ -1,69 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navbar with Close Button</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    /* Only show close button on mobile */
-    .close-btn {
-      display: none;
-      position: relative;
-      top: 0;
-      right: 0;
-    }
-    @media (max-width: 991.98px) {
-      .close-btn {
-        display: block;
-        text-align: right;
-        margin-bottom: 1rem;
-      }
-    }
-  </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
 </head>
 <body>
+  <button onclick="greet()"> tap to get greetings</button>
+    <button ondblclick="change()">dabaye</button>
+    <button onmousemove="change()"> aaiye</button>
+    <button onmouseout="change()"> nikal madarchod</button>
+  <h1 id="test1">batuu</h1>
+  <h1 id="mess">jay</h1>
+  <script>
+    function greet() {
+      document.getElementById('test1').innerHTML = "battu motherfuker";
 
-  <!-- ✅ Navbar Starts -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">MyWebsite</a>
+    }
+    function change() {
+      document.getElementById('mess').innerHTML = "batuu dallla bc dalla";
+    }
+    
+   
+  
+  </script>
+   
+   <input type="text" id="demo" onkeypress="upper()">
+    <script>
+      function upper() {
+        document.getElementById('demo').style.textTransform = "uppercase";
+      }
+      </script>
+  <input type="text" id="test100" onfocus="change10()" onblur="change20()">
+  <script>
+    function change10(){
+      document.getElementById('test100').style.backgroundColor = "red";
+      document.getElementById('test100').style.color = "white";
+    }
+    function change20() {
+      document.getElementById('test100').style.backgroundColor = "pink";
+      document.getElementById('test100').style.color = "black";
+    }
+  </script>
+  <img src="download (1).jpg"  width="10%" id="lala" alt="" onmouseover="changeImage()" >
+  <img src="download.jpg" id="lali" alt="" onmouseout="changeImageBack()" width="50%">
+  <script>
+    function changeImage() {
+       var pehla =document.getElementById('lala').style.width = "25%";
+       pehla.src = "download.jpg" ;width="50%";
+    }
+    function changeImageBack() {
+      var dusra = document.getElementById('lali').style.width = "10%";
+      dusra.src = "download (1).jpg";  
+    }
+  </script>
 
-      <!-- Hamburger Toggler -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Collapsible Menu -->
-      <div class="collapse navbar-collapse" id="mainNavbar">
-
-        <!-- Close Button (only visible on mobile) -->
-        <div class="w-100 close-btn">
-          <button class="btn btn-sm btn-outline-secondary float-end" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-            &times;
-          </button>
-        </div>
-
-        <!-- Menu Items -->
-        <ul class="navbar-nav ms-auto text-end w-100">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ✅ Bootstrap Bundle (includes JS & Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+  </body>
+  </html>

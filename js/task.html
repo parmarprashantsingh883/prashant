@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currency Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f2f4f8;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        border: 2px solid #ddd;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    }
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 15px 0;
+        padding: 10px 15px;
+        background: #fafafa;
+        border-radius: 6px;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+    }
+    .note {
+        flex: 0 0 100px;
+    }
+    .note img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+    .input-box {
+        width: 80px;
+        height: 35px;
+        border: 2px solid #3399ff;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 16px;
+        margin: 0 12px;
+        padding: 4px;
+    }
+    .equal {
+        background: #cce0d6;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-weight: bold;
+        color: #2e7d32;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+    .total-box {
+        background: #cce0ff;
+        padding: 8px 14px;
+        border-radius: 4px;
+        font-weight: bold;
+        min-width: 50px;
+        text-align: center;
+    }
+    .total-section {
+        margin-top: 30px;
+        width: 100%;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .total-line {
+        background: #cce0d6;
+        padding: 12px 15px;
+        font-weight: bold;
+        text-align: left;
+        margin: 10px 0;
+        color: #1b5e20;
+        border-radius: 6px;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+        .row {
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .note {
+            flex: 0 0 80px;
+            margin-bottom: 10px;
+        }
+        .input-box {
+            width: 60px;
+            font-size: 14px;
+        }
+        .equal {
+            margin: 5px 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="note"><img src="2000.jpg" alt="2000" ></div>
+        <input type="number" class="input-box" value="0" id="tq2000" oninput="calc()">
+        <div class="equal">=</div>
+        <div class="total-box" id="mytotal">0</div>
+    </div>
+
+    <div class="row">
+        <div class="note"><img src="500.jpg" alt="500"></div>
+        <input type="number" class="input-box" value="0" id="tq500" oninput="calc()">
+        <div class="equal">=</div>
+        <div class="total-box" id="mytotal1" >0</div>
+    </div>
+
+    <div class="row">
+        <div class="note"><img src="200.jpg" alt="200"></div>
+        <input type="number" class="input-box" value="0" id="tq200" oninput="calc()" >
+        <div class="equal">=</div>
+        <div class="total-box" id="mytotal2">0</div>
+    </div>
+
+    <div class="row">
+        <div class="note"><img src="100.png" alt="100"></div>
+        <input type="number" class="input-box" value="0" id="tq100" oninput="calc()">
+        <div class="equal">=</div>
+        <div class="total-box" id="mytotal3">0</div>
+    </div>
+
+    <div class="row">
+        <div class="note"><img src="50.jpg" alt="50"></div>
+        <input type="number" class="input-box" value="0" id="tq50" oninput="calc()">
+        <div class="equal">=</div>
+        <div class="total-box" id="mytotal4">0</div>
+    </div>
+
+    <div class="row">
+        <div class="note"><img src="20.jpg" alt="20"></div>
+        <input type="number" class="input-box" value="0" id="tq20" oninput="calc()">
+        <div class="equal">=</div>
+        <div class="total-box" id="mytotal5">0</div>
+    </div>
+
+    <div class="row">
+        <div class="note"><img src="10.jpg" alt="10"></div>
+        <input type="number" class="input-box" value="0" id="tq10" oninput="calc()">
+        <div class="equal">=</div>
+        <div class="total-box" id="mytotal6">0</div>
+    </div>
+
+    <div class="row">
+        <div class="note"><img src="5.jpg" alt="5"></div>
+        <input type="number" class="input-box" value="0" id="tq5" oninput="calc()">
+        <div class="equal">=</div>
+        <div class="total-box"  id="mytotal7">0</div>
+    </div>
+
+    <div class="row">
+        <div class="note"><img src="2.jpg" alt="2"></div>
+        <input type="number" class="input-box" value="0" id="tq2" oninput="calc()">
+        <div class="equal">=</div>
+        <div class="total-box" id="mytotal8">0</div>
+    </div>
+
+    <div class="row">
+        <div class="note"><img src="1.jpg" alt="1"></div>
+        <input type="number" class="input-box" value="0" id="tq1" oninput="calc()">
+        <div class="equal">=</div>
+        <div class="total-box" id="mytotal9">0</div>
+    </div>
+</div>
+
+<!-- Total Section -->
+<div class="total-section">
+    <div class="total-line" id="totle">Total Cash: 0</div>
+    <div class="total-line" id="total notes">Total Note's: 0</div>
+    <div class="total-line">Only!</div>
+</div>
+<script>
+    function calc(){
+        // for 2000 notes
+        var tq1 = document.getElementById('tq2000').value || 0;
+        var result=tq1*2000;
+        result=document.getElementById('mytotal');
+        result.innerText = tq1*2000;
+        var total = 0;
+        var notes = 0;
+        document.getElementById('totle').innerText = "Total Cash: ₹" + result.innerText;
+        document.getElementById('total notes').innerText = "Total Note's: " + tq1;
+
+    //  for 500 notes
+
+     var tq2 = document.getElementById('tq500').value || 0;
+        var result=tq2*500;
+        result=document.getElementById('mytotal1');
+        result.innerText = tq2 * 500;
+        var total = 0;
+        var notes = 0;
+        document.getElementById('totle').innerText = "Total Cash: ₹" + result.innerText;
+        document.getElementById('total notes').innerText = "Total Note's: " + tq2;
+
+// for 200 notes
+        var tq3 = document.getElementById('tq200').value || 0;
+        var result=tq3*200;
+        result=document.getElementById('mytotal2');
+        result.innerText = tq3 * 200;
+        var total = 0;
+        var notes = 0;
+        notes += tq3;
+        document.getElementById('totle').innerText = "Total Cash: ₹" + + result.innerText;;
+        document.getElementById('total notes').innerText = "Total Note's: " + tq3;
+        
+        // for 100 notes
+         var tq4 = document.getElementById('tq100').value || 0;
+        var result=tq4*100;
+        result=document.getElementById('mytotal3');
+        result.innerText = tq4 * 100;
+        var total = 0;
+        var notes = 0;
+        document.getElementById('totle').innerText = "Total Cash: ₹" + result.innerText;
+        document.getElementById('total notes').innerText = "Total Note's: " + tq4;
+// for 50 notes
+        var tq5 = document.getElementById('tq50').value || 0;
+        var result=tq5*50;
+        result=document.getElementById('mytotal4');
+        result.innerText = tq5 * 50;
+        var total = 0;  
+        var notes = 0;
+        document.getElementById('totle').innerText = "Total Cash: ₹" + + result.innerText;
+        document.getElementById('total notes').innerText = "Total Note's: " + tq5;
+        // // for 20 notes 
+         var tq6 = document.getElementById('tq20').value || 0;
+        var result=tq6*20;
+        result=document.getElementById('mytotal5');
+        result.innerText = tq6 * 20;
+        var total = 0;
+        var notes = 0;
+        document.getElementById('totle').innerText = "Total Cash: ₹" + result.innerText;
+        document.getElementById('total notes').innerText = "Total Note's: " + tq6;
+
+        // for 10 notes
+         var tq7 = document.getElementById('tq10').value || 0;
+        var result=tq7*10;
+        result=document.getElementById('mytotal6');
+        result.innerText = tq7 * 10;
+        var total = 0;
+        var notes = 0;
+        document.getElementById('totle').innerText = "Total Cash: ₹" + result.innerText;
+        document.getElementById('total notes').innerText = "Total Note's: " + tq7;
+//         // for 5 notes
+         var tq8 = document.getElementById('tq5').value || 0;
+        var result=tq8*5;
+        result=document.getElementById('mytotal7');
+        result.innerText = tq8*5;
+        var total = 0;
+        var notes = 0;
+        document.getElementById('totle').innerText = "Total Cash: ₹" + result.innerText;
+        document.getElementById('total notes').innerText = "Total Note's: " + tq8;
+//         // for 2 notes
+        var tq9 = document.getElementById('tq2').value || 0;
+        var result=tq9*2;
+        result=document.getElementById('mytotal8');
+        result.innerText = tq9 *2;
+        var total = 0;
+        var notes = 0;
+        document.getElementById('totle').innerText = "Total Cash: ₹" + result.innerText;
+        document.getElementById('total notes').innerText = "Total Note's: " + tq2;
+
+//         // for 1 notes
+         var tq1note = document.getElementById('tq1').value || 0;
+var result = tq1note * 1;
+result = document.getElementById('mytotal9');
+result.innerText = tq1note * 1;
+
+var total = 0;
+var notes = 0;
+document.getElementById('totle').innerText = "Total Cash: ₹" + result.innerText;
+document.getElementById('total notes').innerText = "Total Note's: " + tq1note;
+
+        
+
+    }
+</script>
+</body>
+</html>
