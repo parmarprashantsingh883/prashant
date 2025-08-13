@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Bill Calculator</title>
+ 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 70%;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .items-container {
+            padding: 40px;
+        }
+
+        .item {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto auto;
+            gap: 30px;
+            align-items: center;
+            padding: 25px;
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            border-color: #4facfe;
+        }
+
+        .item-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .item-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-left: 10px;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #27ae60;
+            min-width: 100px;
+            text-align: right;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f8f9fa;
+            border-radius: 25px;
+            padding: 5px;
+            border: 2px solid #e9ecef;
+            transition: border-color 0.3s ease;
+        }
+
+        .quantity-control:focus-within {
+            border-color: #4facfe;
+        }
+
+        .quantity-btn {
+            width: 35px;
+            height: 35px;
+            border: none;
+            background: #4facfe;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: #3498db;
+            transform: scale(1.1);
+        }
+
+        .quantity-btn:active {
+            transform: scale(0.95);
+        }
+
+        .quantity-input {
+            width: 70px;
+            padding: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            border: none;
+            background: transparent;
+            color: #333;
+            min: 0;
+        }
+
+        .quantity-input:focus {
+            outline: none;
+        }
+
+        .item-total {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #e74c3c;
+            min-width: 120px;
+            text-align: right;
+        }
+
+        .summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .grand-total {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .total-items {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .items-container {
+                padding: 20px;
+            }
+
+            .item {
+                grid-template-columns: auto 1fr;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .item-details {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                margin-top: 15px;
+                padding-top: 15px;
+                border-top: 1px solid #f0f0f0;
+            }
+
+            .price, .item-total {
+                text-align: center;
+            }
+
+            .quantity-control {
+                justify-self: center;
+            }
+
+            /* Hide desktop controls on mobile */
+            .item > .price,
+            .item > .quantity-control,
+            .item > .item-total {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px 5px;
+            }
+
+            .item-details {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .price, .quantity-control, .item-total {
+                justify-self: stretch;
+            }
+
+            .quantity-control {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+      <script src="first.js"></script>
+    <div class="container">
+        <div class="header">
+            <h1>🛒 Grocery Calculator</h1>
+            <p class="subtitle">Smart shopping made simple</p>
+        </div>
+
+        <div class="items-container">
+            <div class="item">
+                <div class="item-icon">🥛</div>
+                <div class="item-name">Milk</div>
+                <div class="price">₹50</div>
+                <div class="quantity-control">
+                    <button onclick="remove_to_cart()" class="quantity-btn">−</button >
+                    <input type="number" class="quantity-input" value="0" min="0">
+                    <button   onclick="add_to_cart()" class="quantity-btn">+</button>
+                </div>
+                <div class="item-total">₹0</div>
+                
+                <!-- Mobile layout controls -->
+                <div class="item-details">
+                    <div class="price">₹50</div>
+                    <div class="quantity-control">
+                        <button onclick="remove_to_cart()" class="quantity-btn">−</button >
+                        <input type="number" class="quantity-input" value="0" min="0">
+                         <button   onclick="add_to_cart()" class="quantity-btn">+</button>
+                    </div>
+                    <div class="item-total">₹0</div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-icon">🍚</div>
+                <div class="item-name">Rice (1kg)</div>
+                <div class="price">₹70</div>
+                <div class="quantity-control">
+                     <button onclick="remove_to_cart()" class="quantity-btn2">−</button >
+                    <input type="number" class="quantity-input2" value="0" min="0">
+                  <button   onclick="add_to_cart()" class="quantity-btn2">+</button>
+                </div>
+                <div class="item-total2">₹0</div>
+                
+                <div class="item-details">
+                    <div class="price">₹70</div>
+                    <div class="quantity-control">
+                        <button class="quantity-btn">−</button>
+                        <input type="number" class="quantity-input" value="0" min="0">
+                        <button class="quantity-btn">+</button>
+                    </div>
+                    <div class="item-total">₹0</div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-icon">🍯</div>
+                <div class="item-name">Sugar (1kg)</div>
+                <div class="price">₹40</div>
+                <div class="quantity-control">
+                    <button onclick="remove_to_cart()" class="quantity-btn">−</button >
+                    <input type="number" class="quantity-input" value="0" min="0">
+                    <button   onclick="add_to_cart()" class="quantity-btn">+</button>
+                </div>
+                <div class="item-total">₹0</div>
+                
+                <div class="item-details">
+                    <div class="price">₹40</div>
+                    <div class="quantity-control">
+                        <button class="quantity-btn">−</button>
+                        <input type="number" class="quantity-input" value="0" min="0">
+                        <button class="quantity-btn">+</button>
+                    </div>
+                    <div class="item-total">₹0</div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-icon">🥚</div>
+                <div class="item-name">Eggs (dozen)</div>
+                <div class="price">₹40</div>
+                <div class="quantity-control">
+                     <button onclick="remove_to_cart()" class="quantity-btn">−</button >
+                    <input type="number" class="quantity-input" value="0" min="0">
+                   <button   onclick="add_to_cart()" class="quantity-btn">+</button>
+                </div>
+                <div class="item-total">₹0</div>
+                
+                <div class="item-details">
+                    <div class="price">₹40</div>
+                    <div class="quantity-control">
+                        <button class="quantity-btn">−</button>
+                        <input type="number" class="quantity-input" value="0" min="0">
+                        <button class="quantity-btn">+</button>
+                    </div>
+                    <div class="item-total">₹0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary">
+            <div class="grand-total">Grand Total: ₹0</div>
+            <div class="total-items">0 items selected</div>
+        </div>
+    </div>
+</body>
+</html>
