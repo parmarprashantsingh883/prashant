@@ -1,0 +1,92 @@
+body{
+
+  background: linear-gradient(135deg, #c6eaea 0%, #ffffff 100%);
+
+
+}
+.header{
+  background-color: whitesmoke !important;
+}
+.font{
+    font-size: 30px;
+     font-family: 'Ubuntu', sans-serif;
+     color: black;
+      font-weight: 700;
+      
+     
+}
+.mark{
+    color: #00a6ad; /* teal color */
+    background-color: transparent;
+}
+
+
+.custom-link {
+  transition: color 0.3s ease !important;
+}
+.custom-link:hover {
+    color: #00a6ad!important;
+}
+.hero-img{
+   
+    width: 500px;
+    transform: rotate(-3deg);   /* initial tilt */
+  transition: transform 0.5s ease-in-out;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+  
+
+.hero-img:hover {
+  transform: rotate(0deg);
+}
+
+.text{
+   
+    height: 45px;
+    padding: 10px 20px;
+    width: max-content;
+    background: #00a6ad;
+    border-radius: 20px;
+    font-size: 18px;
+    color: whitesmoke;
+    
+}
+.description{
+    padding: 0px 0px 40px;
+    font-size: 19.2px;
+}
+.icones{
+    font-size: 40px;
+    color: #00a6ad;
+}
+.icon-box {
+  background: #deecf9; /* light background */
+  border-radius: 20px; /* rounded corners */
+  padding:  30px 20px;       /* space inside */
+  width: max-content  ;    /* control width */
+  height: max-content;     /* control height */
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.color{
+  color: #00a6ad;
+}
+.icon-box2 {
+  background: #deecf9; /* light background */
+  /* rounded corners */
+ padding: 30px;      /* space inside */
+  width: max-content  ;    /* control width */
+  height: max-content;     /* control height */
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  border-radius: 50px
+}
+ .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}

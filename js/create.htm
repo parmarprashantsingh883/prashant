@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let btn = document.createElement("button");
+btn.textContent = "Click Me!";
+btn.style.background = "blue";
+btn.style.color = "white";
+btn.style.padding = "10px 20px";
+btn.style.border = "none";
+btn.style.borderRadius = "5px";
+btn.style.cursor = "pointer";
+btn.style.fontSize = "16px";
+btn.style.margin = "auto 10px";
+
+
+btn.onclick = function() {
+    alert("Button clicked!");
+};
+
+document.body.appendChild(btn);
+</script>
+</body>
+</html>
