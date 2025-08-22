@@ -228,6 +228,124 @@
     </div>
   </div>
 </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .search-box {
+      border-radius: 20px;
+      padding: 20px;
+    }
+    .input-group-text {
+      background: transparent;
+      border: none;
+    }
+    .form-control, .form-select {
+      border-radius: 12px;
+    }
+    .btn-custom {
+      background-color: #0097a7;
+      color: #fff;
+      border-radius: 50%;
+      padding: 10px 15px;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+<div class="container my-5">
+  <div class="card shadow-sm search-box">
+    <div class="row g-3 align-items-center">
+      
+      <!-- Practitioner Name -->
+      <div class="col-md-4">
+        <label class="form-label fw-semibold">Practitioner Name</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input type="text" class="form-control" placeholder="Search by name...">
+        </div>
+      </div>
+
+      <!-- Medical Specialty -->
+      <div class="col-md-3">
+        <label class="form-label fw-semibold">Medical Specialty</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-plus-circle"></i></span>
+          <select class="form-select">
+            <option>Select specialty</option>
+            <option>Cardiology</option>
+            <option>Neurology</option>
+            <option>Dermatology</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="col-md-3">
+        <label class="form-label fw-semibold">Location</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+          <select class="form-select">
+            <option>All locations</option>
+            <option>New York</option>
+            <option>London</option>
+            <option>Delhi</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="col-md-2 d-flex align-items-end">
+        <button class="btn btn-custom"><i class="bi bi-arrow-right"></i></button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<div class="card p-3 shadow-sm" style="width: 420px; border-radius: 15px;">
+  <div class="d-flex align-items-center">
+    <!-- Profile Image -->
+    <img src="/images/staff-1.webp" 
+         class="rounded-circle me-3" 
+         alt="Doctor" 
+         style="width: 70px; height: 70px; object-fit: cover; border: 2px solid #ddd;">
+    
+    <!-- Doctor Info -->
+    <div>
+      <h5 class="mb-0 fw-bold">Dr. Jennifer Morgan</h5>
+      <p class="text-primary mb-1">Senior Cardiologist</p>
+      <div class="d-flex align-items-center">
+        <span class="badge bg-info text-dark me-2">MD, FACC</span>
+        <small class="text-muted">18 years</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rating -->
+  <div class="mt-3 d-flex align-items-center">
+    <span class="text-warning me-1">★★★★★</span>
+    <span class="fw-bold me-1">4.9</span>
+    <small class="text-muted">(142 patients)</small>
+  </div>
+
+  <!-- Buttons -->
+  <div class="d-flex justify-content-between mt-3">
+    <button class="btn btn-outline-secondary w-50 me-2">Profile</button>
+    <button class="btn btn-info text-white fw-bold w-50">Consult</button>
+  </div>
+</div>
+
+</body>
+</html>
+
 
 </body>
 </html>

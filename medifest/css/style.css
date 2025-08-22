@@ -90,3 +90,12 @@ body{
   transform: translateY(-10px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
+.my-btn:hover{
+  border: 2px solid #00a6ad ;
+  background-color: transparent;
+  color: #00a6ad;
+}
+.img-size{
+  height: 80px ;
+  width: 90px;
+}
