@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Lesson 1</title>
+</head>
+<body>
+  <h1>Lesson 1: Basics of JavaScript</h1>
+  <p>Open the Console (Right click → Inspect → Console) to see outputs.</p>
+
+  <script>
+    // Variables
+    let myName = "Prashant";
+    const country = "India";
+    let age = 22;
+
+    console.log("My Name:", myName);
+    console.log("My Country:", country);
+    console.log("My Age:", age);
+
+    // Data types
+    let str = "Hello JavaScript";  // String
+    let num = 100;                 // Number
+    let isStudent = true;          // Boolean
+    let emptyValue = null;         // Null
+    let notDefined;                // Undefined
+    let fruits = ["Apple", "Mango", "Banana"]; // Array
+    let person = { name: "Aman", age: 21 };    // Object
+
+    console.log("String:", str);
+    console.log("Number:", num);
+    console.log("Boolean:", isStudent);
+    console.log("Null:", emptyValue);
+    console.log("Undefined:", notDefined);
+    console.log("Array:", fruits);
+    console.log("Object:", person);
+
+    // Operators
+    let x = 10;
+    let y = 3;
+    console.log("Addition:", x + y);
+    console.log("Subtraction:", x - y);
+    console.log("Multiplication:", x * y);
+    console.log("Division:", x / y);
+    console.log("Remainder:", x % y);
+    console.log("Power:", x ** y);
+
+    console.log("Is x > y?", x > y);
+    console.log("Is x == '10' ?", x == "10");   // true
+    console.log("Is x === '10' ?", x === "10"); // false
+
+// array methods //
+
+    let fruit = ["Apple", "Mango", "Banana"];
+    console.log("First Fruit:", fruits[0]);
+    console.log(fruits.length); // 3
+
+    //  for loop //
+    for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+
+// for..of loop  //
+for (let fruit in  fruits) {    
+  console.log(fruit);
+}
+
+
+//  push method  it will add item at end of  array//
+
+fruit.push("kiwi");
+console.log(fruit);
+
+//  unshift method  it will add item at start of  array//
+fruit.unshift("watermelone");
+console.log(fruit);
+
+// pop() removes the last elements 
+
+
+
+let numbers=[100,200,300,400,500, 600,700];
+console.log(numbers);
+
+numbers.pop();
+console.log(numbers);
+
+// shift() removes the last elements
+
+numbers.shift();
+console.log(numbers);
+
+
+for(let marks in numbers)
+console.log(marks)
+  </script>
+</body>
+</html>

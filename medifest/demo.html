@@ -15,23 +15,36 @@
 
 <body>
  <!-- Normal Navbar (large screens) -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none d-lg-flex">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark d-none d-lg-flex">
   <div class="container-fluid">
     <!-- Logo -->
-    <a class="navbar-brand fw-bold text-white" href="#">
-      Medi<span class="text-info">Nest</span>
+    <a class="navbar-brand fw-bold text-white d-flex ms-5" href="#">
+    <h1>  Medi</h1><h1 class="text-info">Nest</h1>
     </a>
 
     <!-- Navbar Links -->
-    <ul class="navbar-nav mx-auto">
-      <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+    <ul class="navbar-nav mx-auto g-5">
+      <!-- <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+       <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+         <li class="nav-item dropdown"> -->
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+    Services
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Web Design</a></li>
+    <li><a class="dropdown-item" href="#">Development</a></li>
+    <li><a class="dropdown-item" href="#">SEO</a></li>
+  </ul>
+</li>
+      <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
       <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
       <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
       <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
     </ul>
 
     <!-- Appointment Button -->
-    <a href="#" class="btn btn-info fw-bold">Appointment</a>
+    <a href="#" class="btn btn-info fw-bold me-5">Appointment</a>
   </div>
 </nav>
 
@@ -55,12 +68,26 @@
   <div class="collapse bg-dark" id="mobileNavbar">
     <ul class="navbar-nav p-3">
       <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+     <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+    Services
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Web Design</a></li>
+    <li><a class="dropdown-item" href="#">Development</a></li>
+    <li><a class="dropdown-item" href="#">SEO</a></li>
+  </ul>
+</li>
+      <li class="nav-item"><a class="nav-link text-white" href="#">doctore</a></li>
       <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
        <li class="nav-item"><a class="nav-link text-white" href="#">other pages</a></li>
          <li class="nav-item"><a class="nav-link text-white" href="#">doctors</a></li>
       <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
        <li class="nav-item"><a class="nav-link text-white" href="#">departments</a></li>
       <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+
       <li class="nav-item mt-3">
         <a href="#" class="btn btn-info fw-bold w-100">Appointment</a>
       </li>
@@ -113,7 +140,7 @@
     lacinia eget consectetur sed, convallis at tellus.
   </p>
 
-  <div class="row text-center mt-4">
+  <div class="row text-center mt-4 g-5">
     <!-- Box 1 -->
     <div class="col-lg-4 col-md-4 d-flex align-items-center">
       <i class="bi bi-award icon-box icones"></i>
@@ -166,19 +193,20 @@
         <div class="row align-items-center text-dark d-flex gap-5 mt-3 ms-3">
 
           <!-- First item -->
-          <div class="col-3 d-flex align-items-center">
-            <i class="bi bi-calendar-check text-info me-2"></i>
-            <span class="text-nowrap">Find Available Times</span>
-          </div>
+         <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center flex-wrap">
+  <i class="bi bi-calendar-check text-info me-2"></i>
+  <span>Find Available Times</span>
+</div>
+
 
           <!-- Second item -->
-          <div class="col-3 d-flex align-items-center">
+          <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center flex-wrap">
             <i class="bi bi-chat-dots text-info me-2"></i>
             <span class="text-nowrap">Chat with Support</span>
           </div>
 
           <!-- Third item -->
-          <div class="col-3 d-flex align-items-center">
+           <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center flex-wrap">
             <i class="bi bi-phone text-info me-2"></i>
             <span class="text-nowrap">Patient Portal</span>
           </div>
@@ -210,14 +238,13 @@
     <div class="row d-flex justify-content-evenly align-items-stretch">
 
       <!-- Left Column -->
-      <div class="col-lg-4 col-md-12 p-0 m-0 h-100 mt-5">
-        <img src="/images/facilities-6.webp" class="img-fluid rounded-3 w-100  scale-down-center-normal" alt=""
-          style="height: 430px;">
+      <div class="col-lg-4 col-md-12   mt-5 flex-fill">
+<img src="/images/facilities-6.webp" class="img-fluid rounded-3 w-100 object-fit-cover" alt="">
       </div>
 
       <!-- Middle Column (stacked images) -->
-      <div class="col-lg-3 col-md-12 mb-3  h-100 mt-5">
-        <div class="row gap-4 h-100">
+      <div class="col-lg-3 col-md-12 mb-3   mt-5">
+        <div class="row gap-4 ">
           <div class="col-12 flex-fill">
             <img src="/images/consultation-3.webp" class="img-fluid rounded-3 w-100 h-100 object-fit-cover" alt="">
           </div>
@@ -943,7 +970,7 @@
       </div>
 
       <!-- Right: Phone number + Link -->
-      <div class="col-lg-6  col-md-12 d-flex  ps-5 mt-3  align-items-center gap-4 mt-3 ">
+      <div class="col-lg-6  col-md-12-flex-column d-flex  ps-5 mt-3  align-items-center gap-4 mt-3 ">
         <!-- Phone number box -->
         <div class="bg-white text-dark px-4 py-2 rounded-3 d-flex align-items-center gap-2 fw-bold">
           <i class="bi bi-telephone-fill"></i>
@@ -955,7 +982,7 @@
 
     </div>
   </div>
-  <div class="container-fluid bg-danger">
+  <div class="container-fluid shadow-lg">
   <div class="container bg-body-secondary p-4 rounded">
     <div class="row g-4">
       

@@ -1,8 +1,9 @@
 body {
 
-  background: linear-gradient(135deg, #c6eaea 0%, #ffffff 100%);
-  padding: 0;
+  background: whitesmoke;
+  padding: 0px ;
   margin: 0;
+  overflow-x: hidden;
 
 
 }
@@ -113,7 +114,7 @@ body {
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px #00a6ad(0, 0, 0, 0.2);
 }
 
 .my-btn:hover {
@@ -148,3 +149,8 @@ body {
   color: #0d6efd;
   text-decoration: underline;
 }
+
+
+
+/* new css */
+
