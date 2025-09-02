@@ -1,22 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management System - Guest Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .form-container {
+            padding: 40px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            padding: 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #3498db;
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+            border-left: 4px solid #28a745;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            min-width: 150px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(46, 204, 113, 0.3);
+        }
+
+        .btn-reset {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            min-width: 120px;
+        }
+
+        .btn-reset:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-view {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            color: white;
+            min-width: 120px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-view:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(155, 89, 182, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .form-container {
+                padding: 30px 20px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
-	<button onclick="toggleColor(this)">Toggle Color</button>
+    <div class="container">
+        <div class="header">
+            <h1>🏨 Swan Hotel</h1>
+            <p>Guest Registration System</p>
+        </div>
 
-<script>
-  function toggleColor(btn) {
-    if (btn.style.backgroundColor == "red") {
-      btn.style.backgroundColor = "white";
-    } else {
-      btn.style.backgroundColor = "red";
-    }
-  }
-</script>
+        <div class="form-container">
+            <div class="success-message" id="successMessage">
+                ✅ Guest information has been successfully saved!
+            </div>
 
+            <form id="guestForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter full name" required>
+                        <div class="error-message" id="fullNameError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number *</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter 10-digit phone number" maxlength="10" required>
+                        <div class="error-message" id="phoneNumberError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="Enter email address" required>
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aadharNumber">Aadhar Card Number *</label>
+                        <input type="text" id="aadharNumber" name="aadharNumber" placeholder="Enter 12-digit Aadhar number" maxlength="12" required>
+                        <div class="error-message" id="aadharNumberError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkInDate">Check-in Date *</label>
+                        <input type="date" id="checkInDate" name="checkInDate" required>
+                        <div class="error-message" id="checkInDateError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkOutDate">Check-out Date *</label>
+                        <input type="date" id="checkOutDate" name="checkOutDate" required>
+                        <div class="error-message" id="checkOutDateError"></div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="purposeOfVisit">Purpose of Visit *</label>
+                        <select id="purposeOfVisit" name="purposeOfVisit" required>
+                            <option value="">Select purpose of visit</option>
+                            <option value="Business">Business</option>
+                            <option value="Tourism">Tourism</option>
+                            <option value="Family Visit">Family Visit</option>
+                            <option value="Medical">Medical</option>
+                            <option value="Conference">Conference</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="error-message" id="purposeOfVisitError"></div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button type="submit" class="btn btn-submit">Submit Registration</button>
+                    <button type="reset" class="btn btn-reset">Reset Form</button>
+                    <a href="#" onclick="openViewPage()" class="btn btn-view">View All Guests</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Form validation and submission
+        document.getElementById('guestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm()) {
+                saveGuestData();
+            }
+        });
+
+        // Reset form
+        document.getElementById('guestForm').addEventListener('reset', function() {
+            clearAllErrors();
+            hideSuccessMessage();
+        });
+
+        function validateForm() {
+            let isValid = true;
+            clearAllErrors();
+
+            // Full Name validation
+            const fullName = document.getElementById('fullName').value.trim();
+            if (!fullName) {
+                showError('fullNameError', 'Full name is required');
+                isValid = false;
+            } else if (fullName.length < 2) {
+                showError('fullNameError', 'Full name must be at least 2 characters');
+                isValid = false;
+            }
+
+            // Phone Number validation
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneNumber) {
+                showError('phoneNumberError', 'Phone number is required');
+                isValid = false;
+            } else if (!phoneRegex.test(phoneNumber)) {
+                showError('phoneNumberError', 'Phone number must be exactly 10 digits');
+                isValid = false;
+            }
+
+            // Email validation
+            const email = document.getElementById('email').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email) {
+                showError('emailError', 'Email address is required');
+                isValid = false;
+            } else if (!emailRegex.test(email)) {
+                showError('emailError', 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            // Aadhar Number validation
+            const aadharNumber = document.getElementById('aadharNumber').value.trim();
+            const aadharRegex = /^\d{12}$/;
+            if (!aadharNumber) {
+                showError('aadharNumberError', 'Aadhar card number is required');
+                isValid = false;
+            } else if (!aadharRegex.test(aadharNumber)) {
+                showError('aadharNumberError', 'Aadhar card number must be exactly 12 digits');
+                isValid = false;
+            }
+
+            // Check-in Date validation
+            const checkInDate = document.getElementById('checkInDate').value;
+            if (!checkInDate) {
+                showError('checkInDateError', 'Check-in date is required');
+                isValid = false;
+            } else {
+                const today = new Date().toISOString().split('T')[0];
+                if (checkInDate < today) {
+                    showError('checkInDateError', 'Check-in date cannot be in the past');
+                    isValid = false;
+                }
+            }
+
+            // Check-out Date validation
+            const checkOutDate = document.getElementById('checkOutDate').value;
+            if (!checkOutDate) {
+                showError('checkOutDateError', 'Check-out date is required');
+                isValid = false;
+            } else if (checkInDate && checkOutDate <= checkInDate) {
+                showError('checkOutDateError', 'Check-out date must be after check-in date');
+                isValid = false;
+            }
+
+            // Purpose of Visit validation
+            const purposeOfVisit = document.getElementById('purposeOfVisit').value;
+            if (!purposeOfVisit) {
+                showError('purposeOfVisitError', 'Purpose of visit is required');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        function clearAllErrors() {
+            const errorElements = document.querySelectorAll('.error-message');
+            errorElements.forEach(element => {
+                element.style.display = 'none';
+                element.textContent = '';
+            });
+        }
+
+        function saveGuestData() {
+            const formData = {
+                fullName: document.getElementById('fullName').value.trim(),
+                phoneNumber: document.getElementById('phoneNumber').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                aadharNumber: document.getElementById('aadharNumber').value.trim(),
+                checkInDate: document.getElementById('checkInDate').value,
+                checkOutDate: document.getElementById('checkOutDate').value,
+                purposeOfVisit: document.getElementById('purposeOfVisit').value,
+                registrationDate: new Date().toISOString()
+            };
+
+            // Get existing data from localStorage
+            let guestData = JSON.parse(localStorage.getItem('hotelGuests') || '[]');
+            
+            // Add new guest data
+            guestData.push(formData);
+            
+            // Save back to localStorage
+            localStorage.setItem('hotelGuests', JSON.stringify(guestData));
+            
+            // Show success message
+            showSuccessMessage();
+            
+            // Reset form
+            document.getElementById('guestForm').reset();
+        }
+
+        function showSuccessMessage() {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            successMessage.scrollIntoView({ behavior: 'smooth' });
+            
+            setTimeout(() => {
+                hideSuccessMessage();
+            }, 5000);
+        }
+
+        function hideSuccessMessage() {
+            document.getElementById('successMessage').style.display = 'none';
+        }
+
+        function openViewPage() {
+            // Create and open the view page
+            const viewPageContent = `
+
+
+            // Open the view page in a new window
+            const viewWindow = window.open('', '_blank');
+            viewWindow.document.write(viewPageContent);
+            viewWindow.document.close();
+        }
+
+        // Set minimum date for check-in to today
+        document.getElementById('checkInDate').min = new Date().toISOString().split('T')[0];
+        
+        // Update minimum check-out date when check-in date changes
+        document.getElementById('checkInDate').addEventListener('change', function() {
+            const checkInDate = this.value;
+            const checkOutInput = document.getElementById('checkOutDate');
+            if (checkInDate) {
+                const nextDay = new Date(checkInDate);
+                nextDay.setDate(nextDay.getDate() + 1);
+                checkOutInput.min = nextDay.toISOString().split('T')[0];
+            }
+        });
+
+        // Real-time validation for phone number (only digits)
+        document.getElementById('phoneNumber').addEventListener('input', function() {
+            this.value = this.value.replace(/\D/g, '');
+        });
+
+        // Real-time validation for Aadhar number (only digits)
+        document.getElementById('aadharNumber').addEventListener('input', function() {
+            this.value = this.value.replace(/\D/g, '');
+        });
+    </script>
 </body>
 </html>

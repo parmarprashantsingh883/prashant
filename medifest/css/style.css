@@ -73,7 +73,7 @@ body {
 }
 
 .icon-box {
-  background: #deecf9;
+  background: #c0d6e9;
   /* light background */
   border-radius: 20px;
   /* rounded corners */
@@ -86,6 +86,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.card:hover .icon-box{
+  background-color: #00a6ad;
 }
 
 .color {
@@ -154,3 +157,66 @@ body {
 
 /* new css */
 
+.gallery img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.4s ease; /* smooth animation */
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.02); /* zoom in */
+}
+
+.gallery {
+  overflow: hidden; /* ensures zoomed image stays inside rounded border */
+  display: inline-block;
+}
+.icon-bg{
+  padding: 15px;
+  border-radius: 100%;
+  background:rgb(33, 170, 170);
+}
+.icon-box5 {
+  background: #c0d6e9;       /* light background */
+  border-radius: 50%;        /* makes it a circle */
+  padding: 20px;             /* space inside */
+  width: 80px;               /* fixed width */
+  height: 80px;              /* fixed height */
+  display: flex;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover .icon-box5 {
+  background: #00a6ad;       /* change bg color */
+  color: #fff;               /* change icon color */
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease; /* smooth animation */
+}
+
+.service-card {
+  
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-title {
+  display: inline-block;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  box-shadow: 5px 5px  5px 5px 5px #00a6ad;
+  border: 1px solid #00a6ad;
+}
+
+.service-card:hover .service-title {
+  background: #00a6ad;  /* highlight */
+  color: #fff;          /* white text */
+  border-radius: 5px;
+}

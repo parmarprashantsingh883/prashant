@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.form-container {
+  display: grid;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+#successMsg {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    grid-template-columns: 1fr;
+  }
+}
