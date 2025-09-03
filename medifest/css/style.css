@@ -237,3 +237,15 @@ body {
   border: 1px solid whitesmoke !important;
   transform: translateY(-10px) !important;
 }
+.img-hover-zoom {
+  overflow: hidden; /* prevents overflow when zoomed */
+}
+
+.img-hover-zoom img {
+  transition: transform 0.5s ease; /* smooth zoom */
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.1); /* zoom in */
+  
+}

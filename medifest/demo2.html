@@ -3,67 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recognized Excellence</title>
+  <title>Cardiology Card</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    .logo-card {
-      border: none;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .logo-card img {
-      filter: grayscale(100%);
-      transition: filter 0.3s ease, transform 0.3s ease;
-      width: 120px;      /* fixed width */
-      height: 60px;      /* fixed height */
-      object-fit: contain; /* keeps proportions inside box */
-    }
-
-    .logo-card img:hover {
-      filter: grayscale(0%);
-      transform: scale(1.05);
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
-<body>
-  <div class="container text-center my-5">
-    <h2>Recognized Excellence</h2>
-    <p class="text-muted">Our commitment to quality is validated by prestigious healthcare organizations</p>
-    
-    <div class="row justify-content-center g-3">
-      <div class="col-6 col-md-2">
-        <div class="card logo-card">
-          <img src="/images/tommato.webp" alt="Logo 1">
+<body class="bg-light">
+
+<div class="container my-5">
+  <div class="card shadow rounded-4 overflow-hidden">
+    <div class="card-body">
+      <!-- Top Icon + Title -->
+      <div class="d-flex align-items-center mb-3">
+        <div class="bg-info bg-opacity-25 d-flex align-items-center justify-content-center rounded me-3" style="width:50px; height:50px;">
+          <i class="bi bi-heart-pulse text-info fs-4"></i>
+        </div>
+        <div>
+          <h5 class="fw-bold mb-0">Cardiology</h5>
+          <span class="badge bg-primary">HEART & VASCULAR</span>
         </div>
       </div>
-      <div class="col-6 col-md-2">
-        <div class="card logo-card">
-          <img src="/images/tommato.webp" alt="Logo 2">
-        </div>
-      </div>
-      <div class="col-6 col-md-2">
-        <div class="card logo-card">
-          <img src="/images/tommato.webp" alt="Logo 3">
-        </div>
-      </div>
-      <div class="col-6 col-md-1">
-        <div class="card logo-card">
-          <img src="/images/tommato.webp" alt="Logo 4">
-        </div>
-      </div>
-      <div class="col-6 col-md-1">
-        <div class="card logo-card">
-          <img src="/images/tommato.webp" alt="Logo 5">
-        </div>
-      </div>
-      <div class="col-6 col-md-2">
-        <div class="card logo-card">
-          <img src="/images/tommato.webp" alt="Logo 6">
-        </div>
+      
+      <!-- Description -->
+      <p class="text-muted">
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.
+      </p>
+      
+      <!-- Badges -->
+      <div class="d-flex gap-2 mb-3">
+        <span class="badge bg-info text-dark">24/7 EMERGENCY</span>
+        <span class="badge bg-info text-dark">ADVANCED DIAGNOSTICS</span>
       </div>
     </div>
+    
+    <!-- Bottom Image -->
+    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/blood-pressure-1869938_960_720.jpg" 
+         class="card-img-bottom" alt="Cardiology">
   </div>
+</div>
+
 </body>
 </html>
