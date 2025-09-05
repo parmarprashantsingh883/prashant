@@ -4,12 +4,14 @@ body {
   padding: 0px ;
   margin: 0;
   overflow-x: hidden;
-
+ font-family: 'Ubuntu', sans-serif;
 
 }
 
 .header {
   background-color: whitesmoke !important;
+  
+      z-index: 1000;
 }
 
 .font {
@@ -324,4 +326,54 @@ body {
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
+.header {
+  background-color: transparent;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+/* Active state when sticky after scroll */
+.header.scrolled {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ccc;
+  background-color: #fff; /* Optional: keep background visible */
+}
+  .mark {
+      color: #00a6ad;
+    }
+    
+    
+    .colors{
+       color: #00a6ad;
+    }
+
+    .nav-link {
+    border: none !important;       /* remove any border */
+    box-shadow: none !important;   /* remove any shadow */
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+.header a:hover {
+  color: #00a6ad;
+}
+/* Target all links inside your header */
+.header a {
+  color: #000 !important; /* reset Bootstrap text-dark */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.header a:hover {
+  color: #00a6ad !important; /* hover color with higher specificity */
+}
+
+/* Dropdown items separately */
+.header .dropdown-item:hover {
+  color: #00a6ad !important;
+  background-color: #f8f9fa; /* optional */
+}
 

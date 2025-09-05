@@ -4,63 +4,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>departments</title>
+  <title>MediNest</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
 
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="row">
-      <div
-        class="col-12 header  col-md-12 col-sm-12 d-flex align-items-center justify-content-around p-2 text-white ps-5 border mb-3">
+  <!-- Header -->
+  <div class="container-fluid sticky-top ">
+    <div class="row  ">
+      <!-- <div class="col-12 header d-flex align-items-center p-4 border-bottom bg-warning px-5 "> -->
+        <div class="col-12 header d-flex align-items-center border-bottom bg-warning px-lg-5 px-md-3 px-2 py-3">
+
 
         <!-- Logo -->
+      <!-- <h2 class="font mb-0 ms-5 ">Medi<span class="colors">Nest</span></h2> -->
+      <!-- Logo (desktop + tablet ≥ 576px) -->
+<h2 class="font mb-0 ms-5 d-none d-sm-block">Medi<span class="colors">Nest</span></h2>
 
-        <h1 class="ms-5 font">Medi<span class="mark">Nest</span></h1>
+<!-- Logo (phone only < 576px, left aligned) -->
+<h2 class="font mb-0 d-sm-none">Medi<span class="colors">Nest</span></h2>
 
 
-        <!-- Navigation -->
+<!-- Desktop Navigation (only on large screens) -->
+<ul class="list-inline d-none d-lg-flex gap-4 mb-0 ms-5 flex-grow-1 justify-content-center align-items-center">
+  <li class="list-inline-item">
+    <a style="color: #00a6ad;" href="demo.html" class="text-decoration-none fs-6">Home</a>
+  </li>
+  <li class="list-inline-item"><a href="about.htm" class="text-dark fs-6 ps-1   ps-sm-0 text-decoration-none">About</a></li>
+  <li class="list-inline-item"><a href="department.html" class="text-dark fs-6 ps-1   ps-sm-0 text-decoration-none">Department</a></li>
+  <li class="list-inline-item"><a href="service.html" class="text-dark fs-6 ps-1   ps-sm-0 text-decoration-none">Services</a></li>
+    <li class="list-inline-item"><a href="doctor.html" class="text-dark fs-ps-1   ps-sm-0 6 text-decoration-none">Doctor</a></li>
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle text-dark fs-6 ps-1 ps-sm-0 text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
+    More Pages
+  </a>
+  <ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="#">Dropdown 1</a></li>
+  <li><a class="dropdown-item" href="#">Dropdown 2</a></li>
 
-        <ul class="list-inline d-flex gap-5 my-auto">
-          <!-- <li class="list-inline-item"><a style="color: #00a6ad;" href="#" class="text-decoration-none fs-6">Home</a -->
-          </li>
-          <li class="list-inline-item"><a style="color: #00a6ad;" href="#" class="text-decoration-none fw-bold">Home</a>
-          </li>
+  <!-- Nested dropdown -->
+  <li class="dropdown-submenu">
+    <a class="dropdown-item dropdown-toggle" href="#">Dropdown 3</a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Sub-dropdown 1</a></li>
+      <li><a class="dropdown-item" href="#">Sub-dropdown 2</a></li>
+    </ul>
+  </li>
 
-          <li class="list-inline-item"><a href="#" class="text-dark custom-link fw-bold text-decoration-none">About</a>
-          </li>
-          <li class="list-inline-item"><a href="#"
-              class="text-dark custom-link fw-bold text-decoration-none">Services</a>
-          </li>
-          <li class="list-inline-item"><a href="#"
-              class="text-dark custom-link fw-bold text-decoration-none">Department</a></li>
-          <li class="list-inline-item"><a href="#" class="text-dark custom-link fw-bold text-decoration-none">More
-              page</a>
-          </li>
-          <li class="list-inline-item"><a href="#"
-              class="text-dark custom-link fw-bold text-decoration-none fw-bold">Doctor</a>
-          </li>
-          <li class="list-inline-item"><a href="#"
-              class="text-dark custom-link fw-bold text-decoration-none">Dropdown</a>
-          </li>
-        </ul>
-        <button type="button" class="btn btn-info">Appointment</button>
+  <li><a class="dropdown-item" href="#">Dropdown 4</a></li>
+</ul>
+
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle text-dark fs-6 ps-1 ps-sm-0 text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
+    Department
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Department Details</a></li>
+        <li><a class="dropdown-item" href="#">Service Details</a></li>
+    <li><a class="dropdown-item" href="#">Appointment</a></li>
+    <li><a class="dropdown-item" href="#">Testimonials</a></li>
+        <li><a class="dropdown-item" href="#">Frequently Asked Questions</a></li>
+            <li><a class="dropdown-item" href="#">Gallery</a></li>
+                <li><a class="dropdown-item" href="#">Terms</a></li>
+                    <li><a class="dropdown-item" href="#">Privacy</a></li>
+
+  </ul>
+</li>    <li class="list-inline-item"><a href="contect.html" class="text-dark fs-6 ps-1 ps-sm-0  text-decoration-none">Contact</a></li>
+</ul>
+
+
+        <!-- Appointment Button (desktop only) -->
+        <button type="button" class="btn btn-info d-none d-lg-block me-5 me-sm-4 mx-auto">Appointment</button>
+
+        <!-- Hamburger (mobile + tablet < 992px) -->
+        <button class="btn d-lg-none ms-auto me-sm-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+          <i class="bi bi-list fs-1 text-dark"></i>
+          <!-- <button class="btn d-lg-none ms-auto me-2" type="button" data-bs-toggle="offcanvas"
+  data-bs-target="#offcanvasMenu">
+  <i class="bi bi-list fs-1 text-dark"></i>
+</button> -->
+
+        </button>
       </div>
     </div>
   </div>
-  <div class="conatiner-fluid text-center my-3">
-    <div class="row ">
-      <div class="col-lg-12 justify-content-center align-items-center g-2 py-5 mb-5">
-        <h1>Departments</h1>
-        <P>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio
-        </P>
-        <P>voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</P>
-      </div>
+
+  <!-- Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
+    <div class="offcanvas-header">
+      <!-- <h5 class="offcanvas-title">MediNest Menu</h5> -->
+      <h2 class="font mb-0 ms-5 offcanvas-title">Medi<span class="colors">Nest</span></h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-unstyled">
+        <li><a href="demo.html" class="d-block py-2 text-dark text-decoration-none my-auto">Home</a></li>
+        <li><a href="about.htm" class="d-block py-2 text-dark text-decoration-none my-auto">About</a></li>
+              <li><a href="department.html" class="d-block py-2 text-dark text-decoration-none my-auto">Department</a></li>
+        <li><a href="service.html" class="d-block py-2 text-dark text-decoration-none my-auto">Services</a></li>
+          <li><a href="doctor.html" class="d-block py-2 text-dark text-decoration-none my-auto">Doctor</a></li>
+        <li><a href="#" class="d-block py-2 text-dark text-decoration-none my-auto">More Page</a></li>
+        <li><a href="#" class="d-block py-2 text-dark text-decoration-none my-auto">Dropdown</a></li>
+          <li><a href="contect.html" class="d-block py-2 text-dark text-decoration-none my-auto">Contact</a></li>
+      </ul>
+      <button type="button" class="btn btn-info mt-3 w-100 ">Appointment</button>
     </div>
   </div>
   <div class="container-fluid bg-body-secondary py-4 ">
