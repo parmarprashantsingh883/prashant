@@ -110,6 +110,23 @@ body {
   align-items: center;
   border-radius: 50px
 }
+.icon-box3  {
+  background: #deecf9;
+  /* light background */
+  /* rounded corners */
+  padding: 20px;
+  /* space inside */
+  width: max-content;
+  /* control width */
+  height: max-content;
+  /* control height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+
+  font-size: 10px;
+}
 
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -243,9 +260,46 @@ body {
 
 .img-hover-zoom img {
   transition: transform 0.5s ease; /* smooth zoom */
+
 }
 
 .img-hover-zoom:hover img {
   transform: scale(1.1); /* zoom in */
+
   
+}
+
+/* doctors pages buttons */
+ .nav-pills .nav-link {
+      border-radius: 50px;  /* Makes pills rounded */
+      border: 1px solid #ddd;
+      color: #333;
+    }
+    .nav-pills .nav-link.active {
+      background-color: #0097a7;  /* Teal active */
+      color: #fff;
+    }
+    .nav-link:hover{
+      color:#00a6ad;
+      border: 1px solid   #0097a7;
+    }
+    .social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #fff;             /* White circle */
+  color: #0097a7;               /* Icon color */
+  border-radius: 50%;           /* Make it round */
+  font-size: 1.2rem;            /* Icon size */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: #0097a7;  /* Fill circle on hover */
+  color: #fff;          /* Make icon white */
+  transform: translateY(-5px); 
 }
