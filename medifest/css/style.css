@@ -1,6 +1,6 @@
 body {
 
-  background: whitesmoke;
+  background: whitesmoke!important;
   padding: 0px ;
   margin: 0;
   overflow-x: hidden;
@@ -303,3 +303,25 @@ body {
   color: #fff;          /* Make icon white */
   transform: translateY(-5px); 
 }
+
+
+/* Icon default state */
+.icon-tilted {
+ 
+  transition: transform 0.2s ease-in-out;
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); */
+}
+
+/* When card is hovered */
+.card:hover .icon-tilted {
+  transform: rotate(8deg) scale(1.1); /* more tilt + zoom in */
+
+}
+
+
+.card-service:hover {
+  border: 2px solid #017c8a;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+
