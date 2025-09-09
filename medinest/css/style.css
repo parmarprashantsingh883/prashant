@@ -376,4 +376,7 @@ body {
   color: #00a6ad !important;
   background-color: #f8f9fa; /* optional */
 }
-
+.border100:hover {
+  border: 2px solid #00a6ad !important;
+  
+}
