@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivia sports</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        [class*="col-"] {
+            width: 100%;
+        }
+
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        /* Header Styles */
+        .header1 {
+            background-color: #090909;
+            padding: 10px;
+            text-align: center;
+            color: whitesmoke;
+            font-weight: lighter;
+            font-size: 14px;
+        }
+
+        .header2 {
+            background-color: whitesmoke;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: auto;
+            min-height: 63px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 100px;
+            padding: 5px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-grow: 1;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 580;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: black;
+            font-size: 14px;
+        }
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .icon i {
+            color: #000;
+            font-weight: 600;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .icon i:hover {
+            color: #e76a30;
+            transform: scale(1.2);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Main Banner */
+        .main img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Sports Cards Container */
+        .container {
+            background-image: url('/images/logo_shaded_cropped.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 450px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 50px 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: whitesmoke;
+            color: #000;
+            transition: transform 0.3s ease;
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            min-width: 180px;
+            max-width: 220px;
+            flex: 1;
+        }
+
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .title {
+            background-color: transparent;
+            color: rgb(143, 36, 36);
+            height: 50px;
+            font-size: 24px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(245, 245, 245, 0.9);
+        }
+
+        /* Product Sections */
+        .container2 {
+            min-height: 350px;
+            background-color: whitesmoke;
+            display: flex;
+            padding: 40px 20px;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .iteam1 {
+            flex: 1;
+            min-width: 250px;
+            max-width: 400px;
+        }
+
+        .iteam1 h1 {
+            font-size: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .iteam1 p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .iteam1 a {
+            font-size: 20px;
+            font-weight: bolder;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .iteam1 a:hover {
+            color: #e76a30;
+        }
+
+        .iteam2, .iteam3, .iteam4 {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            text-align: center;
+        }
+
+        .iteam2 img, .iteam3 img, .iteam4 img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .iteam2 img:hover, .iteam3 img:hover, .iteam4 img:hover {
+            transform: scaleX(-1);
+        }
+
+        /* Banner Section */
+        .cont3 {
+            display: flex;
+            gap: 30px;
+            padding: 60px 20px;
+            background-color: whitesmoke;
+            margin-top: 100px;
+        }
+
+        .cont3 img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Arrivals Section */
+        .arrivals {
+            background-color: #000;
+            padding: 70px 30px;
+            text-align: left;
+            margin-bottom: 50px;
+        }
+
+        .arrivals span {
+            font-size: 40px;
+            padding: 10px 20px;
+            font-weight: bolder;
+            color: rgb(5, 5, 5);
+            background-color: red;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 5px;
+            width: 100%;
+            background-color: red;
+        }
+
+        .arrivals h1 {
+            color: aliceblue;
+            font-size: 80px;
+            line-height: 0.8;
+            margin: 20px 0;
+        }
+
+        .arrivals a {
+            text-decoration: none;
+            border: 2px solid whitesmoke;
+            padding: 15px 25px;
+            color: aliceblue;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .arrivals2 {
+            background-color: #791212;
+            display: flex;
+            margin-bottom: 50px;
+            gap: 10px;
+            padding: 20px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .a1, .a2, .a3, .a4 {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+        }
+
+        .a1 img, .a2 img, .a3 img, .a4 img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        /* Impact Banner */
+        .impact-banner {
+            background-image: url('/images/impact-banner-desktop.webp');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 275px;
+            margin-bottom: 60px;
+        }
+
+        /* Logos Section */
+        .heading {
+            font-size: 35px;
+            text-align: center;
+            font-weight: bolder;
+            font-family: 'Montserrat', sans-serif;
+            margin: 40px 0;
+        }
+
+        .logoes {
+            min-height: 200px;
+            background-color: whitesmoke;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .logo1 {
+            height: 126px;
+            width: 126px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .logo1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Videos Section */
+        .videos {
+            display: flex;
+            min-height: 400px;
+            justify-content: center;
+            background-color: whitesmoke;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        video {
+            border-radius: 20px;
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        .footer1 {
+            background-color: #000;
+            padding: 30px 20px;
+            color: whitesmoke;
+        }
+
+        .footer1 h2, .footer1 h3 {
+            margin-bottom: 20px;
+        }
+
+        .footer1 p {
+            margin-bottom: 10px;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            max-width: 300px;
+            height: 40px;
+            background-color: #423f3f;
+            border: none;
+            color: whitesmoke;
+            border-bottom: 2px solid white;
+            padding: 0 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            height: 40px;
+            background-color: #f01010;
+            border: none;
+            color: whitesmoke;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+
+        .contact {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact i {
+            font-size: 30px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .contact i:hover {
+            color: rgb(249, 243, 243);
+            transform: scale(1.3);
+        }
+
+        .footer2 {
+            background-color: #000;
+            padding: 20px;
+            color: whitesmoke;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer2 img {
+            height: 57px;
+            width: 90px;
+        }
+
+        .line {
+            margin: 0;
+            height: 3px;
+            width: 100%;
+            background-color: #f01010;
+            border: none;
+        }
+
+        /* Responsive Media Queries */
+        @media screen and (max-width: 992px) {
+            .hamburger {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: whitesmoke;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            .header2 {
+                position: relative;
+            }
+
+            .container {
+                justify-content: center;
+            }
+
+            .card {
+                margin: 10px;
+                min-width: 200px;
+            }
+
+            .iteam1 h1 {
+                font-size: 40px;
+            }
+
+            .arrivals h1 {
+                font-size: 60px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .header1 {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .logo img {
+                height: 50px;
+                width: 80px;
+            }
+
+            .container {
+                padding: 30px 15px;
+                min-height: auto;
+            }
+
+            .card {
+                min-width: 160px;
+                margin: 10px 0;
+            }
+
+            .card img {
+                height: 250px;
+            }
+
+            .title {
+                font-size: 20px;
+                height: 45px;
+            }
+
+            .container2 {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .iteam1 {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .iteam1 h1 {
+                font-size: 36px;
+            }
+
+            .iteam2, .iteam3, .iteam4 {
+                min-width: 250px;
+                margin-bottom: 20px;
+            }
+
+            .cont3 {
+                flex-direction: column;
+                padding: 30px 15px;
+                gap: 20px;
+            }
+
+            .arrivals {
+                text-align: center;
+                padding: 40px 20px;
+            }
+
+            .arrivals span {
+                font-size: 30px;
+            }
+
+            .arrivals h1 {
+                font-size: 50px;
+            }
+
+            .arrivals2 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .a1, .a2, .a3, .a4 {
+                min-width: 250px;
+                margin-bottom: 15px;
+            }
+
+            .impact-banner {
+                height: 200px;
+            }
+
+            .logoes {
+                gap: 20px;
+            }
+
+            .logo1 {
+                height: 100px;
+                width: 100px;
+            }
+
+            .videos {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            video {
+                width: 100%;
+                max-width: 400px;
+                margin-bottom: 15px;
+            }
+
+            .footer2 {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .header1 {
+                font-size: 11px;
+                padding: 5px;
+            }
+
+            .logo img {
+                height: 45px;
+                width: 70px;
+            }
+
+            .icon {
+                gap: 15px;
+            }
+
+            .icon i {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 20px 10px;
+            }
+
+            .card {
+                min-width: 140px;
+            }
+
+            .card img {
+                height: 200px;
+            }
+
+            .title {
+                font-size: 16px;
+                height: 40px;
+            }
+
+            .iteam1 h1 {
+                font-size: 28px;
+            }
+
+            .iteam1 p {
+                font-size: 16px;
+            }
+
+            .iteam1 a {
+                font-size: 16px;
+            }
+
+            .arrivals span {
+                font-size: 24px;
+            }
+
+            .arrivals h1 {
+                font-size: 40px;
+            }
+
+            .a1 img, .a2 img, .a3 img, .a4 img {
+                height: 250px;
+            }
+
+            .impact-banner {
+                height: 150px;
+            }
+
+            .logo1 {
+                height: 80px;
+                width: 80px;
+            }
+
+            .heading {
+                font-size: 28px;
+            }
+
+            video {
+                height: 250px;
+            }
+
+            .footer1 {
+                padding: 20px 15px;
+                text-align: center;
+            }
+
+            input[type="email"], input[type="submit"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .contact {
+                justify-content: center;
+            }
+
+            .cont3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* center align on large and small */
+  gap: 20px; /* spacing between items */
+  margin: 20px auto;
+}
+
+.cont3 .col-6 {
+  flex: 1 1 48%;   /* 2 per row (like col-6) */
+  max-width: 48%;
+}
+
+.cont3 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Tablet & Mobile */
+@media (max-width: 992px) {
+  .cont3 .col-6 {
+    flex: 1 1 100%;   /* full width */
+    max-width: 100%;
+  }
+}
+
+        }
+     
+
+
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-12 header1">
+            <header>
+                <p>Get 15% Off on purchases above ₹2500 or Get 30% Off on purchases above ₹5000</p>
+            </header>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 header2">
+            <div class="logo">
+                <img src="/images/Nivia-Logo-Black-SVG_2_1.svg" alt="">
+            </div>
+            <nav id="menu">
+                <a href="index.html">ALL SPORTS</a>
+                <a href="appereal.html">APPAREL</a>
+                <a href="footwear.html">FOOTWEAR</a>
+                <a href="ContactUs">FITNESS</a>
+                <a href="MUSCLE">MUSCLE SPORTS</a>
+                <a href="accessories">ACCESSORIES</a>
+                <a style="color: red;" href="cart">OFFERS</a>
+                <a href="club.html">CLUB</a>
+            </nav>
+            <div class="icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="hamburger" onclick="document.getElementById('menu').classList.toggle('show')">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 main">
+            <img src="/images/Pickleball_Hompage_Banner_Web_1.webp" alt="">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="col-2 card">
+                <a href="badmintion.html">
+                    <img src="/images/Badminton_251319b7-7ae9-4e12-ae73-63e2480456bb (1).webp" alt="Badminton">
+                </a>
+                <div class="title">Badminton</div>
+            </div>
+
+            <div class="col-2 card">
+                <a href="basketbal.html">
+                    <img src="/images/Basketball_a6f2b8c0-f842-48df-8b53-1f3896df5704.webp" alt="">
+                </a>
+                <div class="title">Basketball</div>
+            </div>
+
+            <div class="col-2 card">
+                <a href="football.htm">
+                    <img src="/images/football.webp" alt="">
+                </a>
+                <div class="title">Football</div>
+            </div>
+
+            <div class="col-2 card">
+                <a href="vollyball.html">
+                    <img src="/images/Volleyball_7016e73d-aa21-4a7b-9434-32ba920ec172.jpg" alt="">
+                </a>
+                <div class="title">Volleyball</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 container2">
+            <div class="col-3 iteam1">
+                <h1>Best Sellers</h1>
+                <p>Sports Gear, Footwear & Accessories</p>
+                <a href="">EXPLORE ALL</a>
+            </div>
+            <div class="col-3 iteam2">
+                <img src="/images/shous.webp" alt="">
+                <span style="font-size: 15px; text-align: center;">Safari Men's Football Shoes</span><br>
+                <span style="color: rgb(214, 14, 14);">₹1,499</span>
+            </div>
+            <div class="col-3 iteam3">
+                <img src="images/shous2.webp" alt="">
+                <span style="font-size: 15px; text-align: center;">Nivia Criks 1000-2.0 cricket shoes</span><br>
+                <span style="color: rgb(214, 14, 14);">₹27,49</span>
+            </div>
+            <div class="col-3 iteam4">
+                <img src="/images/shous3.webp" alt="">
+                <span style="font-size: 15px; text-align: center;">Nivia Dagger Mens Football Studs</span><br>
+                <span style="color: rgb(214, 14, 14);">₹1799</span> <del>₹1799</del><span>10% off</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 container2">
+            <div class="col-3 iteam1">
+                <h1>Clearance</h1>
+            </div>
+            <div class="col-3 iteam2">
+                <img src="/images/shoues4.webp" alt="">
+                <span style="font-size: 15px; text-align: center;">Safari Men's Football Shoes</span><br>
+                <span style="color: rgb(214, 14, 14);">₹1,499</span>
+            </div>
+            <div class="col-3 iteam3">
+                <img src="images/shoues5.webp" alt="">
+                <span style="font-size: 15px; text-align: center;">Nivia Criks 1000-2.0 cricket shoes</span><br>
+                <span style="color: rgb(214, 14, 14);">₹27,49</span>
+            </div>
+            <div class="col-3 iteam4">
+                <img src="/images/shoes6.webp" alt="">
+                <span style="font-size: 15px; text-align: center;">Nivia Dagger Mens Football Studs</span><br>
+                <span style="color: rgb(214, 14, 14);">₹1799</span> <del>₹1799</del><span>10% off</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="cont3">
+            <div class="col-6">
+                <img src="/images/Rule_The_Court-10oct24.webp" alt="">
+            </div>
+            <div class="col-6">
+                <img src="/images/DOMINATE_THE_PITCH-10oct24.webp" alt="">
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-5 arrivals">
+            <span>NEW</span>
+            <h2 class="section-title">Best Sellers</h2>
+            <h1>ARRIVALS</h1>
+            <a href="">EXPLORE</a>
+        </div>
+
+        <div class="col-7 arrivals2">
+            <div class="a1">
+                <img src="/images/Nitro_New_Arrival.webp" alt="">
+            </div>
+            <div class="a2">
+                <img src="/images/Skyrush.webp" alt="">
+            </div>
+            <div class="a3">
+                <img src="/images/Powerstrike_4.0.webp" alt="">
+            </div>
+            <div class="a4">
+                <img src="/images/Street_Art_400x563_8d1f06d0-bbc6-4377-a69c-a354f95bc268.webp" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="impact-banner"></div>
+        </div>
+    </div>
+
+    <p class="heading">Our Association</p>
+    <div class="row">
+        <div class="col-12">
+            <div class="logoes">
+                <div class="logo1">
+                    <img src="/images/ATKMohunBagan_club-newlogo (1).webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/ChennaiyinFC_clublogo1.webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/RealKashmirFC_club-logo1.webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/Churchill_club-logo1.webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/JamshedpurFC_club-logo1.webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/SreenidhiDeccanFC_club-logo1.webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/Bhutan_club-logo1.webp" alt="">
+                </div>
+                <div class="logo1">
+                    <img src="/images/ATKMohunBagan_club-newlogo (1).webp" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="heading">Follow Us On <i style="font-size: 40px;" class="fa-brands fa-instagram"></i></p>
+    <div class="row">
+        <div class="col-12">
+            <div class="videos">
+                <video src="/images/1.mp4" autoplay muted loop playsinline></video>
+                <video src="/images/2.mp4" autoplay muted loop playsinline></video>
+                <video src="/images/3.mp4" autoplay muted loop playsinline></video>
+                <video src="/images/4.mp4" autoplay muted loop playsinline></video>
+                <video src="/images/5.mp4" autoplay muted loop playsinline></video>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3 footer1">
+            <h2 style="color: aliceblue;">#MoveUp by signing up</h2>
+            <input type="email" placeholder="Enter your Email">
+            <input type="submit">
+            <hr>
+            <div class="contact">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-square-x-twitter"></i>
+            </div>
+        </div>
+        <div class="col-3 footer1">
+            <h3>COMPANY INFORMATION</h3>
+            <p>About Us</p>
+            <p>Contact</p>
+            <p>Terms And Conditions</p>
+            <p>Privacy Policy</p>
+            <p>Exchange & Return Policy</p>
+            <p>Track Order</p>
+            <p>Blogs</p>
+            <p>Catalogues</p>
+            <p>CSR Policy</p>
+        </div>
+        <div class="col-3 footer1">
+            <h3>NIVIA AFFILIATIONS</h3>
+            <p>AIFF</p>
+            <p>ISL</p>
+            <p>Bhutan Football Federation</p>
+            <p>Srilankan Football Federation</p>
+            <p>CFI</p>
+            <p>VFI</p>
+        </div>
+        <div class="col-3 footer1">
+            <h3>CONNECT WITH US</h3>
+            <p><i class="fa-solid fa-phone"></i>+91-9115497521</p>
+            <p><i class="fa-solid fa-envelope"></i>contact@nivia.in</p>
+            <p>(Mon-Sat, 10:00am till 6:00pm)</p>
+        </div>
+    </div>
+
+    <hr class="line">
+    <div class="row">
+        <div class="col-12 footer2">
+            <img src="/images/nivia-logo-white-svg.svg" alt="">
+            <p>© 2024 Niviasports, All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+
+</html>

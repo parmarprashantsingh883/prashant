@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Changer Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      text-align: center;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    #colorBox {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      background-color: lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 10px;
+    }
+
+    .buttons {
+      margin: 10px 0;
+    }
+
+    .buttons button {
+      margin: 0 5px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .input-color {
+      margin-top: 10px;
+    }
+
+    .input-color input {
+      padding: 6px;
+      width: 120px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .input-color button {
+      padding: 6px 12px;
+      margin-left: 5px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Color Changer Panel</h2>
+
+    <div id="colorBox">Box</div>
+
+    <div class="buttons">
+      <button onclick="boxred()" style="background-color: red; color: #fff;">Red</button>
+      <button onclick="boxblue()" style="background-color: blue; color: #fff;">Blue</button>
+      <button onclick="boxgreen()" style="background-color: green; color: #fff;">Green</button>
+    </div>
+
+    <div class="input-color">
+      <input id="text" type="text" placeholder="Enter color name or hex">
+      <button onclick="textcolor()">Set Color</button>
+    </div>
+  </div>
+  <script>
+    function boxred(){
+   document.getElementById('colorBox').style.backgroundColor="red";
+    }
+      function boxblue(){
+   document.getElementById('colorBox').style.backgroundColor="blue";
+    }
+      function boxgreen(){
+   document.getElementById('colorBox').style.backgroundColor="green";
+    }
+    function textcolor(){
+      let val=document.getElementById('text').value;
+      document.getElementById('colorBox').style.color = val; 
+
+    }
+
+  </script>
+
+</body>
+</html>

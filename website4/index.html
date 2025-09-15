@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Nivia sports</title>
+    
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -19,43 +20,47 @@
 
 <body>
     <div class="row">
-        <div class="col-12 header1">
-            <header>
-                <p>Get 15% Off on purchases above ₹2500 or Get 30% Off on purchases above ₹5000</p>
-            </header>
-        </div>
+    <div class="col-12 header1">
+      <header>
+        <p>Get 15% Off on purchases above ₹2500 or Get 30% Off on purchases above ₹5000</p>
+      </header>
     </div>
-    <div class="row">
-        <div class="col-12 header2">
-            <div class="logo">
-                <img src="/images/Nivia-Logo-Black-SVG_2_1.svg" alt="">
-            </div>
-            <nav>
-                <a href="index.html">ALL SPORTS</a>
-                <a href="appereal.html">APPAREL</a>
-                <a href="footwear.html">FOOTWEAR</a>
-                <a href="ContactUs">FITNESS</a>
-                <a href="MUSCLE"> MUSCLE SPORTS</a>
-                <a href="accessories">ACCESSORIES</a>
-                <a style="color: red;" href="cart">OFFERS </a>
-                <a href="club.html">CLUB</a>
-            </nav>
-            <div class="icon">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <i class="fa-regular fa-user"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-        </div>
-    </div>
+  </div>
 
-    <div class="row">
-        <div class="col-12 main">
-            <img src="/images/Pickleball_Hompage_Banner_Web_1.webp" alt="">
-        </div>
+  <div class="row">
+    <div class="col-12 header2">
+      <div class="logo">
+        <img src="/images/Nivia-Logo-Black-SVG_2_1.svg" alt="">
+      </div>
+      <nav id="menu">
+        <a href="index.html">ALL SPORTS</a>
+        <a href="appereal.html">APPAREL</a>
+        <a href="footwear.html">FOOTWEAR</a>
+        <a href="ContactUs">FITNESS</a>
+        <a href="MUSCLE"> MUSCLE SPORTS</a>
+        <a href="accessories">ACCESSORIES</a>
+        <a style="color: red;" href="cart">OFFERS </a>
+        <a href="club.html">CLUB</a>
+      </nav>
+      <div class="icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+      <div class="hamburger" onclick="document.getElementById('menu').classList.toggle('show')">
+        <i class="fa-solid fa-bars"></i>
+      </div>
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 main">
+      <img src="/images/Pickleball_Hompage_Banner_Web_1.webp" alt="">
+    </div>
+  </div>
     <div class="row">
-        <div class="col-12 container">
-            <div class="card">
+<div class="container" style="display: flex; justify-content: space-evenly;">
+            <div class=" col-2 card">
                 <a href="badmintion.html">
                     <img src="/images/Badminton_251319b7-7ae9-4e12-ae73-63e2480456bb (1).webp" alt="Badminton">
                 </a>
@@ -63,37 +68,37 @@
                 <div class="title">Badminton</div>
             </div>
 
-            <div class="card">
+            <div class=" col-2 card">
                 <a href="basketbal.html">
                 <img src="/images/Basketball_a6f2b8c0-f842-48df-8b53-1f3896df5704.webp" alt="">
                 </a>
                 <div class="title">Basketball</div>
             </div>
-            <div class="card">
+            <!-- <div class=" col-2 card">
                 <a href="turf.html">
                 <img src="/images/Turf_a0f3876a-9b32-4464-9889-27bebd8e0f6b.jpg" alt="">
                 <div class="title">truf</div>
                 </a>
-            </div>
-            <div class="card">
+            </div> -->
+            <div class="col-2 card">
                 <a href="football.htm">
                 <img src="/images/football.webp" alt="">
             </a>
                 <div class="title">Football</div>
             </div>
-            <div class="card">
+            <div class=" col-2 card">
                 <a href="vollyball.html">
                 <img src="/images/Volleyball_7016e73d-aa21-4a7b-9434-32ba920ec172.jpg" alt="">
                 </a>
                 <div class="title">vollyball</div>
             
             </div>
-            <div class="card">
+            <!-- <div class=" col-2 card">
                 <a href="running.html">
                 <img src="/images/Running_cc8978ba-c4ff-4842-9376-4ba476b94365.jpg" alt="">
                 </a>
                 <div class="title">Running</div>
-            </div>
+            </div> -->
 
         </div>
     </div>

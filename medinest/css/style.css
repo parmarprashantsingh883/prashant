@@ -19,12 +19,18 @@ body {
   font-family: 'Ubuntu', sans-serif;
   color: black;
   font-weight: 700;
-
-
+}
+.b-shadow {
+  box-shadow: 
+    -15px 0px 30px rgba(0, 166, 173, ),  /* left */
+     15px 0px 30px rgba(0, 166, 173, ),  /* right */
+     0px 20px 30px rgba(0, 166, 173, );   /* bottom */
+  border-radius: 1.5rem; /* same as Bootstrap .rounded-5 */
 }
 
+
 .mark {
-  color: #00a6ad;
+  color: rgb(0, 166, 173);
   /* teal color */
   background-color: transparent;
 }
@@ -137,6 +143,7 @@ body {
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 25px #00a6ad(0, 0, 0, 0.2);
+  border-top: 2px solid #00a6ad ;
 }
 
 .my-btn:hover {
@@ -380,3 +387,4 @@ body {
   border: 2px solid #00a6ad !important;
   
 }
+
