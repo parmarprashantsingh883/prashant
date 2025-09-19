@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProServices - Professional Services</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            background-color:aliceblue; 
+            min-height: 100vh;
+        }
+
+        /* Navigation Container */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0.1rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container with max-width and responsive padding */
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 3rem);
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 2rem;
+            min-height: 70px;
+        }
+
+        /* Logo Section */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-1px);
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #4285f4 0%, #1a73e8 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+        }
+
+        .logo-text {
+            font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+            font-weight: 600;
+            color: #2d3748;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: clamp(1rem, 3vw, 2.5rem);
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            /* background: linear-gradient(135deg, #4285f4, #1a73e8); */
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover {
+            color: #1a73e8;
+            background: rgba(66, 133, 244, 0.05);
+        }
+
+        .nav-links a:hover::before {
+            width: 80%;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+            color: white;
+            text-decoration: none;
+            padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(1.2rem, 3vw, 2rem);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(237, 137, 54, 0.3);
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(237, 137, 54, 0.4);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            background: none;
+            border: none;
+            justify-self: end;
+        }
+
+        .mobile-toggle:hover {
+            background: rgba(66, 133, 244, 0.1);
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #4a5568;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                grid-template-columns: auto 1fr auto;
+                gap: 1rem;
+            }
+
+            .mobile-toggle {
+                display: flex;
+                grid-column: 3;
+            }
+
+            .cta-button {
+                display: none;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                transform: translateY(-20px);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links a {
+                padding: 1rem;
+                border-radius: 12px;
+                text-align: center;
+                width: 100%;
+            }
+
+            .mobile-toggle {
+                display: flex;
+                grid-column: 3;
+            }
+
+            .cta-button {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Container Queries for even more responsive control */
+        @container (max-width: 600px) {
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+
+        /* Smooth scrolling and focus styles */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-links a:focus,
+        .cta-button:focus {
+            outline: 2px solid #4285f4;
+            outline-offset: 2px;
+        }
+
+        /* Loading animation for smooth transitions */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navbar {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* Content area for demo */
+        .content {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container " >
+            <!-- Logo Section -->
+            <a href="#" class="logo">
+                <div class="logo-icon">P</div>
+                <span class="logo-text">ProServices</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <!-- CTA Button -->
+            <a href="#join" class="cta-button">Join Us</a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+                <a href="#join" class="cta-button">Join Us</a>
+            </button>
+        </div>
+    </nav>
+    <main>
+        <div class="container-fluid py-4" style="background-color: rgba(11,64,137,255);">
+            <div class="container  my-5 p-4">
+                <div class="row g-3">
+                    <div class="col-6 text-start ps-3 lh-1 text-light">
+                        <h1 class="text-capitalize display-3 fw-bold">Professional <br>
+                            services for
+                        </h1>
+                        <h1 class="text-capitalize display-3 fw-bold lh-1" style="color: rgba(13, 110, 253, 0.95);
+           text-shadow: 0 0 3px rgba(13, 110, 253, 0.4);">
+                            growing <br> businesses
+                        </h1>
+
+                        </h1>
+                        <p class="text-capitalize fs-5 fw-bold lh-base">
+                            We deliver cutting-edge web development, strategic marketing, and compelling content that
+                            drives results, transforming your vision and business into reality.
+                        </p>
+                        <div class="buttons d-flex gap-3 mt-5">
+                            <button type="button"
+                                class="btn btn-warning btn-modern d-flex justify-content-center align-items-center px-4 py-2">
+                                Get Started <i class="bi bi-arrow-right ms-2"></i>
+                            </button>
+                            <button type="button"
+                                class="btn btn-outline-primary btn-outline-modern d-flex justify-content-center align-items-center px-4 py-2">
+                                Contact Us
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="col-6">
+                        <div class="img p-5">
+                            <img src="/images/istockphoto-1423550628-612x612.jpg "
+                                class="img-fluid rounded-4 object-fit-cover" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    
+
+    <script>
+        // Mobile menu functionality
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on links
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;   /* hide everything */
+      }
+      #print-section, #print-section * {
+        visibility: visible;  /* show only this */
+      }
+      #print-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      #hello{
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>My Website</h1>
+  <p>This should not be printed</p>
+
+  <div id="print-section">
+    <h2>Bill</h2>
+    <p>Total: $200</p>
+  </div>
+  <div id="hello">
+    here we gonna use the print function
+  </div>
+
+  <button onclick="window.print()">Print Bill</button>
+</body>
+</html>
