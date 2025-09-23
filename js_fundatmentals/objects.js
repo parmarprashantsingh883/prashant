@@ -1,33 +1,41 @@
-let persone={
-    name:"prashnat",
-    age: 21,
-    isstudent: true
-
+const car = {
+  brand: "Toyota",
+  model: "Fortuner",
+  year: 2024,
+  engine: {
+    type: "Diesel",
+    capacity: "2.8L",
+    horsepower: 201,
+    transmission: {
+      type: "Automatic",
+      gears: 6
+    }
+  },
+  features: {
+    safety: {
+      airbags: 6,
+      abs: true,
+      tractionControl: true
+    },
+    comfort: {
+      seats: "Leather",
+      ac: "Dual-zone",
+      sunroof: true
+    }
+  },
+  owners: [
+    {
+      name: "Rajesh Kumar",
+      since: 2024,
+      location: { city: "Delhi", country: "India" }
+    },
+    {
+      name: "Aman Verma",
+      since: 2025,
+      location: { city: "Mumbai", country: "India" }
+    }
+  ]
 };
-console.log(persone.name)
-console.log(persone["name"])
-console.log(persone);
+console.log(car.owners[0].location.city);
 
-let obj=new Object();
-obj.Name="prashnat";
-obj.Age=21;
-obj.ISstudent=false
-console.log(obj)
- obj3=Object.assign(persone,obj)
-
-//  console.log(obj3)
-
-
- /////////////////////////////////
-
- const obj1 = {1: "a", 2: "b"}
-const obj2 = {3: "a", 4: "b"}
-const obj4 = {5: "a", 6: "b"}
-
-const obj3 = { obj1, obj2 }
-console.log(obj3);
-// const obj3 = Object.assign({}, obj1, obj2, obj4)
-
-// const obj3 = {...obj1, ...obj2}
-// console.log(obj3);
 
