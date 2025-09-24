@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="demo" placeholder="Enter your choice (1,2,3)">
+    <button onclick="run()">Submit</button>
+    <script>
+        class MyClass1 {
+            x = function () {
+                console.log("This is the first class");
+            }
+        }
+        class MyClass2 extends MyClass1 {
+            y = function () {
+                console.log("This is the second class");
+            }
+        }
+        class MyClass3 extends MyClass2 {
+            z = function () {
+                console.log("This is the third class");
+            }
+        }
+        var obj = new MyClass3()
+        function run() {
+            let val = parseInt(document.getElementById('demo').value);
+
+            switch (val) {
+                case 1:
+
+                    obj1.x();
+                    break;
+
+                case 2:
+
+                    obj.y();
+                    break;
+
+                case 3:
+
+                    obj.z();
+                    break;
+
+                default:
+                     console.log("Nothing there");
+            }
+        }
+    </script>
+</body>
+</html>
