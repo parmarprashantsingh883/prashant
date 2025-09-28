@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Form - Tecocraft</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            margin: -30px -30px 30px -30px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success {
+            color: green;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-field {
+            border-color: red !important;
+            background-color: #fff5f5 !important;
+        }
+
+        .success-field {
+            border-color: green !important;
+            background-color: #f5fff5 !important;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .button-clear {
+            background-color: #6c757d;
+        }
+
+        .button-clear:hover {
+            background-color: #545b62;
+        }
+
+        .button-view {
+            background-color: #28a745;
+        }
+
+        .button-view:hover {
+            background-color: #1e7e34;
+        }
+
+        .message {
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .message-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .header {
+                margin: -20px -20px 20px -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Customer Support Form</h1>
+            <p>Tell us about your vehicle issue</p>
+        </div>
+
+        <div id="message" class="message"></div>
+
+        <form id="customerForm">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" placeholder="Enter your full name">
+                <div class="error" id="nameError">Name must be at least 3 characters</div>
+                <div class="success" id="nameSuccess">✓ Valid name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="text" id="phone" placeholder="Enter 10-digit phone number">
+                <div class="error" id="phoneError">Phone must be exactly 10 digits</div>
+                <div class="success" id="phoneSuccess">✓ Valid phone number</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                <div class="error" id="emailError">Please enter a valid email</div>
+                <div class="success" id="emailSuccess">✓ Valid email</div>
+            </div>
+
+            <div class="form-group">
+                <label for="vehicle">Vehicle Type *</label>
+                <select id="vehicle">
+                    <option value="">Select your vehicle</option>
+                    <option value="Car">Car</option>
+                    <option value="Motorcycle">Motorcycle</option>
+                    <option value="Truck">Truck</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Van">Van</option>
+                    <option value="Other">Other</option>
+                </select>
+                <div class="error" id="vehicleError">Please select a vehicle type</div>
+                <div class="success" id="vehicleSuccess">✓ Vehicle selected</div>
+            </div>
+
+            <div class="form-group">
+                <label for="complaint">Your Issue/Complaint *</label>
+                <textarea id="complaint" placeholder="Describe your issue (minimum 10 characters)"></textarea>
+                <div class="error" id="complaintError">Complaint must be at least 10 characters</div>
+                <div class="success" id="complaintSuccess">✓ Valid complaint</div>
+            </div>
+
+            <button type="button" class="button" onclick="submitForm()">Submit</button>
+            <button type="button" class="button button-clear" onclick="clearForm()">Clear</button>
+            <button type="button" class="button button-view" onclick="viewSubmissions()">View All</button>
+        </form>
+    </div>
+
+    <script>
+        // Check if name is valid
+        function checkName() {
+            var name = document.getElementById('fullName').value;
+            var nameField = document.getElementById('fullName');
+            var errorMsg = document.getElementById('nameError');
+            var successMsg = document.getElementById('nameSuccess');
+            
+            if (name.length == 0) {
+                nameField.className = '';
+                errorMsg.style.display = 'none';
+                successMsg.style.display = 'none';
+                return false;
+            }
+            
+            if (name.length >= 3) {
+                nameField.className = 'success-field';
+                errorMsg.style.display = 'none';
+                successMsg.style.display = 'block';
+                return true;
+            } else {
+                nameField.className = 'error-field';
+                errorMsg.style.display = 'block';
+                successMsg.style.display = 'none';
+                return false;
+            }
+        }
+
+        // Check if phone is valid
+        function checkPhone() {
+            var phone = document.getElementById('phone').value;
+            var phoneField = document.getElementById('phone');
+            var errorMsg = document.getElementById('phoneError');
+            var successMsg = document.getElementById('phoneSuccess');
+            
+            // Remove all non-numbers
+            var numbers = phone.replace(/[^0-9]/g, '');
+            
+            if (phone.length == 0) {
+                phoneField.className = '';
+                errorMsg.style.display = 'none';
+                successMsg.style.display = 'none';
+                return false;
+            }
+            
+            if (numbers.length == 10) {
+                phoneField.className = 'success-field';
+                errorMsg.style.display = 'none';
+                successMsg.style.display = 'block';
+                return true;
+            } else {
+                phoneField.className = 'error-field';
+                errorMsg.style.display = 'block';
+                successMsg.style.display = 'none';
+                return false;
+            }
+        }
+
+        // Check if email is valid
+        function checkEmail() {
+            var email = document.getElementById('email').value;
+            var emailField = document.getElementById('email');
+            var errorMsg = document.getElementById('emailError');
+            var successMsg = document.getElementById('emailSuccess');
+            
+            if (email.length == 0) {
+                emailField.className = '';
+                errorMsg.style.display = 'none';
+                successMsg.style.display = 'none';
+                return false;
+            }
+            
+            // Simple email check
+            if (email.indexOf('@') > 0 && email.indexOf('.') > email.indexOf('@')) {
+                emailField.className = 'success-field';
+                errorMsg.style.display = 'none';
+                successMsg.style.display = 'block';
+                return true;
+            } else {
+                emailField.className = 'error-field';
+                errorMsg.style.display = 'block';
+                successMsg.style.display = 'none';
+                return false;
+            }
+        }
+
+        // Check if vehicle is selected
+        function checkVehicle() {
+            var vehicle = document.getElementById('vehicle').value;
+            var vehicleField = document.getElementById('vehicle');
+            var errorMsg = document.getElementById('vehicleError');
+            var successMsg = document.getElementById('vehicleSuccess');
+            
+            if (vehicle == '') {
+                vehicleField.className = 'error-field';
+                errorMsg.style.display = 'block';
+                successMsg.style.display = 'none';
+                return false;
+            } else {
+                vehicleField.className = 'success-field';
+                errorMsg.style.display = 'none';
+                successMsg.style.display = 'block';
+                return true;
+            }
+        }
+
+        // Check if complaint is valid
+        function checkComplaint() {
+            var complaint = document.getElementById('complaint').value;
+            var complaintField = document.getElementById('complaint');
+            var errorMsg = document.getElementById('complaintError');
+            var successMsg = document.getElementById('complaintSuccess');
+            
+            if (complaint.length == 0) {
+                complaintField.className = '';
+                errorMsg.style.display = 'none';
+                successMsg.style.display = 'none';
+                return false;
+            }
+            
+            if (complaint.length >= 10) {
+                complaintField.className = 'success-field';
+                errorMsg.style.display = 'none';
+                successMsg.style.display = 'block';
+                return true;
+            } else {
+                complaintField.className = 'error-field';
+                errorMsg.style.display = 'block';
+                successMsg.style.display = 'none';
+                return false;
+            }
+        }
+
+        // Show message to user
+        function showMessage(text, type) {
+            var messageBox = document.getElementById('message');
+            messageBox.innerHTML = text;
+            messageBox.className = 'message message-' + type;
+            messageBox.style.display = 'block';
+            
+            if (type == 'success') {
+                setTimeout(function() {
+                    messageBox.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        // Check if all fields are valid
+        function validateAll() {
+            var nameOk = checkName();
+            var phoneOk = checkPhone();
+            var emailOk = checkEmail();
+            var vehicleOk = checkVehicle();
+            var complaintOk = checkComplaint();
+            
+            return nameOk && phoneOk && emailOk && vehicleOk && complaintOk;
+        }
+
+        // Save data to browser storage
+        function saveData() {
+            var data = {
+                id: new Date().getTime(),
+                name: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                vehicle: document.getElementById('vehicle').value,
+                complaint: document.getElementById('complaint').value,
+                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString()
+            };
+            
+            var savedData = localStorage.getItem('submissions');
+            var allData = [];
+            
+            if (savedData) {
+                allData = JSON.parse(savedData);
+            }
+            
+            allData.push(data);
+            localStorage.setItem('submissions', JSON.stringify(allData));
+            return true;
+        }
+
+        // Submit the form
+        function submitForm() {
+            if (validateAll()) {
+                if (saveData()) {
+                    showMessage('Thank you! Your form has been submitted successfully.', 'success');
+                    clearForm();
+                } else {
+                    showMessage('Sorry, there was an error saving your data.', 'error');
+                }
+            } else {
+                showMessage('Please fix all errors before submitting.', 'error');
+            }
+        }
+
+        // Clear the form
+        function clearForm() {
+            document.getElementById('customerForm').reset();
+            
+            // Reset all field styles
+            var fields = ['fullName', 'phone', 'email', 'vehicle', 'complaint'];
+            for (var i = 0; i < fields.length; i++) {
+                document.getElementById(fields[i]).className = '';
+                document.getElementById(fields[i].replace(/([A-Z])/g, function(x) { return x.toLowerCase(); }) + 'Error').style.display = 'none';
+                document.getElementById(fields[i].replace(/([A-Z])/g, function(x) { return x.toLowerCase(); }) + 'Success').style.display = 'none';
+            }
+            
+            document.getElementById('message').style.display = 'none';
+        }
+
+        // Go to view page
+        function viewSubmissions() {
+            window.open('view.html', '_blank');
+        }
+
+        // Setup real-time checking
+        function setupValidation() {
+            document.getElementById('fullName').addEventListener('input', checkName);
+            document.getElementById('fullName').addEventListener('blur', checkName);
+            
+            document.getElementById('phone').addEventListener('input', checkPhone);
+            document.getElementById('phone').addEventListener('blur', checkPhone);
+            
+            document.getElementById('email').addEventListener('input', checkEmail);
+            document.getElementById('email').addEventListener('blur', checkEmail);
+            
+            document.getElementById('vehicle').addEventListener('change', checkVehicle);
+            document.getElementById('vehicle').addEventListener('blur', checkVehicle);
+            
+            document.getElementById('complaint').addEventListener('input', checkComplaint);
+            document.getElementById('complaint').addEventListener('blur', checkComplaint);
+        }
+
+        // Start everything when page loads
+        window.onload = function() {
+            setupValidation();
+        };
+    </script>
+</body>
+</html>
