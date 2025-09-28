@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+JavaScript Objects
+A javaScript object is an entity having state and behavior (properties and method). 
+For example: car, pen, bike, chair, glass, keyboard, monitor etc.
+
+JavaScript is an object-based language. Everything is an object in JavaScript.
+
+JavaScript is template based not class based. Here, we don't create class to 
+get the object. But, we direct create objects.
+
+Creating Objects in JavaScript
+There are 3 ways to create objects.
+
+
+1)By object literal
+
+2)By creating instance of Object directly (using new keyword)
+3)By using an object constructor (using new keyword)
+
+*/
+
+// ====================================================1 way=============================================================
+
+// 1)By object literal
+//  let myinfo={
+//    name:"prashnat",
+//    age:21,
+//    region:"india",
+//    city:"ahmedabad",
+//    isstudent:true
+//  }
+//  document.write(myinfo.name+"<br> "+myinfo.age+"<br> "+myinfo.region+"<br> "+myinfo.city+"<br> "+myinfo.isstudent+"<br>")
+// // console.log(myinfo);
+// for(key in myinfo){
+//     document.write( key+" ==",myinfo[key]+"<br>")
+// }
+// let user=[
+//     {id:2,name:"prashnat",city:"delhi",salaey:20000},
+//     {id:1,name:"aayush",city:"mumbai",salaey:40000},
+//     {id:3,name:"ram",city:"ahm",salaey:30000},
+//     {id:4,name:"suraj",city:"surat",salaey:50000}
+// ]
+// // document.write(user[0].id+"<br>"+user[1].name+"<br>"+user[3].salaey+"<br>"+user[0].city)
+// for(data of user){
+//     document.write( data.id+"<br>"+data.name+"<br>"+data.city+"<br>"+data.salaey+"<br>" )
+// }
+
+
+//2) By creating instance of Object directly (using new keyword)==================================================================
+
+// var emp=new Object();
+// emp.id=1
+// emp.name="prashant"
+// emp.age=21
+// emp.isstudent=false
+// document.write(emp.id+" "+emp.name+" "+emp.age+" "+emp.isstudent+" <br>")
+// for(key in emp){
+//     document.write(key+" "+emp[key])
+// }
+
+
+// ===========================3) By using an object constructor (using new keyword)===================
+function emp(id,name,age,salary){
+    this.userid=id;
+    this.username=name;
+    this.userage=age;
+    this.usersalary=salary
+}
+let obj=new emp(1,"prashant",21,500000)
+    let obj2=new emp(2,"aayushii",21,600000)
+document.write(obj.userid+" "+obj.username+" "+obj.userage+" "+obj.usersalary+"<br> ")
+document.write(obj2.userid+" "+obj2.username+" "+obj2.userage+" "+obj2.usersalary+" ")
+
+
+    </script>
+</body>
+</html>

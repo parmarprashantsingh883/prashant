@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    
+                // url / api format json data fake : https://jsonplaceholder.typicode.com/
+                // now convorting api to json and than object data
+
+
+                // fetch('https://jsonplaceholder.typicode.com/posts.')
+                // .then((res)=>res.json())
+                // .then((myobj)=>console.log(myobj))
+                // .catch((error) => console.error("API Error:", error)); 
+                
+
+
+                // error handling with api
+
+                fetch("https://jsonplaceholder.typicode.com/posts") // wrong URL
+  .then((res) => {
+    if (!res.ok) {
+      // Handle HTTP error (like 404, 500)
+      throw new Error(`HTTP Error! Status: ${res.status}`);
+    }
+    return res.json();
+  })
+  .then((data) => {
+    console.log("Data received:", data);
+  })
+  .catch((error) => {
+    // Handles both network errors and thrown errors
+    console.error("Fetch error:", error.message);
+  });
+
+</script>
+   </script> 
+</body>
+</html>

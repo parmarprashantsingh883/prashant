@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+  <script>
+    // Mock API fetch (here using local data)
+    const data = [
+      { id: 1, name: "Prashant", email: "prashant@example.com" },
+      { id: 2, name: "Aman", email: "aman@example.com" },
+      { id: 3, name: "Ravi", email: "ravi@example.com" }
+    ];
+
+    function createTable(data) {
+      // create table
+      const table = document.createElement("table");
+      table.border = "1";
+      table.style.borderCollapse = "collapse";
+      table.style.width = "100%";
+      table.style.textAlign = "left";
+
+      // create header row
+      const thead = document.createElement("thead");
+      const headerRow = document.createElement("tr");
+
+      const headers = Object.keys(data[0]); // ["id", "name", "email"]
+      headers.forEach(head => {
+        const th = document.createElement("th");
+        th.innerText = head.toUpperCase();
+        th.style.padding = "8px";
+        th.style.backgroundColor = "#333";
+        th.style.color = "white";
+        headerRow.appendChild(th);
+      });
+
+      thead.appendChild(headerRow);
+      table.appendChild(thead);
+
+      // create body
+      const tbody = document.createElement("tbody");
+
+      data.forEach(item => {
+        const row = document.createElement("tr");
+        headers.forEach(key => {
+          const td = document.createElement("td");
+          td.innerText = item[key];
+          td.style.padding = "8px";
+          row.appendChild(td);
+        });
+        tbody.appendChild(row);
+      });
+
+      table.appendChild(tbody);
+
+      return table;
+    }
+
+    // render table
+    document.body.appendChild(createTable(data));
+  </script>
+</body>
+
+</body>
+</html>
