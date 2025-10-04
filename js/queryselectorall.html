@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+  <li class="fruit">Apple</li>
+  <li class="fruit">Banana</li>
+  <li class="fruit">Cherry</li>
+</ul>
+<script>
+    // Select all elements with class "fruit"
+const fruits = document.querySelectorAll(".fruit");
+
+console.log(fruits); 
+// Output: NodeList(3) [li.fruit, li.fruit, li.fruit]
+
+// Access elements individually
+// console.log(fruits[0].textContent); // "Apple"
+// console.log(fruits[1].textContent); // "Banana"
+
+// Loop through all elements
+fruits.forEach(fruit => {
+  console.log(fruit.style="color:red");
+});
+// Output:
+// Apple
+// Banana
+// Cherry
+
+</script>
+</body>
+</html>

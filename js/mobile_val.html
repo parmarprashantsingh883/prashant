@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validation Example</title>
+</head>
+<body>
+  <input onkeyup="val()" id="mno" type="tel" placeholder="Enter mobile number" maxlength="10">
+  <button onclick="return valchck()">Submit</button><br><br>
+  <span id="msg" style="color: red;"></span>
+
+  <script>
+    function valchck() {
+      var mno = document.getElementById('mno').value;
+      var msg = document.getElementById('msg');
+
+      if (mno.trim() === "") {
+        msg.innerHTML = " Please enter the mobile number";
+        return false;
+      }
+      if (!/^[0-9]{10}$/.test(mno)) {
+        msg.innerHTML = " Mobile number must be exactly 10 digits";
+        return false;
+      }
+
+alert("submitted")
+     
+    }
+
+    function val() {
+      var mno = document.getElementById('mno').value;
+      var msg = document.getElementById('msg');
+
+     
+      if (!/^[0-9]*$/.test(mno)) {
+        msg.innerHTML = " Only digits are allowed (no alphabets or symbols)";
+        return false;
+      }
+
+      
+    
+      
+    }
+  </script>
+</body>
+</html>
