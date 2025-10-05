@@ -42,6 +42,11 @@ const fruits = ["Apple", "Banana"];
 const newFruits = ["Orange", ...fruits, "Mango"];
 console.log(newFruits); // ["Orange", "Apple", "Banana", "Mango"]
 
+const user = { name: "Prashant", address: { city: "Ahmedabad", state: "Gujarat" } };
+const updatedUser = { ...user, address: { ...user.address, city: "Mumbai" } };
+console.log(updatedUser);
+// { name: "Prashant", address: { city: "Mumbai", state: "Gujarat" } }
+
     </script>
 </body>
 </html>
