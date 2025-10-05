@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//     1️⃣ What is Spread Operator?
+
+// The spread operator allows you to expand an iterable (like an array or object) into individual elements.
+
+// Used to copy, merge, or pass values easily.
+
+// Works on arrays, objects, and function calls.
+
+// Syntax:
+
+// ...iterable
+
+// 🧩 2️⃣ Spread Operator with Arrays
+// Example 1 – Copy Array
+{
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1];  // Copy of arr1
+console.log(arr2);       // [1, 2, 3]
+
+
+// // ✅ Why not just do arr2 = arr1?
+
+// Without ..., it copies reference, not values.
+
+// ... creates a new array, so changes to arr2 don’t affect arr1.
+
+arr2.push(4);
+console.log(arr1); // [1, 2, 3]
+console.log(arr2); // [1, 2, 3, 4]
+
+Example 2 – Merge Arrays
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+const merged = [...arr1, ...arr2];
+console.log(merged); // [1, 2, 3, 4]
+
+Example 3 – Pass Array as Function Arguments
+const numbers = [5, 10, 15];
+console.log(Math.max(...numbers)); // 15
+
+
+// ...numbers spreads the array into Math.max(5, 10, 15)
+
+// 🧩 3️⃣ Spread Operator with Objects (ES6)
+// Example 1 – Copy Object
+const obj1 = { a: 1, b: 2 };
+const obj2 = { ...obj1 };
+console.log(obj2); // { a: 1, b: 2 }
+
+// Example 2 – Merge Objects
+const obj1 = { a: 1 };
+const obj2 = { b: 2 };
+const merged = { ...obj1, ...obj2 };
+console.log(merged); // { a: 1, b: 2 }
+
+// Example 3 – Update Object
+const user = { name: "Prashant", age: 22 };
+const updatedUser = { ...user, age: 23 };
+console.log(updatedUser); // { name: "Prashant", age: 23 }
+
+
+// ✅ Very useful for immutable updates in React or state management.
+
+// 🧩 4️⃣ Difference Between Rest and Spread
+// Feature	Spread	Rest
+// Syntax	...	...
+// Use	Expands array/object into elements	Collects multiple values into array
+// Example	[...arr1, ...arr2]	function sum(...nums)
+// Example – Rest vs Spread Together
+function add(a, b, ...others) {
+  console.log(a, b);       // first 2 values
+  console.log(others);     // rest collected into array
+}
+
+const nums = [1, 2, 3, 4, 5];
+add(...nums); // spread expands array to arguments
+
+}
+// Output:
+
+// 1 2
+// [3, 4, 5]
+
+
+// ...nums → spread array into individual arguments
+
+// ...others → collects remaining arguments as array
+
+// 🧩 5️⃣ Real-Life Examples
+// Example 1 – Adding New Items to Array
+const fruits = ["Apple", "Banana"];
+const newFruits = ["Orange", ...fruits, "Mango"];
+console.log(newFruits); // ["Orange", "Apple", "Banana", "Mango"]
+
+// Example 2 – Updating Nested Objects
+const user = { name: "Prashant", address: { city: "Ahmedabad", state: "Gujarat" } };
+const updatedUser = { ...user, address: { ...user.address, city: "Mumbai" } };
+console.log(updatedUser);
+// { name: "Prashant", address: { city: "Mumbai", state: "Gujarat" } }
+
+
+// ✅ Spread operator is extremely powerful in copying, merging, updating without mutating the original.
+</script>
+</body>
+</html>
