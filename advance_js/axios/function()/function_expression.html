@@ -1,0 +1,56 @@
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+<!-- 
+    🧩 1️⃣ What is a Function Expression?
+
+A Function Expression means:
+
+You create a function and store it in a variable (or constant).
+
+That’s why it’s called an expression — because it’s part of an expression (something that produces a value). -->
+
+    <!-- 🧠 Example:
+const greet = function() {
+  console.log("Hello, World!");
+};
+
+greet(); // Output: Hello, World!
+
+✅ Key Point:
+
+Here function() { ... } is anonymous (it has no name).
+You store it in greet, so you can call it later like a variable.
+
+
+| Feature        | Function Declaration                   | Function Expression            |
+| -------------- | -------------------------------------- | ------------------------------ |
+| Syntax         | `function sayHi() {}`                  | `const sayHi = function() {};` |
+| Hoisted?       | ✅ Yes (you can call before definition) | ❌ No (must define first)       |
+| Name           | Named                                  | Often anonymous                |
+| When evaluated | At compile time                        | At runtime (when code runs)    | -->
+    
+<script>
+    // Function Declaration
+sayHello(); // ✅ Works before definition
+function sayHello() {
+  console.log("Hello!");
+}
+
+// Function Expression
+sayHi(); // ❌ Error: Cannot access 'sayHi' before initialization
+const sayHi = function() {
+  console.log("Hi!");
+};
+
+
+</script>
+ </body>
+ </html>
