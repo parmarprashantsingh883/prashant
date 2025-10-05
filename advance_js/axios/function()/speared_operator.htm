@@ -25,6 +25,19 @@ const updatedUser = { ...user, age: 23 };
 console.log(updatedUser); // { name: "Prashant", age: 23 }
 
 }
+// | Feature | Spread                             | Rest                                |
+// | ------- | ---------------------------------- | ----------------------------------- |
+// | Syntax  | `...`                              | `...`                               |
+// | Use     | Expands array/object into elements | Collects multiple values into array |
+// | Example | `[...arr1, ...arr2]`               | `function sum(...nums)`             |
+
+function add(a, b, ...others) {
+  console.log(a, b);       // first 2 values
+  console.log(others);     // rest collected into array
+}
+
+const nums = [1, 2, 3, 4, 5];
+add(...nums); // spread expands array to arguments
 
     </script>
 </body>
