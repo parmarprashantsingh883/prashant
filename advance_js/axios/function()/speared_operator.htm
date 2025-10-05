@@ -38,6 +38,9 @@ function add(a, b, ...others) {
 
 const nums = [1, 2, 3, 4, 5];
 add(...nums); // spread expands array to arguments
+const fruits = ["Apple", "Banana"];
+const newFruits = ["Orange", ...fruits, "Mango"];
+console.log(newFruits); // ["Orange", "Apple", "Banana", "Mango"]
 
     </script>
 </body>
