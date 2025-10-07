@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 🔹================ Example 4 – Copy & Merge Objects========================================================================
+
+        
+//       const person = { name: "Prashant", age: 22 };
+// const details = { city: "Ahmedabad", country: "India" };
+// const fullProfile = { ...person, ...details };
+// const updated={...person,name:"prashnat parmar",age:21}
+// console.log(fullProfile);
+// console.log(updated);
+
+
+// ==================🔹 Example 5 – Update Object with Spread=======================================================
+
+
+// const user = { name: "Prashant", age: 22 ,city:"delhi"};
+// const updated = { ...user, age: 21,city:"ahmedabad" }; // overwrite age
+// console.log(updated);
+
+// ============================🧩 5️⃣ Using Both Together (Powerful Example)================================
+
+// function add(a, b, ...others) {
+//   console.log("First two:", a, b);
+//   console.log("Others:", others);
+// }
+
+// const nums = [1, 2, 3, 4, 5,10,20,30,40];
+// add(...nums);
+
+
+//===========================6️⃣ Real-Life Example (Copy and Update User Profile)=====================
+const arr1=[10,20,30]
+const arr2=[50,60,40]
+const arr3=[...arr1,...arr2]
+console.log(arr3);
+
+
+
+
+    </script>
+</body>
+</html>
