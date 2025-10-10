@@ -73,26 +73,38 @@
 //  console.log(`the substraction is: ${obj.sub() }`);
 //  console.log(`the mutliplication is:${obj.mult( )}`);
 
-class product{
-    constructor(iteam_name,price,quantity=1){
-        this.iteam_name=iteam_name;
-        this.price=price
-        this.quantity=quantity
-    }
-    cals(){
-        let total=this.price*this.quantity
-        return total;
-        // console.log(total);
+// class product{
+//     constructor(iteam_name,price,quantity=1){
+//         this.iteam_name=iteam_name;
+//         this.price=price
+//         this.quantity=quantity
+//     }
+//     cals(){
+//         let total=this.price*this.quantity
+//         return total;
+//         // console.log(total);
         
+//     }
+// }
+// let p=new product("cap",250,2)
+// let p2=new product("bottle",500)
+// console.log(`The price of ${p.iteam_name} ${p.quantity} is ${p.cals()}`);
+// console.log(`The price of ${p2.iteam_name} ${p2.quantity} is ${p2.cals()}`);
+
+class Message {
+    constructor(name) {
+        this.name = name;
+
+        // Method defined inside constructor
+        this.greet = function() {
+            console.log(`Hello, this is ${this.name}`);
+        };
     }
 }
-let p=new product("cap",250,2)
-let p2=new product("bottle",500)
-console.log(`The price of ${p.iteam_name} ${p.quantity} is ${p.cals()}`);
-console.log(`The price of ${p2.iteam_name} ${p2.quantity} is ${p2.cals()}`);
 
+let m = new Message("Prashant");
+m.greet();  // Output: Hello, this is Prashant
 
-    
     </script>
 </body>
 </html>
