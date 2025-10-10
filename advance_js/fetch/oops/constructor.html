@@ -91,19 +91,46 @@
 // console.log(`The price of ${p.iteam_name} ${p.quantity} is ${p.cals()}`);
 // console.log(`The price of ${p2.iteam_name} ${p2.quantity} is ${p2.cals()}`);
 
-class Message {
-    constructor(name) {
-        this.name = name;
+// class Message {
+//     constructor(name) {
+//         this.name = name;
 
-        // Method defined inside constructor
-        this.greet = function() {
-            console.log(`Hello, this is ${this.name}`);
-        };
+//         // Method defined inside constructor
+//         this.greet = function() {
+//             console.log(`Hello, this is ${this.name}`);
+//         };
+//     }
+// }
+
+// let m = new Message("Prashant");
+// m.greet();  // Output: Hello, this is Prashant
+
+class BankAccount {
+    constructor(accountName, balance) {
+        this.accountName = accountName;
+        this.balance = balance;
+    }
+
+    deposit(amount) {
+        this.balance += amount;
+        console.log(`Deposited: ${amount}, New Balance: ${this.balance}`);
+    }
+
+    withdraw(amount) {
+        if (amount > this.balance) {
+            console.log("Insufficient funds");
+        } else {
+            this.balance -= amount;
+            console.log(`Withdrawn: ${amount}, New Balance: ${this.balance}`);
+        }
+    }
+
+    showBalance() {
+        console.log(`Current Balance: ${this.balance}`);
     }
 }
-
-let m = new Message("Prashant");
-m.greet();  // Output: Hello, this is Prashant
+ let bal=new BankAccount("prahant",2000)
+console.log(bal.deposit(1000));
 
     </script>
 </body>
