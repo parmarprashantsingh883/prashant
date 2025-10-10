@@ -74,8 +74,23 @@
 //  console.log(`the mutliplication is:${obj.mult( )}`);
 
 class product{
-    constructor
+    constructor(iteam_name,price,quantity=1){
+        this.iteam_name=iteam_name;
+        this.price=price
+        this.quantity=quantity
+    }
+    cals(){
+        let total=this.price*this.quantity
+        return total;
+        // console.log(total);
+        
+    }
 }
+let p=new product("cap",250,2)
+let p2=new product("bottle",500)
+console.log(`The price of ${p.iteam_name} ${p.quantity} is ${p.cals()}`);
+console.log(`The price of ${p2.iteam_name} ${p2.quantity} is ${p2.cals()}`);
+
 
     
     </script>
