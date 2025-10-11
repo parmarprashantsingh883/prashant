@@ -87,11 +87,23 @@
 
 
 //===============================================================================================================================
-const product = { name: "Laptop", price: 55000, quantity: 5 };
-for( key in product){
-    console.log(key,product[key]);
+// const product = { name: "Laptop", price: 55000, quantity: 5 };
+// for( key in product){
+//     console.log(key,product[key]);
+    
+// }
+const inventory = { pens: 100, pencils: 50, notebook: 75, name: "Stationery" };
+let count=0;
+for(key in inventory){
+   if( typeof inventory[key]==="number"){
+    count+=inventory[key];
+
+   }
+    console.log(`${key} ${inventory[key]} the total of ${count}`);
+    
     
 }
+
 
 
     </script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         1️⃣ What is forEach()?
+
+// forEach() is an array method that allows you to iterate over each element of an array.
+
+// Unlike for or for...of, you don’t need an index (unless you want it).
+
+// Syntax:
+
+// array.forEach(function(element, index, array) {
+  // code to execute for each element
+// });
+
+
+// \array.forEach(function(element, index, array) {
+//   // code to execute for each element
+// });
+// Parameters:
+
+// element → current item in the array
+
+// index → (optional) index of the element
+
+// array → (optional) the original array itself
+
+
+const numbers = [10, 20, 30];
+
+numbers.forEach(function(num) {
+  console.log(num);
+});
+
+const fruits = ["Apple", "Banana", "Mango"];
+
+fruits.forEach((fruit, index) => {
+  console.log(`Index: ${index}, Fruit: ${fruit}`);
+});
+
+
+    </script>
+</body>
+</html>
