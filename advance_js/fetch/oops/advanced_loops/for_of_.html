@@ -66,24 +66,32 @@
 
 
 //======================================================================================================================
-const products = [
-  { name: "Laptop", price: 55000, quantity: 5 },
-  { name: "Phone", price: 25000, quantity: 10 },
-  { name: "Tablet", price: 15000, quantity: 7 },
-  { name: "Headphones", price: 5000, quantity: 20 },
-  { name: "Monitor", price: 12000, quantity: 8 }
-];
+// const products = [
+//   { name: "Laptop", price: 55000, quantity: 5 },
+//   { name: "Phone", price: 25000, quantity: 10 },
+//   { name: "Tablet", price: 15000, quantity: 7 },
+//   { name: "Headphones", price: 5000, quantity: 20 },
+//   { name: "Monitor", price: 12000, quantity: 8 }
+// ];
 
-let grandtotal = 0;
+// let grandtotal = 0;
 
-console.log("All Products with Total per Product:");
-for (let pro of products) {
-  let productTotal = pro.price * pro.quantity;
-  console.log(`${pro.name} - ₹${pro.price} x ${pro.quantity} = ₹${productTotal}`);
-  grandtotal += productTotal;
+// console.log("All Products with Total per Product:");
+// for (let pro of products) {
+//   let productTotal = pro.price * pro.quantity;
+//   console.log(`${pro.name} - ₹${pro.price} x ${pro.quantity} = ₹${productTotal}`);
+//   grandtotal += productTotal;
+// }
+
+// console.log(`\nGrand Total of all products = ₹${grandtotal}`);
+
+
+//===============================================================================================================================
+const product = { name: "Laptop", price: 55000, quantity: 5 };
+for( key in product){
+    console.log(key,product[key]);
+    
 }
-
-console.log(`\nGrand Total of all products = ₹${grandtotal}`);
 
 
     </script>
