@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1. for...of Loop (ES6)
+//🔹 Purpose:
+
+//Iterates over iterable objects, like arrays, strings, Maps, Sets, and typed arrays.
+
+//🔹 Syntax:
+//for (let element of iterable) {
+  // code block
+//}
+// let numbers=[10,20,30,40,50]
+// for(num of numbers){
+//     console.log(num);
+    
+// }
+
+
+//======================================================================================================================
+// let myname="prashant singh"
+// for( let ch of myname){
+//     console.log(`char of myname=>${ch}`);
+
+//======================================================================================================================
+
+// let numbers=[10,20,30,40,50,]
+// var sum=0
+// for(num of numbers){
+//     sum+=num;
+  
+// }
+//   console.log(`the sum of array elements is${sum}`);
+    
+
+//==========================================================================================================================
+// let numbers=[10,22,33,55,66,77]
+
+// for( let num of numbers){
+//     if(num%2==0){
+//         console.log(`even numbers:${num}`)
+        
+//     }
+
+// }
+
+// const products = [
+//   {  quantity:5,name: "Laptop", price: 55000 },
+//   {  quantity:5,name: "Phone", price: 25000 },
+//   {  quantity:5,name: "Tablet", price: 15000 },
+//   {  quantity:5,name: "Headphones", price: 5000 }
+// ];
+
+// // 1️⃣ Print all products
+// console.log("All Products:");
+// for (let product of products) {
+//   console.log(`${product.name} — ₹${product.price}- quantity:=>${product.quantity}`);
+// }
+
+
+//======================================================================================================================
+const products = [
+  { name: "Laptop", price: 55000, quantity: 5 },
+  { name: "Phone", price: 25000, quantity: 10 },
+  { name: "Tablet", price: 15000, quantity: 7 },
+  { name: "Headphones", price: 5000, quantity: 20 },
+  { name: "Monitor", price: 12000, quantity: 8 }
+];
+
+let grandtotal = 0;
+
+console.log("All Products with Total per Product:");
+for (let pro of products) {
+  let productTotal = pro.price * pro.quantity;
+  console.log(`${pro.name} - ₹${pro.price} x ${pro.quantity} = ₹${productTotal}`);
+  grandtotal += productTotal;
+}
+
+console.log(`\nGrand Total of all products = ₹${grandtotal}`);
+
+
+    </script>
+</body>
+</html>
