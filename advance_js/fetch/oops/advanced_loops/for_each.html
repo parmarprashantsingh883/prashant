@@ -55,23 +55,36 @@
 // cites.forEach((city, index) => {
 //   console.log(`Index: ${index} → City: ${city}`);
 // });
-const numbers = [10, 20, 30, 40, 50];
-let total=0
-numbers.forEach((num)=>{
-  total+=num;
-  console.log(total);
-  
-}
-)
 
-const numbers = [10, 20, 30, 40, 50];
-let total = 0;
+// const numbers = [10, 20, 30, 40, 50];
+// let total = 0;
 
-numbers.forEach(num => {
-  total += num;
+// numbers.forEach(num => {
+//   total += num;
+// });
+
+// console.log(`Total sum: ${total}`);
+
+// const numbers = [1, 2, 3, 4, 5];
+// numbers.forEach(num=>{
+//      const sq= num*num
+//  console.log(sq);
+// }
+// )
+const products = [
+  { name: "Laptop", price: 55000, quantity: 5 },
+  { name: "Phone", price: 25000, quantity: 10 },
+  { name: "Tablet", price: 15000, quantity: 7 },
+  { name: "Headphones", price: 5000, quantity: 20 }
+];
+
+products.forEach(product => {
+  document.write(JSON.stringify(product) + "<br>");
 });
 
-console.log(`Total sum: ${total}`);
+  
+
+
 
  
 

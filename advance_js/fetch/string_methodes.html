@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string_methodes</title>
+</head>
+<body>
+    <script>
+//         1️⃣ length → (Property, not a function)
+
+// Returns the total number of characters in the string.
+
+
+// let str = "Prashant";
+// console.log(str.length); // 8
+//========================================================================================================================================
+
+// 🔤 2️⃣ toUpperCase() and toLowerCase()
+
+// Change the case of the string.
+// let name = "Prashant Singh";
+
+// console.log(name.toUpperCase()); // PRASHANT SINGH
+// console.log(name.toLowerCase()); // prashant singh
+//======================================================================================================================================
+// ✂️ 3️⃣ slice(start, end)
+// 👉 Description:
+
+// Extracts a part of a string based on index.
+
+// start → starting index (included)
+
+// end → ending index (excluded)
+
+// Can use negative values (counting from end)
+
+// let str = "JavaScript";
+// console.log(str.slice(0, 4));  // "Java"
+// console.log(str.slice(4));     // "Script" “Start from index 4 and take everything to the end.”
+// console.log(str.slice(-6));    // "Script"  “Start from the -6th character from the end, and go till the end.”
+
+
+// 🧠 Real use:
+
+// To display only first few characters of product name or message preview.
+//==================================================================================================================================
+// (4) .substring(start, end)
+
+// Almost same as .slice(),
+// but:
+
+// Doesn’t support negative indexes
+
+// Swaps start/end if you give them in reverse order
+// let str = "JavaScript";
+// console.log(str.substring(1, 4)); // "ava"
+// console.log(str.substring(4, 1)); // also "ava" (auto swapped)
+// console.log(str.substring(-3));   // "JavaScript" (negatives → 0)
+//================================================================================================================================
+//b) Trimming Whitespace
+// let str = "   Hello   ";
+// console.log(str.trim());      // "Hello"
+// console.log(str.trimStart()); // "Hello   "
+// console.log(str.trimEnd());   // "   Hello"
+
+
+// Theory:
+// Useful when processing user input to remove accidental spaces at the start or end.
+
+
+    </script>
+</body>
+</html>
