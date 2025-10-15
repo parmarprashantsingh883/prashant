@@ -7,6 +7,242 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- 1. What is an Array in JavaScript?
+
+An array is a special type of object used to store multiple values in a single variable.
+
+Arrays can hold:
+
+Numbers
+
+Strings
+
+Boolean
+
+Objects
+
+Even other arrays (nested arrays)
+2. How to Create Arrays
+
+Using square brackets (most common)
+
+let colors = ["Red", "Green", "Blue"];
+
+
+Using Array constructor
+
+let numbers = new Array(1, 2, 3, 4);
+let emptyArray = new Array(5); // creates array with length 5 but empty
+
+
+Using Array.of()
+
+let letters = Array.of("A", "B", "C");
+
+
+Using Array.from()
+
+let str = "hello";
+let chars = Array.from(str); // ["h", "e", "l", "l", "o"] -->
+
+
+<script>
+
+// for loop::
+
+
+//     let numbers = [100, 200, 300, 400, 500, 600, 450];
+// for (let i = 0; i < numbers.length; i++) {
+//     document.write(numbers[i] + "<br>"); // <br> to show in separate lines
+//     console.log(numbers[i]); // logs the value, not the index
+// }
+//============================================================================================================================
+
+//  deleting the elements 
+
+
+//   let numbers = [100, 200, 300, 400, 500, 600, 450];
+// numbers.pop()
+// console.log(numbers);
+
+
+//   let numbers = [100, 200, 300, 400, 500, 600, 450];
+// numbers.shift()
+// console.log(numbers);
+
+
+//ADDING THE ELEMENTS
+
+//   let numbers = [100, 200, 300, 400, 500, 600, 450];
+//     numbers.push("apple")
+//     console.log(numbers);
+
+
+//   let numbers = [100, 200, 300, 400, 500, 600, 450];
+// numbers.unshift(`kiwi`)
+// console.log(numbers);
+
+//=====================================================================================
+
+
+
+//=======================================================================================
+
+
+
+
+// 1️⃣ slice()
+
+// Purpose:
+
+// Extracts a portion of an array into a new array.
+
+// Does not modify the original array.
+
+// Syntax:
+
+// array.slice(start, end)
+
+
+// Parameters:
+
+// start → index to start extraction (inclusive)
+
+// end → index to end extraction (exclusive, not included)
+
+// If end is omitted, it slices till the end of the array.
+
+// Supports negative indexes (counts from the end).
+
+// Example 1: Basic slice
+
+// let numbers = [10, 20, 30, 40, 50];
+// let newNumbers = numbers.slice(1, 4);
+
+// console.log(newNumbers);  // [20, 30, 40]
+// console.log(numbers);     // [10, 20, 30, 40, 50] → original array unchanged
+
+
+// //Example 2: Using negative index
+
+// let arr = [1, 2, 3, 4, 5];
+// console.log(arr.slice(-3)); // [3, 4, 5] → last 3 elements
+
+
+// ✅ Key points for slice()
+
+// Returns a new array.
+
+// Original array is unchanged.
+
+// Negative indexes count from the end.
+
+  //✅====================================================================================✅
+  
+  
+  //========================================================================================
+
+
+//   2️⃣ splice()
+
+// Purpose:
+
+// Adds or removes elements from an array.
+
+// Modifies the original array.
+
+// Syntax:
+
+// array.splice(start, deleteCount, item1, item2, ...)
+
+
+// Parameters:
+
+// start → index to start changing the array
+
+// deleteCount → number of elements to remove (0 to not remove)
+
+// item1, item2, ... → elements to insert (optional)
+
+// Example 1: Remove elements
+
+// let numbers = [10, 20, 30, 40, 50];
+// let removed = numbers.splice(2, 2);  // start at index 2, remove 2 elements
+
+// console.log(removed); // [30, 40] → removed elements
+// console.log(numbers); // [10, 20, 50] → original array changed
+
+// Example 3: Replace elements
+
+// let numbers = [10, 20, 30, 40, 50];
+// numbers.splice(1, 3, 21, 31, 41); // start at 1, remove 3, insert 3 new elements
+
+// console.log(numbers); // [10, 21, 31, 41, 50]
+//================================================================================================================
+//================================================================================================================
+ 
+//  let fruit=["apple","kiw","banana","pineapple","orange"]
+//  let removed=fruit.pop()
+//  console.log(removed);
+//  console.log(fruit);\
+//==================================================================================================================== 
+//  let num=[10,20,30]
+//  num.push(25,35)
+//  console.log(num);
+//========================================================================================================
+// let colors=["red","blue","green","purple"]
+// let removed=colors.shift()
+// console.log(removed);
+// console.log(colors);
+//===========================================================================================================
+// 
+//===========================================================================================================
+// let cart = ["Shirt", "Pants", "Shoes"];
+// let remove=cart.pop()
+// console.log(remove);
+// cart.unshift("bread","milk")
+// console.log(cart);
+
+//==============================================================================================================
+// let todo=["workout","bath","gotready"]
+// let completed=todo.shift()
+// console.log(completed);
+// todo.unshift("gethome" ,"meetings")
+// console.log(todo);
+//==================================================================================================================
+
+
+// let messages = [
+//   "Hi!",
+//   "How are you?",
+//   "Are you coming today?",
+//   "Yes, on my way",
+//   "See you soon",
+//   "Bye!"
+// ];
+// let submes=messages.slice(-3)
+// console.log(submes);
+// console.log(messages);
+//=====================================================================================================================
+// let students = ["Alice", "Bob", "Charlie", "David", "Eva"];
+// let dropout=students.splice(1,2)
+// console.log(dropout);
+// let newstudent=students.splice(1,0,"aman","ram")
+// console.log(students);
+//======================================================================================================================
+
+
+ 
+
+
+
+
+
+
+ 
+
+ 
+
+</script>
 </body>
 </html>
