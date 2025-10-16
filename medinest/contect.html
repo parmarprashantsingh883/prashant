@@ -10,6 +10,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+   <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </head>
 
@@ -33,7 +38,7 @@
 <!-- Desktop Navigation (only on large screens) -->
 <ul class="list-inline d-none d-lg-flex gap-4 mb-0 ms-5 flex-grow-1 justify-content-center align-items-center">
   <li class="list-inline-item">
-    <a style="color: #00a6ad;" href="demo.html" class="text-decoration-none fs-6">Home</a>
+    <a style="color: #00a6ad;" href="index.html" class="text-decoration-none fs-6">Home</a>
   </li>
   <li class="list-inline-item"><a href="about.htm" class="text-dark fs-6 ps-1   ps-sm-0 text-decoration-none">About</a></li>
   <li class="list-inline-item"><a href="department.html" class="text-dark fs-6 ps-1   ps-sm-0 text-decoration-none">Department</a></li>
@@ -103,7 +108,7 @@
     </div>
     <div class="offcanvas-body">
       <ul class="list-unstyled">
-        <li><a href="demo.html" class="d-block py-2 text-dark text-decoration-none my-auto">Home</a></li>
+        <li><a href="index.html" class="d-block py-2 text-dark text-decoration-none my-auto">Home</a></li>
         <li><a href="about.htm" class="d-block py-2 text-dark text-decoration-none my-auto">About</a></li>
               <li><a href="department.html" class="d-block py-2 text-dark text-decoration-none my-auto">Department</a></li>
         <li><a href="service.html" class="d-block py-2 text-dark text-decoration-none my-auto">Services</a></li>
@@ -118,12 +123,10 @@
     <div class="container-fluid text-center my-3">
         <div class="row ">
             <div class="col-lg-12 justify-content-center align-items-center g-2 py-5 mb-5">
-                <h1>Doctors</h1>
-                <P>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur
-                    ut a odio
+                <h1>Contact</h1>
+                <P>OOdio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio
                 </P>
-                <P>voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum
-                    dolorem.</P>
+                <P>vvoluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</P>
             </div>
         </div>
     </div>
@@ -140,7 +143,7 @@
     </div>
     <div class="container px-3 my-5">
         <div class="row g-5">
-            <div class="col-4">
+            <div class="col-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0">
                 <div class="card text-center rounded-4 p-1 ">
                     <i class="bi bi-geo-alt fs-1 text-info icon-box3 i d-bloc mx-auto"></i>
                     <div class="card-body text-center">
@@ -156,7 +159,7 @@
 
 
             </div>
-            <div class="col-4">
+            <div class="col-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 <div class="card text-center rounded-4 p-1">
                     <i class="bi bi-telephone fs-1 text-info icon-box3 m-auto"></i>
                     <div class="card-body text-center">
@@ -172,7 +175,7 @@
 
 
             </div>
-            <div class="col-4">
+            <div class="col-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                 <div class="card text-center rounded-4 p-1">
                     <i class="bi bi-envelope fs-1 text-info icon-box3 mx-auto"></i>
                     <div class="card-body text-center">
@@ -193,15 +196,15 @@
     </div>
     <div class="container">
         <div class="row g-3">
-            <div class="col-6">
+            <div class="col-6"data-aos="fade-up" data-aos-duration="1000">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.1706210060647!2d72.76218087508582!3d22.833176179307017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e850633c43eed%3A0xc562ccbcbfa3cf4d!2sSiddhivinayak%20Ganpati%20Temple!5e0!3m2!1sen!2sin!4v1757061840166!5m2!1sen!2sin"
                     class="rounded-4" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="col-6 bg-white rounded-3 p-3 ">
+            <div class="col-6 bg-white rounded-3 p-3 "data-aos="fade-up" data-aos-duration="1000">
                 <div class="row g-3">
-                    <div class="col-6 ">
+                    <div class="col-6 " >
                         <input type="text" placeholder="your name"
                             class="rounded-3 w-100 p-2 border border-dark-subtle">
                     </div>
@@ -221,7 +224,7 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex justify-content-center gap-3 my-5">
+        <div class="d-flex justify-content-center gap-3 my-5" data-aos="zoom-in" data-aos-duration="1000">
             <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
             <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
             <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
@@ -311,6 +314,17 @@
       <p class="mb-0">&copy; 2025 <strong>MediNest</strong>. All Rights Reserved.</p>
     </div>
   </div>
+    <!-- Your footer section -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
+
 
 </body>
 
