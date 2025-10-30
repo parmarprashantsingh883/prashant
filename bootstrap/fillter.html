@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Filter Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .product {
+      display: none; /* Hide all items initially */
+    }
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body class="p-4">
+
+  <h2 class="text-center mb-4">🛍 Product Filter</h2>
+
+  <!-- Filter Buttons -->
+  <div class="text-center mb-4">
+    <button class="btn btn-outline-primary m-1" onclick="filterProducts('all')">All</button>
+    <button class="btn btn-outline-primary m-1" onclick="filterProducts('men')">Men</button>
+    <button class="btn btn-outline-primary m-1" onclick="filterProducts('women')">Women</button>
+    <button class="btn btn-outline-primary m-1" onclick="filterProducts('shoes')">Shoes</button>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="row g-4">
+    <div class="col-md-3 product men show">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150?text=Men+T-shirt" class="card-img-top">
+        <div class="card-body text-center">Men’s T-shirt</div>
+      </div>
+    </div>
+
+    <div class="col-md-3 product women show">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150?text=Women+Dress" class="card-img-top">
+        <div class="card-body text-center">Women’s Dress</div>
+      </div>
+    </div>
+
+    <div class="col-md-3 product shoes show">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150?text=Shoes" class="card-img-top">
+        <div class="card-body text-center">Shoes</div>
+      </div>
+    </div>
+
+    <div class="col-md-3 product men show">
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150?text=Men+Jeans" class="card-img-top">
+        <div class="card-body text-center">Men’s Jeans</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterProducts(category) {
+      let products = document.getElementsByClassName('product');
+      for (let i = 0; i < products.length; i++) {
+        products[i].classList.remove('show');
+        if (category === 'all' || products[i].classList.contains(category)) {
+          products[i].classList.add('show');
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

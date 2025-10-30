@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap + Media Query Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  /* For tablets (width ≤ 768px) */
+  @media (max-width: 768px) {
+    .row div {
+      font-size: 18px;
+      padding: 20px;
+    }
+  }
 
-    <title>Document</title>
+  /* For mobile (width ≤ 576px) */
+  @media (max-width: 576px) {
+    .row div {
+      font-size: 16px;
+      border-radius: 10px;
+    }
+  }
+</style>
+
 </head>
 <body>
-    <div class="container mt-3 mb-3">
-  <div class="row">
-    <div class="col bg-primary">Column 1</div>
-    <div class="col bg-success">Column 2</div>
-    <div class="col bg-danger">Column 3</div>
-      <div class="col bg-success">Column 4</div>
-        <div class="col bg-success">Column 5</div>
-      <div class="col bg-success">Column 6</div>
-        <div class="col bg-success">Column 7</div>
+  <div class="container mt-4">
+    <div class="row text-center">
+      <div class="col-md-4 col-sm-6 col-12 p-3 bg-primary text-white">Card 1</div>
+      <div class="col-md-4 col-sm-6 col-12 p-3 bg-success text-white">Card 2</div>
+      <div class="col-md-4 col-sm-6 col-12 p-3 bg-danger text-white">Card 3</div>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-4 bg-info">4 columns</div>
-  <div class="col-8 bg-warning">8 columns</div>
-</div>
-
-
 </body>
 </html>

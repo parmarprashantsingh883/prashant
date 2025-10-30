@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS (place inside <head>) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS Bundle (place before </body>) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <!-- <h1 id="title">good morning</h1>
+    <button onclick="change()">click here</button>
+    <script>
+   function  change(){
+let val=document.getElementById("title");
+val.innerText="helloo this is dom"
+val.style.color = val.style.color === "red" ? "blue" : "red";
+
+   }
+    </script> -->
+<!-- <p id="error"></p>
+<input id="name" type="name"><br>
+<button onclick="sent()">click here</button>
+<script>
+    function sent(){
+    let val=document.getElementById("name").value;
+   if (val.trim() === "") {
+
+       let msg = document.getElementById("error");
+msg.innerText = "Please enter the name!";
+msg.style.color = "red";
+
+    } else{
+         let msg = document.getElementById("error");
+     msg.innerText=`welcome ${val}`
+     msg.style.color="green"
+    }
+}
+</script>-->
+
+
+<!-- <button onclick="add()">add para</button>
+
+
+<script>
+    function add(){
+        let para=document.createElement("p")
+        para.innerText="this para created by the dom";
+        para.style.color="green"
+        document.body.appendChild(para)
+
+    }
+</script> -->
+<!-- <ul id="ullist"></ul>
+<button onclick="addlist()">add items</button>
+<script>
+     let count=1;
+    function addlist(){
+    
+    let li=document.createElement("li")
+    li.style.color=count%2===0 ?"red":"blue"
+    li.innerText=`item${count}`
+    document.getElementById("ullist").appendChild(li)
+   count++
+    }
+
+</script> -->
+<!-- <p class="para">this is the class</p> <br>
+<p class="para">this is the class</p> <br>
+<p class="para">this is the class</p> <br>
+<button onclick="chng()">change the text</button>
+<script>
+    function chng(){
+    let val=document.getElementsByClassName("para");
+    for( let elements of val){
+    elements.innerText="now this is changed✅"
+    elements.style.color="red"
+    }
+}
+</script> -->
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+  <li>Bootstrap</li>
+</ul>
+<button onclick="newlist()">change the list</button>
+<script>
+    function newlist(){
+        let newli=document.getElementsByTagName("li")
+        for( let val of newli){
+           val.style.fontWeight = "bold";
+            val.innerText+="✅"
+            val.style.color="red"
+        }
+    }
+
+</script>
