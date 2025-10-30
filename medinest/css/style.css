@@ -388,3 +388,61 @@ body {
   
 }
 
+.btn-teal {
+  background-color: #009ca8;
+  border: none;
+  transition: 0.3s;
+}
+.btn-teal:hover {
+  background-color: #007f88;
+}
+
+.search-box {
+  border: 1px solid #e0e0e0;
+}
+
+.input-group-text i {
+  color: #009ca8;
+  font-size: 1.1rem;
+}
+
+.form-control,
+.form-select {
+  height: 45px;
+  border-radius: 10px;
+}
+
+.search-box label {
+  color: #222;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .btn-teal {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+.cta-box {
+  background: linear-gradient(90deg, #009ca8 0%, #019fb2 100%);
+  border-radius: 25px;
+}
+
+.text-teal {
+  color: #009ca8 !important;
+}
+
+.btn-light:hover {
+  background-color: #f8f9fa;
+  color: #007c86 !important;
+}
+
+@media (max-width: 768px) {
+  .cta-box {
+    text-align: center;
+  }
+  .cta-buttons {
+    justify-content: center;
+  }
+}
+

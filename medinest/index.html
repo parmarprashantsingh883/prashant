@@ -659,16 +659,59 @@
 
 
 
-  <div class="container mt-5 mb-5">
-    <div class="row">
-      <div class="col-12">
-        <div class="card d-flex p-5">
-          <input type="search " class=" w-25 h-100">
+  <section class="doctor-search py-5">
+  <div class="container">
+    <form class="search-box p-4 shadow-sm rounded-4 bg-white">
+      <div class="row g-3 align-items-end">
+        <!-- Practitioner Name -->
+        <div class="col-md-4">
+          <label class="form-label fw-semibold">Practitioner Name</label>
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control border-start-0" placeholder="Search by name...">
+          </div>
+        </div>
 
+        <!-- Medical Specialty -->
+        <div class="col-md-4">
+          <label class="form-label fw-semibold">Medical Specialty</label>
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0"><i class="bi bi-plus-circle"></i></span>
+            <select class="form-select border-start-0">
+              <option selected>Select specialty</option>
+              <option>Cardiology</option>
+              <option>Dermatology</option>
+              <option>Neurology</option>
+              <option>Orthopedics</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="col-md-3">
+          <label class="form-label fw-semibold">Location</label>
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0"><i class="bi bi-geo-alt"></i></span>
+            <select class="form-select border-start-0">
+              <option selected>All locations</option>
+              <option>Mumbai</option>
+              <option>Delhi</option>
+              <option>Pune</option>
+              <option>Bangalore</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Search Button -->
+        <div class="col-md-1 text-center">
+          <button type="submit" class="btn btn-teal rounded-3 w-100 h-100">
+            <i class="bi bi-arrow-right text-white fs-5"></i>
+          </button>
         </div>
       </div>
-    </div>
+    </form>
   </div>
+</section>
 
 
   <div class="container">
