@@ -1,0 +1,15 @@
+<button id="btn">Click Me</button>
+
+<script>
+  const btn = document.getElementById("btn");
+
+  btn.addEventListener("click", function() {
+     btn.addEventListener("click", () => console.log("First function"));
+btn.addEventListener("click", () => console.log("Second function"));
+
+    
+  });
+  btn.addEventListener("click", () => console.log("First function"));
+btn.addEventListener("click", () => console.log("Second function"));
+
+</script>
