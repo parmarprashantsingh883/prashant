@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Product Manager</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .admin-panel {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    .admin-panel h3 {
+      margin-bottom: 15px;
+      color: #007bff;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive Card Grid */
+    #productContainer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+     height: calc(100% + 10px);
+width: calc(200px + 10px);
+
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+    }
+
+    .product-card h4 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .product-card p {
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .product-card button {
+      margin-bottom: 15px;
+      background: #28a745;
+    }
+
+    .product-card button:hover {
+      background: #218838;
+    }
+
+    @media (max-width: 480px) {
+      .admin-panel {
+        padding: 15px;
+      }
+      input, button {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🛍️ Admin Product Manager (Add Products Dynamically)</h2>
+
+  <!-- Admin Add Product Form -->
+  <div class="admin-panel">
+    <h3>Add New Product</h3>
+    <input type="text" id="productName" placeholder="Enter Product Name" required>
+    <input type="text" id="productPrice" placeholder="Enter Product Price (₹)" required>
+    <input type="text" id="productImage" placeholder="Enter Product Image URL" required>
+    <button id="addProductBtn">Add Product</button>
+  </div>
+
+  <!-- Product Display Section -->
+  <div id="productContainer">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x180?text=Sample+Product" alt="Product">
+      <h4>Sample Product</h4>
+      <p>₹499</p>
+      <button>Buy Now</button>
+    </div>
+  </div>
+
+  <script>
+    const productContainer = document.getElementById("productContainer");
+    const addBtn = document.getElementById("addProductBtn");
+
+    addBtn.addEventListener("click", () => {
+      const name = document.getElementById("productName").value;
+      const price = document.getElementById("productPrice").value;
+      const image = document.getElementById("productImage").value;
+
+      if (!name || !price || !image) {
+        alert("Please fill all fields before adding!");
+        return;
+      }
+
+      const newProduct = `
+        <div class="product-card">
+          <img src="${image}" alt="${name}">
+          <h4>${name}</h4>
+          <p>₹${price}</p>
+          <button>Buy Now</button>
+        </div>
+      `;
+
+      // Add to product grid
+      productContainer.insertAdjacentHTML("beforeend", newProduct);
+
+      // Clear input fields
+      document.getElementById("productName").value = "";
+      document.getElementById("productPrice").value = "";
+      document.getElementById("productImage").value = "";
+    });
+  </script>
+
+</body>
+</html>
