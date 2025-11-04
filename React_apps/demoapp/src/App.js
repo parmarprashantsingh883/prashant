@@ -1,19 +1,36 @@
-import React from "react";
-import Home from "./Home";
-import About from "./About";
-import Contact from "./Contact";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Navbar from "./Comp/Navbar";
+import Footer from "./Comp/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Department from './pages/Department';
+import Service from './pages/Service';
+import Doctor from './pages/Doctor';
 
 function App() {
+
+
   return (
     <>
-      <div className="bg-primary text-white text-center p-4">
-        <h2>🚀 App.js</h2>
-        <p>This is the root component. It imports and renders other pages 👇</p>
-      </div>
+      <Router>
+      <Navbar />
+    
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path='/Department' element={<Department/>}/>
+          <Route path='/Service'element={< Service/>}/>
+          <Route path='/Doctor' element={<Doctor/>}/>
 
-      <Home />
-      <About />
-      <Contact />
+        </Routes>
+      
+      <Footer />
+    </Router>
+
     </>
   );
 }
