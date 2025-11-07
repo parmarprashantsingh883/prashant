@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filter Example in JavaScript</title>
+  <!-- <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 40px;
+      text-align: center;
+    }
+
+    input {
+      width: 300px;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 320px;
+      margin: auto;
+      text-align: left;
+    }
+
+    li {
+      background: white;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    }
+
+    li.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🛍️ Product Search Filter</h2>
+  <input type="text" id="searchBox" placeholder="Search for a product...">
+
+  <ul id="productList">
+    <li>Laptop</li>
+    <li>Mobile</li>
+    <li>Tablet</li>
+    <li>Mouse</li>
+    <li>Keyboard</li>
+    <li>Charger</li>
+    <li>Headphones</li>
+    <li>Smartwatch</li>
+    <li>battla </li>
+    
+  </ul>
+
+  <script>
+    const searchBox = document.getElementById("searchBox");
+    const productList = document.getElementById("productList");
+    const items = Array.from(productList.getElementsByTagName("li"));
+
+    searchBox.addEventListener("input", function() {
+      const searchText = searchBox.value.toLowerCase();
+
+      items.forEach(item => {
+        const itemText = item.textContent.toLowerCase();
+
+        // Use filter logic — show if match found
+        if (itemText.includes(searchText)) {
+          item.classList.remove("hidden");
+        } else {
+          item.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html> -->
+<script>
+    const users = [
+  { name: "Prashant", age: 22 },
+  { name: "Rohan", age: 17 },
+  { name: "Neha", age: 19 },
+  { name: "Aman", age: 16 }
+];
+
+const adults = users.filter(user => user.age >= 18);
+
+console.log(adults);
+
+</script>
