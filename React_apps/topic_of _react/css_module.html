@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mastering CSS Modules in React</title>
+
+  <style>
+    /* 🌍 Base Layout */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(90deg, #007bff, #0056b3);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    header h1 {
+      font-size: 2.3rem;
+      margin: 0 0 10px;
+    }
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: #0056b3;
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    p.desc {
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    /* 🃏 Card Layout */
+    .card-area {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      transition: all 0.4s ease;
+    }
+
+    .card {
+      width: 300px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      background: white;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    /* 🔴 Global CSS Simulation */
+    .global .card {
+      border-top: 6px solid #ff1744;
+      background: #ffebee;
+    }
+    .global .title {
+      color: #d50000;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    .global .text {
+      color: #d32f2f;
+    }
+
+    /* 🟢 CSS Module Simulation */
+    .module .card {
+      border-top: 6px solid #43a047;
+      background: #e8f5e9;
+    }
+    .module .title {
+      color: #1b5e20;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    .module .text {
+      color: #333;
+    }
+
+    /* 💡 Toggle Button */
+    .toggle-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .toggle-btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: #007bff;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .toggle-btn:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+
+    /* 🧾 Code Blocks */
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    code {
+      background: #e0e0e0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: "Consolas", monospace;
+    }
+
+    /* 📊 Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #0056b3;
+      color: white;
+    }
+    td {
+      background: #fafafa;
+    }
+
+    footer {
+      background: #0056b3;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 70px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🌟 Mastering CSS Modules in React</h1>
+    <p>Understand global vs modular CSS visually + learn how to use it in real React projects</p>
+  </header>
+
+  <main>
+    <div class="toggle-container">
+      <button id="toggle" class="toggle-btn">Switch to CSS Modules View</button>
+    </div>
+
+    <section id="cards" class="card-area global">
+      <div class="card">
+        <h3 class="title">Global Styled Card 1</h3>
+        <p class="text">This card uses <code>.title</code> and <code>.text</code> globally.  
+        These classes can affect other components unintentionally.</p>
+      </div>
+
+      <div class="card">
+        <h3 class="title">Global Styled Card 2</h3>
+        <p class="text">Notice how all cards share the same red color scheme — this is global CSS.</p>
+      </div>
+    </section>
+
+    <h2>💻 How to Use CSS Modules in React</h2>
+    <p class="desc">Here’s exactly how you’d create and import a CSS Module in a real React project 👇</p>
+
+    <h3>1️⃣ Create a CSS Module File</h3>
+    <pre>
+/* 📄 Card.module.css */
+.title {
+  color: #2e7d32;
+  font-size: 22px;
+  font-weight: 600;
+}
+.text {
+  color: #333;
+  background: #e8f5e9;
+  padding: 10px;
+  border-radius: 8px;
+}
+    </pre>
+
+    <h3>2️⃣ Import and Use It in React Component</h3>
+    <pre>
+/* 📄 Card.jsx */
+import React from "react";
+import styles from "./Card.module.css";  // import module file
+
+function Card() {
+  return (
+    &lt;div&gt;
+      &lt;h2 className={styles.title}&gt;Module Card&lt;/h2&gt;
+      &lt;p className={styles.text}&gt;
+        This component uses scoped CSS classes from Card.module.css.
+      &lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Card;
+    </pre>
+
+    <h3>3️⃣ Use It in Your App</h3>
+    <pre>
+/* 📄 App.jsx */
+import React from "react";
+import Card from "./components/Card";
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Using CSS Modules in React&lt;/h1&gt;
+      &lt;Card /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+    </pre>
+
+    <h3>🧠 What Happens Behind the Scenes</h3>
+    <ul>
+      <li>React compiles <code>Card.module.css</code> and generates unique class names like <code>Card_title__3Ax9</code>.</li>
+      <li>These class names are stored in the <code>styles</code> object you import.</li>
+      <li>No other file can overwrite these styles.</li>
+    </ul>
+
+    <h2>📊 CSS Modules vs Global CSS</h2>
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>Global CSS</th>
+        <th>CSS Modules</th>
+      </tr>
+      <tr>
+        <td>Scope</td>
+        <td>Global (affects everything)</td>
+        <td>Local (scoped to one component)</td>
+      </tr>
+      <tr>
+        <td>Class Naming</td>
+        <td>Simple names (e.g. <code>.title</code>)</td>
+        <td>Generated unique names (<code>Card_title__abc12</code>)</td>
+      </tr>
+      <tr>
+        <td>Conflict Risk</td>
+        <td>High</td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <td>Ease of Maintenance</td>
+        <td>Hard in large apps</td>
+        <td>Easy per component</td>
+      </tr>
+      <tr>
+        <td>Import Style</td>
+        <td><code>import './App.css'</code></td>
+        <td><code>import styles from './Card.module.css'</code></td>
+      </tr>
+    </table>
+  </main>
+
+  <footer>
+    💡 Pro Tip: Always name your file like <code>ComponentName.module.css</code>  
+    and use <code>className={styles.className}</code> in React for best practice.
+  </footer>
+
+  <script>
+    // 🧠 Toggle between Global & Module View
+    const toggleBtn = document.getElementById("toggle");
+    const cards = document.getElementById("cards");
+    let isModule = false;
+
+    toggleBtn.addEventListener("click", () => {
+      isModule = !isModule;
+      cards.className = "card-area " + (isModule ? "module" : "global");
+      toggleBtn.textContent = isModule
+        ? "Switch to Global CSS View"
+        : "Switch to CSS Modules View";
+    });
+  </script>
+</body>
+</html>

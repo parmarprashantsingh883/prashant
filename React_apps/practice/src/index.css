@@ -13,12 +13,13 @@ body {
 
 .parent{
   min-height: 100vh;
-  width: 100%;
-  background-color: #111;
+  min-width: 100vw;
+  /* background-color: #111; */
   padding: 30px;
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card{
@@ -111,7 +112,7 @@ body {
 
 .bottom h3{
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 4px;
 }
 .bottom p{

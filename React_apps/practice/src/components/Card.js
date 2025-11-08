@@ -5,15 +5,15 @@ const Card = (props) => {
         <div className="card">
             <div>
                 <div className="top">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFkkQhwA-14yQus_rij6VonTP5UT7IrorBkg&s"alt="nachioooooo" />
+                    <img src={props.img} alt="nachioooooo" />
                     <button>Save <Bookmark size={10} /> </button>
                 </div>
                 <div className="center">
-                    <h3>Amazon <span>5 days ago</span></h3>
-                    <h2>Senior UI/UX Designer</h2>
+                    <h3>{props.company} <span>{props.posted}</span></h3>
+                    <h2>{props.position}</h2>
                     <div className='tag'>
-                        <h4>part time </h4>
-                        <h4>senior level</h4>
+                        <h4>{props.type} </h4>
+                        <h4>{props.level}</h4>
                     </div>
                 </div>
             </div>
