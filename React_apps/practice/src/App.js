@@ -1,8 +1,11 @@
+import { useState } from "react";
 import Card from "./components/Card";
 import Props from "./components/Props";
 
 const App = () => {
- 
+
+  const [num, setnum] = useState(10)
+  
 //    const jobs = [
 //   {
 //     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFkkQhwA-14yQus_rij6VonTP5UT7IrorBkg&s",
@@ -188,10 +191,14 @@ const App = () => {
 
 // // console.log(jobData);
 
-
+function Update(){
+  setnum(num+1);
+}
  
   return (
     <>
+    <h1>the value of number is{num}</h1>
+    <button onClick={Update}> click </button>
     {/* <div className="parent">
      {jobs.map(function(elem){
      return <>
@@ -209,7 +216,7 @@ const App = () => {
 
     </div>
     */}
-    <Props name="prashnat" age={21}/>
+    {/* <Props name="prashnat" age={21}/> */}
     
     
       </>
