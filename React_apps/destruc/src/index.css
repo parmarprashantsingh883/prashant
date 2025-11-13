@@ -6,9 +6,11 @@ img{
   height: 300px;
   width: 100%;
   object-fit: cover;
+
 }
 .card{
- 
+ height: max-content;
+ width: max-content;
 }
 .card-body{
   background:darkgray;
