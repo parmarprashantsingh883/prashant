@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function App() {
 
-  const [num, setnum] = useState(0)
+  const [num, setnum] = useState(10)
 
   const Update=()=>{
     setnum(num+1)
