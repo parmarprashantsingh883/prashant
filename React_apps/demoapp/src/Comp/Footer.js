@@ -1,5 +1,6 @@
 
-  import React from 'react';;
+  import React from 'react';import { Link } from 'react-router-dom';
+;
   function Footer() {
   return (
 
@@ -30,8 +31,8 @@
         {/* Useful Links */}
         <div className="col-lg-2 col-md-6 d-flex flex-column">
           <h5 className="fw-bold mb-3">Useful Links</h5>
-          <a className="footer-link" href="#">Home</a>
-          <a className="footer-link" href="#">About Us</a>
+          <Link className="footer-link" to="/">Home</Link>
+          <Link className="footer-link" href="/about">About Us</Link>
           <a className="footer-link" href="#">Services</a>
           <a className="footer-link" href="#">Terms of Service</a>
           <a className="footer-link" href="#">Privacy Policy</a>

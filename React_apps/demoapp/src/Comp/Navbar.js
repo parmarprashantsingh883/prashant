@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -19,19 +19,19 @@ function Navbar() {
             {/* Desktop Navigation */}
             <ul className="list-inline d-none d-lg-flex gap-4 mb-0 ms-5 flex-grow-1 justify-content-center align-items-center">
               <li className="list-inline-item">
-                <Link style={{ color: '#00a6ad' }} to="/" className="text-decoration-none fs-6">Home</Link>
+                <NavLink style={{ color: '#00a6ad' }} to="/" className="text-decoration-none fs-6">Home</NavLink>
               </li>
               <li className="list-inline-item">
-                <Link to="/about" className="text-dark fs-6 text-decoration-none">About</Link>
+                <NavLink to="/about" className="text-dark fs-6 text-decoration-none">About</NavLink>
               </li>
               <li className="list-inline-item">
-                <Link to="/department" className="text-dark fs-6 text-decoration-none">Department</Link>
+                <NavLink to="/department" className="text-dark fs-6 text-decoration-none">Department</NavLink>
               </li>
               <li className="list-inline-item">
-                <Link to="/service" className="text-dark fs-6 text-decoration-none">Services</Link>
+                <NavLink to="/service" className="text-dark fs-6 text-decoration-none">Services</NavLink>
               </li>
               <li className="list-inline-item">
-                <Link to="/doctor" className="text-dark fs-6 text-decoration-none">Doctor</Link>
+                <NavLink to="/doctor" className="text-dark fs-6 text-decoration-none">Doctor</NavLink>
               </li>
 
               {/* Dropdown (example, static for now) */}
