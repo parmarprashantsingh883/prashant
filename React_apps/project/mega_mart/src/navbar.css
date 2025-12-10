@@ -1,0 +1,142 @@
+.logo-circle {
+  width: 50px;
+  height: 50px;
+  background: #DD4A48;
+  color: white;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.brand-sub {
+  color: #DD4A48;
+  font-weight: 600;
+}
+
+.nav-link {
+  font-size: 18px;
+  color: #555 !important;
+  padding: 10px 18px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #DD4A48 !important;
+}
+
+.nav-link.active {
+  background: #DD4A48 !important;
+  color: #fff !important;
+}
+
+.nav-icons i {
+  font-size: 26px;
+  cursor: pointer;
+}
+.nav-icons i:hover {
+  color: #DD4A48;
+}
+
+.cart-btn {
+  width: 50px;
+  height: 50px;
+  background: #DD4A48;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: gold;
+  padding: 2px 7px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: bold;
+}
+/* Slimmer Logo */
+.logo-circle {
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
+}
+
+/* Reduce left-side brand spacing */
+.navbar-brand h4 {
+  font-size: 20px;
+}
+.brand-sub {
+  font-size: 13px;
+}
+
+/* Slimmer Nav Links */
+.nav-link {
+  font-size: 17px;
+  padding: 6px 14px !important;  /* ↓ Reduced vertical padding */
+}
+
+/* Active pill smaller */
+.nav-link.active {
+  padding: 6px 14px !important;
+  border-radius: 10px;
+}
+
+/* Slimmer icons */
+.nav-icons i {
+  font-size: 22px;
+}
+
+/* Slim cart button */
+.cart-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+.cart-badge {
+  font-size: 11px;
+  padding: 1px 6px;
+}
+
+/* === LOGO BOX === */
+.logo-box {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+/* === BRAND TEXT === */
+.brand-text {
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+.brand-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: #222;
+}
+
+.brand-subtext {
+  margin-top: 2px;
+  display: block;
+  color: #d32f2f;
+  font-size: 14px;
+  font-weight: 500;
+}

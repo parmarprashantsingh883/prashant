@@ -1,0 +1,146 @@
+/* TOP FEATURE BAR */
+.footer-top {
+  background: #111;
+  display: flex;
+  justify-content: space-around;
+  padding: 25px 10px;
+  border-bottom: 1px solid #222;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  min-width: 220px;
+  margin: 10px 0;
+}
+
+.feature-icon {
+  font-size: 32px;
+  background: #DD4A48;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.feature-box h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.feature-box p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+/* MAIN FOOTER */
+.main-footer {
+  background: #0d0d0d;
+  color: #ddd;
+  padding: 60px 40px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+.footer-col h3 {
+  color: #DD4A48;
+  margin-bottom: 15px;
+}
+
+.footer-col ul li {
+  list-style: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.footer-col ul li:hover {
+  color: #DD4A48;
+}
+
+/* Logo */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-circle {
+  background: #DD4A48;
+  padding: 14px 18px;
+  color: #fff;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Social Icons */
+.footer-socials span {
+  background: #222;
+  padding: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.footer-socials span:hover {
+  background: #DD4A48;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 50px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.feature-icon {
+  width: 40px !important;   /* increase circle width */
+  height: 40px !important;  /* increase circle height */
+  border-radius: 14px;
+  background: #dd4a48;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon i {
+  font-size: 20px !important; /* increase icon size */
+  color: #fff;
+}
+
+.footer-links span {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.footer-links span:hover {
+  color: #DD4A48;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}

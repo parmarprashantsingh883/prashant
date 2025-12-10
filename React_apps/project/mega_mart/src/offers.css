@@ -1,0 +1,370 @@
+.offer-section {
+  padding: 120px 0;
+  background: linear-gradient(to bottom, #fde7e7, #fffceb);
+  position: relative;
+  overflow: hidden;
+}
+
+/* SOFT GLOW BACKGROUND CIRCLES */
+.offer-section::before,
+.offer-section::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.45;
+}
+
+.offer-section::before {
+  background: #ffb3b3;
+  top: -100px;
+  left: -150px;
+}
+
+.offer-section::after {
+  background: #ffe7a3;
+  bottom: -120px;
+  right: -100px;
+}
+
+/* HOT DEALS BADGE */
+.offer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffe6e1;
+  color: #d94a43;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.offer-badge .material-icons-outlined {
+  font-size: 18px;
+}
+
+/* MAIN TITLE */
+.offer-title {
+  margin-top: 25px;
+  font-size: 56px;
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+.offer-title .highlight {
+  color: #d62828;
+}
+
+/* SUBTEXT */
+.offer-sub {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #555;
+}
+
+/* OFFER STAT BOXES */
+.offer-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 45px;
+}
+
+.stat-box {
+  background: white;
+  padding: 28px 35px;
+  border-radius: 20px;
+  width: 170px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.stat-box h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #d62828;
+}
+
+.stat-box p {
+  margin: 0;
+  color: #666;
+  font-size: 15px;
+}
+/* FLASH DEALS SECTION */
+.flash-section {
+  background: #111;
+  padding: 60px 0;
+  color: #fff;
+  margin-top: 60px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.flash-icon {
+  background: #f4c20d;
+  color: #000;
+  font-size: 30px;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.flash-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.flash-sub {
+  color: #ccc;
+  font-size: 15px;
+}
+
+/* Product grid */
+.flash-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.flash-card {
+  background: #1b1b1b;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Discount badge */
+.flash-discount {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #ff4646;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  z-index: 5;
+}
+
+.flash-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Timer */
+.flash-timer {
+  background: rgba(0,0,0,0.7);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.flash-content {
+  padding: 15px;
+}
+
+.flash-price .new {
+  font-size: 20px;
+  color: #f4c20d;
+  font-weight: 700;
+}
+
+.flash-price .old {
+  margin-left: 10px;
+  text-decoration: line-through;
+  color: #888;
+}
+
+.flash-btn {
+  width: 100%;
+  margin-top: 15px;
+  background: linear-gradient(to right, #f8a800, #f4c20d);
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .flash-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .flash-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* PREMIUM FLASH DEALS */
+.flash-card.upgraded {
+  transition: 0.3s ease;
+  transform: translateY(0);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.flash-card.upgraded:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 200, 0, 0.2);
+}
+
+.flash-discount {
+  background: linear-gradient(to right, #ff4747, #ff8b4a);
+  font-size: 13px;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.flash-img {
+  transition: 0.3s ease-in-out;
+}
+
+.flash-card.upgraded:hover .flash-img {
+  transform: scale(1.05);
+}
+
+/* Timer Glow Badge */
+.flash-timer {
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Button Upgrade */
+.flash-btn {
+  background: linear-gradient(90deg, #ffb302, #ffdd33);
+  color: #000;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+.flash-btn:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+
+/* another section */
+/* HEADER */
+.weekly-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background: #fdecec;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e63946;
+}
+
+.weekly-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.weekly-subtitle {
+  color: #666;
+  margin-top: 3px;
+}
+
+/* CARD */
+.weekly-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.weekly-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* IMAGE */
+.weekly-img-wrapper {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  position: relative;
+}
+
+.weekly-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TAG */
+.weekly-tag {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: #ff8c00;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* CONTENT */
+.weekly-content {
+  padding: 20px;
+}
+
+.weekly-item-title {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.weekly-desc {
+  color: #777;
+  margin-bottom: 18px;
+}
+
+/* BOTTOM ROW */
+.weekly-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offer-code b {
+  background: #ffeaea;
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: #d62828;
+}
+
+.expiry {
+  color: #666;
+  font-size: 14px;
+}

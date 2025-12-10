@@ -8,6 +8,11 @@ import Arrays from './Arrays';
 import StudentManager from './StudentManager';
 import AdminPanel from './AdminPanel';
 
+import BootstrapFormObject from './BootstrapFormObject';
+import Formprevent from './Formprevent';
+import UserForm from './UserForm';
+import BasicValidationForm from './BasicValidationForm';
+
 function Array() {
   const [fruits, setFruits] = useState(["Apple", "Banana", "Mango"]);
 
@@ -54,6 +59,17 @@ function Array() {
         <Container>
           <AdminPanel/>
         </Container>
+<BootstrapFormObject/>
+<Container>
+  <Formprevent/>
+</Container>
+<Container>
+  <UserForm/>
+
+</Container>
+<Container>
+  <BasicValidationForm/>
+</Container>
 
     </div>
   );

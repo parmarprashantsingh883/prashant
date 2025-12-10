@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Organic Banana Bundle",
+    "image": "https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=400&h=400&fit=crop",
+    "price": 2.99,
+    "oldPrice": 5.99,
+    "discount": 50,
+    "expiresAt": "2025-12-15T12:30:00",
+    "category": "Fruits"
+  },
+  {
+    "id": 2,
+    "name": "Fresh Strawberries Pack",
+    "image": "https://images.unsplash.com/photo-1518635017498-87f514b751ba?w=400&h=400&fit=crop",
+    "price": 4.49,
+    "oldPrice": 8.99,
+    "discount": 50,
+    "expiresAt": "2025-12-15T15:00:00",
+    "category": "Fruits"
+  },
+  {
+    "id": 3,
+    "name": "Greek Yogurt 500g",
+    "image": "https://assets.bonappetit.com/photos/63b5fe187015aa59a8e880ac/16:9/w_2560%2Cc_limit/010323-its-greek-yogurt-taste-test-01.jpg",
+    "price": 3.99,
+    "oldPrice": 6.49,
+    "discount": 38,
+    "expiresAt": "2025-12-15T11:10:00",
+    "category": "Dairy"
+  },
+  {
+    "id": 4,
+    "name": "Whole Grain Bread",
+    "image": "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=400&h=400&fit=crop",
+    "price": 2.49,
+    "oldPrice": 4.99,
+    "discount": 50,
+    "expiresAt": "2025-12-15T14:30:00",
+    "category": "Bakery"
+  }
+]
