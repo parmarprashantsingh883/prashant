@@ -7,7 +7,9 @@ import Categories from './Categories'
 import Home from './pages/Home'
 import Product from './pages/Product'
 import Offers from './pages/Offers';
+// import AdminDashboard from "./admin/AdminDashboard";
 import About from './pages/About';
+ import AuthPage from "./pages/AuthPage";
 
 function App() {
   return (
@@ -20,8 +22,15 @@ function App() {
           <Route path='/product' element={<Product />} />
           <Route path='/categories' element={<Categories />} />
           <Route path='/offers' element={<Offers />} />
-             <Route path='/about' element={<About />} />
+           <Route path='/about' element={<About />} />
+           {/* <Route path="/admin" element={<AdminDashboard />} /> */}
+          
+
+<Route path="/login" element={<AuthPage />} />
+
+
         </Routes>
+        
 
         <Footer />
       </BrowserRouter>

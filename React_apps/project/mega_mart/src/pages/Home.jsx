@@ -571,6 +571,38 @@ function Home() {
     </div>
   </div>
 </section>
+<section className="newsletter-section">
+  <div className="newsletter-container">
+
+    {/* Pills */}
+    <div className="newsletter-pills">
+      <span><i>🎁</i> Exclusive Offers</span>
+      <span><i>📅</i> Weekly Discounts</span>
+      <span><i>🆕</i> New Arrivals</span>
+    </div>
+
+    {/* Heading */}
+    <h1 className="newsletter-title">Get Fresh Deals in Your Inbox</h1>
+
+    <p className="newsletter-subtext">
+      Subscribe to our newsletter and get exclusive offers, new arrivals, and recipe ideas 
+      delivered weekly. Plus, get <strong>10% off</strong> your first order!
+    </p>
+
+    {/* Form */}
+    <div className="newsletter-form">
+      <input type="email" placeholder="Enter your email address" />
+      <button>
+        Subscribe <span className="send-icon">✈️</span>
+      </button>
+    </div>
+
+    <p className="newsletter-note">
+      No spam, unsubscribe at any time. By subscribing you agree to our Privacy Policy.
+    </p>
+
+  </div>
+</section>
 
 
     </>

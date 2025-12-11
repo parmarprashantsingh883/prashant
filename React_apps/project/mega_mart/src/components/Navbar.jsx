@@ -48,7 +48,9 @@ function Navbar() {
           <div className="cart-btn">
             <i className="material-icons-outlined">shopping_cart</i>
             <span className="cart-badge">3</span>
+            
           </div>
+          
         </div>
 
       </div>

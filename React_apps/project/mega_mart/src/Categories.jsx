@@ -1,8 +1,10 @@
 import React from 'react'
+import CategoriesSection from './components/CategoriesSection'
 
 function Categories() {
   return (
-    <div>
+    <>
+    <CategoriesSection/>
   <section className="py-5" style={{background: '#f8f8f2'}}>
   <div className="container text-center">
     {/* Shop by Category Badge */}
@@ -84,7 +86,7 @@ function Categories() {
 </section>
 
 
-    </div>
+    </>
   )
 }
 
