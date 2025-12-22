@@ -1,0 +1,108 @@
+/* NAVBAR BACKGROUND */
+.navbar-wrapper {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+/* CENTER CONTENT (THIS FIXES YOUR ISSUE) */
+.navbar-inner {
+  max-width: 1320px;   /* SAME AS BOOTSTRAP LG */
+  margin: 0 auto;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-circle {
+  width: 44px;
+  height: 44px;
+  background: #e02424;
+  color: #fff;
+  border-radius: 50%;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.logo-sub {
+  font-size: 13px;
+  color: #e02424;
+}
+
+/* MENU */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+.menu-btn.active {
+  background: #e02424;
+  color: #fff;
+}
+
+/* RIGHT */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.signin {
+  border: 1px solid #aaa;
+  background: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.cart {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background: #e02424;
+  border-radius: 12px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart span {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  background: #ffcc00;
+  font-size: 11px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

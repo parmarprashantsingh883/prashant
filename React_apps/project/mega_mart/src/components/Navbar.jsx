@@ -20,12 +20,12 @@ function Navbar() {
 
         {/* Normal Bootstrap Toggler */}
         <button
-          className="navbar-toggler"
+          className="navbar-toggler "
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#mainMenu"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon "></span>
         </button>
 
         {/* MENU (Desktop + Mobile) */}

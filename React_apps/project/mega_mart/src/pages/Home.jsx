@@ -3,7 +3,12 @@ import { FaTruck, FaLeaf, FaLock, FaClock, FaShieldAlt, FaHeadphones } from "rea
 
 function Home() {
   return (
-    <>
+    
+    
+    
+    
+
+  <>
       <section
         style={{
           position: "relative",
