@@ -1,0 +1,611 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Fresh Organic Apples",
+      "category": "Fruits",
+      "categoryId": "1",
+      "price": 4.39,
+      "oldPrice": 5.49,
+      "rating": 4.8,
+      "reviews": 124,
+      "tag": "Organic",
+      "stock": 150,
+      "image": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "2",
+      "name": "Farm Fresh Carrots",
+      "category": "Vegetables",
+      "categoryId": "2",
+      "price": 2.49,
+      "oldPrice": 3.49,
+      "rating": 4.6,
+      "reviews": 89,
+      "tag": "Organic",
+      "stock": 200,
+      "image": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "3",
+      "name": "Premium Almonds",
+      "category": "Snacks",
+      "categoryId": "5",
+      "price": 8.99,
+      "oldPrice": 11.99,
+      "rating": 4.9,
+      "reviews": 256,
+      "tag": "New",
+      "stock": 80,
+      "image": "https://images.unsplash.com/photo-1508736793122-f516e3ba5569?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "4",
+      "name": "Fresh Avocados",
+      "category": "Fruits",
+      "categoryId": "1",
+      "price": 5.49,
+      "oldPrice": 7.99,
+      "rating": 4.7,
+      "reviews": 178,
+      "tag": "30% Off",
+      "stock": 120,
+      "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "5",
+      "name": "Bananas",
+      "category": "Fruits",
+      "categoryId": "1",
+      "price": 1.99,
+      "oldPrice": 2.49,
+      "rating": 4.5,
+      "reviews": 210,
+      "tag": "Best Seller",
+      "stock": 300,
+      "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "6",
+      "name": "Fresh Strawberries",
+      "category": "Fruits",
+      "categoryId": "1",
+      "price": 3.99,
+      "oldPrice": 5.29,
+      "rating": 4.9,
+      "reviews": 310,
+      "tag": "Fresh",
+      "stock": 100,
+      "image": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "7",
+      "name": "Green Spinach",
+      "category": "Vegetables",
+      "categoryId": "2",
+      "price": 1.29,
+      "oldPrice": 1.99,
+      "rating": 4.4,
+      "reviews": 98,
+      "tag": "Organic",
+      "stock": 180,
+      "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "8",
+      "name": "Broccoli Crown",
+      "category": "Vegetables",
+      "categoryId": "2",
+      "price": 1.79,
+      "oldPrice": 2.49,
+      "rating": 4.6,
+      "reviews": 122,
+      "tag": "Fresh",
+      "stock": 150,
+      "image": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "9",
+      "name": "Whole Milk",
+      "category": "Dairy",
+      "categoryId": "3",
+      "price": 2.99,
+      "oldPrice": 3.49,
+      "rating": 4.7,
+      "reviews": 201,
+      "tag": "New",
+      "stock": 250,
+      "image": "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "10",
+      "name": "Greek Yogurt",
+      "category": "Dairy",
+      "categoryId": "3",
+      "price": 3.49,
+      "oldPrice": 4.29,
+      "rating": 4.8,
+      "reviews": 189,
+      "tag": "Best Seller",
+      "stock": 200,
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "11",
+      "name": "Chocolate Donuts",
+      "category": "Bakery",
+      "categoryId": "4",
+      "price": 4.29,
+      "oldPrice": 5.99,
+      "rating": 4.6,
+      "reviews": 150,
+      "tag": "Hot",
+      "stock": 90,
+      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "12",
+      "name": "Fresh Bread Loaf",
+      "category": "Bakery",
+      "categoryId": "4",
+      "price": 2.49,
+      "oldPrice": 3.19,
+      "rating": 4.8,
+      "reviews": 173,
+      "tag": "Fresh",
+      "stock": 120,
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "13",
+      "name": "Mixed Dry Fruits",
+      "category": "Snacks",
+      "categoryId": "5",
+      "price": 6.99,
+      "oldPrice": 8.49,
+      "rating": 4.7,
+      "reviews": 230,
+      "tag": "Combo",
+      "stock": 110,
+      "image": "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "14",
+      "name": "Fresh Tomatoes",
+      "category": "Vegetables",
+      "categoryId": "2",
+      "price": 1.99,
+      "oldPrice": 2.59,
+      "rating": 4.3,
+      "reviews": 140,
+      "tag": "Fresh",
+      "stock": 220,
+      "image": "https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "15",
+      "name": "Red Onions",
+      "category": "Vegetables",
+      "categoryId": "2",
+      "price": 1.89,
+      "oldPrice": 2.39,
+      "rating": 4.5,
+      "reviews": 112,
+      "tag": "New",
+      "stock": 190,
+      "image": "https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "16",
+      "name": "Orange Juice",
+      "category": "Dairy",
+      "categoryId": "3",
+      "price": 3.29,
+      "oldPrice": 4.29,
+      "rating": 4.8,
+      "reviews": 198,
+      "tag": "Fresh",
+      "stock": 140,
+      "image": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "17",
+      "name": "Chocolate Cookies",
+      "category": "Snacks",
+      "categoryId": "5",
+      "price": 2.99,
+      "oldPrice": 3.99,
+      "rating": 4.9,
+      "reviews": 267,
+      "tag": "Best Seller",
+      "stock": 180,
+      "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "18",
+      "name": "Blueberries Pack",
+      "category": "Fruits",
+      "categoryId": "1",
+      "price": 5.99,
+      "oldPrice": 7.99,
+      "rating": 4.8,
+      "reviews": 143,
+      "tag": "Fresh",
+      "stock": 85,
+      "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "19",
+      "name": "Cheddar Cheese",
+      "category": "Dairy",
+      "categoryId": "3",
+      "price": 4.49,
+      "oldPrice": 5.99,
+      "rating": 4.7,
+      "reviews": 167,
+      "tag": "30% Off",
+      "stock": 130,
+      "image": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "20",
+      "name": "Croissants Pack",
+      "category": "Bakery",
+      "categoryId": "4",
+      "price": 3.89,
+      "oldPrice": 4.79,
+      "rating": 4.6,
+      "reviews": 119,
+      "tag": "Fresh",
+      "stock": 95,
+      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "21",
+      "name": "Organic Eggs",
+      "category": "Dairy",
+      "categoryId": "3",
+      "price": 3.99,
+      "oldPrice": 4.99,
+      "rating": 4.9,
+      "reviews": 245,
+      "tag": "Organic",
+      "stock": 160,
+      "image": "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "22",
+      "name": "Sweet Potatoes",
+      "category": "Vegetables",
+      "categoryId": "2",
+      "price": 2.29,
+      "oldPrice": 3.19,
+      "rating": 4.5,
+      "reviews": 156,
+      "tag": "Fresh",
+      "stock": 210,
+      "image": "https://images.unsplash.com/photo-1589927986089-35812378d2dd?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "23",
+      "name": "Peanut Butter",
+      "category": "Snacks",
+      "categoryId": "5",
+      "price": 4.79,
+      "oldPrice": 6.29,
+      "rating": 4.8,
+      "reviews": 312,
+      "tag": "Best Seller",
+      "stock": 140,
+      "image": "https://images.unsplash.com/photo-1615478503562-ec2d8aa0e24e?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "24",
+      "name": "Fresh Salmon",
+      "category": "Meat & Fish",
+      "categoryId": "6",
+      "price": 12.99,
+      "oldPrice": 15.99,
+      "rating": 4.7,
+      "reviews": 189,
+      "tag": "Fresh",
+      "stock": 45,
+      "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "25",
+      "name": "Chicken Breast",
+      "category": "Meat & Fish",
+      "categoryId": "6",
+      "price": 7.99,
+      "oldPrice": 9.99,
+      "rating": 4.6,
+      "reviews": 234,
+      "tag": "20% Off",
+      "stock": 75,
+      "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "26",
+      "name": "Potato Chips",
+      "category": "Snacks",
+      "categoryId": "5",
+      "price": 2.29,
+      "oldPrice": 3.49,
+      "rating": 4.4,
+      "reviews": 278,
+      "tag": "Hot",
+      "stock": 200,
+      "image": "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "27",
+      "name": "Brown Rice",
+      "category": "Grains",
+      "categoryId": "7",
+      "price": 5.49,
+      "oldPrice": 6.99,
+      "rating": 4.7,
+      "reviews": 167,
+      "tag": "Organic",
+      "stock": 90,
+      "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "28",
+      "name": "Pasta Pack",
+      "category": "Grains",
+      "categoryId": "7",
+      "price": 3.29,
+      "oldPrice": 4.49,
+      "rating": 4.8,
+      "reviews": 298,
+      "tag": "Best Seller",
+      "stock": 150,
+      "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "29",
+      "name": "Mango Pack",
+      "category": "Fruits",
+      "categoryId": "1",
+      "price": 6.49,
+      "oldPrice": 8.99,
+      "rating": 4.9,
+      "reviews": 221,
+      "tag": "Fresh",
+      "stock": 70,
+      "image": "https://images.unsplash.com/photo-1553279768-865429fa0078?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "30",
+      "name": "Bell Peppers Mix",
+      "category": "Vegetables",
+      "categoryId": "2",
+      "price": 3.99,
+      "oldPrice": 5.29,
+      "rating": 4.6,
+      "reviews": 143,
+      "tag": "Combo",
+      "stock": 105,
+      "image": "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&h=400&fit=crop"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Fruits",
+      "description": "Fresh fruits and berries",
+      "image": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "2",
+      "name": "Vegetables",
+      "description": "Farm fresh vegetables",
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "3",
+      "name": "Dairy",
+      "description": "Milk, cheese, and dairy products",
+      "image": "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "4",
+      "name": "Bakery",
+      "description": "Freshly baked goods",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "5",
+      "name": "Snacks",
+      "description": "Chips, nuts, and snacks",
+      "image": "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "6",
+      "name": "Meat & Fish",
+      "description": "Fresh meat and seafood",
+      "image": "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "7",
+      "name": "Grains",
+      "description": "Rice, pasta, and grains",
+      "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&h=400&fit=crop"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "productId": "1",
+      "author": "John Doe",
+      "rating": 5,
+      "comment": "Best apples I've ever had! Super fresh and crispy.",
+      "date": "2024-12-15"
+    },
+    {
+      "id": "2",
+      "productId": "1",
+      "author": "Sarah Smith",
+      "rating": 4,
+      "comment": "Great quality, but a bit pricey.",
+      "date": "2024-12-10"
+    },
+    {
+      "id": "3",
+      "productId": "3",
+      "author": "Mike Johnson",
+      "rating": 5,
+      "comment": "These almonds are amazing! Perfect for snacking.",
+      "date": "2024-12-18"
+    },
+    {
+      "id": "4",
+      "productId": "5",
+      "author": "Emma Wilson",
+      "rating": 5,
+      "comment": "Always fresh and ripe. My go-to for breakfast.",
+      "date": "2024-12-12"
+    },
+    {
+      "id": "5",
+      "productId": "10",
+      "author": "David Brown",
+      "rating": 5,
+      "comment": "Best Greek yogurt in the store. Creamy and delicious!",
+      "date": "2024-12-20"
+    },
+    {
+      "id": "6",
+      "productId": "17",
+      "author": "Lisa Anderson",
+      "rating": 5,
+      "comment": "My kids love these cookies! Great value for money.",
+      "date": "2024-12-14"
+    },
+    {
+      "id": "7",
+      "productId": "24",
+      "author": "James Taylor",
+      "rating": 4,
+      "comment": "Fresh salmon, perfect for grilling. Highly recommend!",
+      "date": "2024-12-19"
+    },
+    {
+      "id": "8",
+      "productId": "6",
+      "author": "Maria Garcia",
+      "rating": 5,
+      "comment": "The strawberries are so sweet and juicy!",
+      "date": "2024-12-16"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": "1",
+      "date": "2024-12-20",
+      "status": "delivered",
+      "total": 45.67,
+      "items": [
+        { "productId": "1", "quantity": 2, "price": 4.39 },
+        { "productId": "5", "quantity": 3, "price": 1.99 },
+        { "productId": "10", "quantity": 2, "price": 3.49 }
+      ]
+    },
+    {
+      "id": "2",
+      "userId": "2",
+      "date": "2024-12-21",
+      "status": "processing",
+      "total": 78.45,
+      "items": [
+        { "productId": "24", "quantity": 1, "price": 12.99 },
+        { "productId": "3", "quantity": 2, "price": 8.99 },
+        { "productId": "28", "quantity": 3, "price": 3.29 }
+      ]
+    },
+    {
+      "id": "3",
+      "userId": "1",
+      "date": "2024-12-22",
+      "status": "shipped",
+      "total": 32.18,
+      "items": [
+        { "productId": "6", "quantity": 2, "price": 3.99 },
+        { "productId": "12", "quantity": 1, "price": 2.49 },
+        { "productId": "17", "quantity": 3, "price": 2.99 }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1-234-567-8900",
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      },
+      "memberSince": "2023-01-15"
+    },
+    {
+      "id": "2",
+      "name": "Sarah Smith",
+      "email": "sarah.smith@example.com",
+      "phone": "+1-234-567-8901",
+      "address": {
+        "street": "456 Oak Ave",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": "90001"
+      },
+      "memberSince": "2023-06-20"
+    }
+  ],
+  "cart": [
+    {
+      "id": "1",
+      "userId": "1",
+      "productId": "1",
+      "quantity": 2
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "productId": "5",
+      "quantity": 1
+    },
+    {
+      "id": "3",
+      "userId": "2",
+      "productId": "24",
+      "quantity": 1
+    }
+  ],
+  "store": {
+    "name": "Fresh Mart Grocery",
+    "description": "Your neighborhood grocery store with the freshest products",
+    "phone": "+1-800-FRESH-01",
+    "email": "contact@freshmart.com",
+    "address": {
+      "street": "789 Market Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94103"
+    },
+    "hours": {
+      "monday": "8:00 AM - 10:00 PM",
+      "tuesday": "8:00 AM - 10:00 PM",
+      "wednesday": "8:00 AM - 10:00 PM",
+      "thursday": "8:00 AM - 10:00 PM",
+      "friday": "8:00 AM - 11:00 PM",
+      "saturday": "8:00 AM - 11:00 PM",
+      "sunday": "9:00 AM - 9:00 PM"
+    }
+  }
+}
