@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary:#ff6a2f;
+  --dark:#2b1f1a;
+  --bg:#fffaf3;
+  --muted:#6b7280;
+  --radius:14px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#fff;
+  color:#2b1f1a;
+}
+
+/* ---------- Navbar ---------- */
+
+.luxe-navbar{
+  background:var(--bg);
+  padding:16px 0;
+}
+
+.luxe-logo{
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:var(--dark);
+}
+
+.luxe-menu .nav-link{
+  margin:0 12px;
+  color:#2b1f1a;
+  font-weight:500;
+}
+
+.luxe-menu .active{
+  color:var(--primary);
+}
+
+.luxe-icons i{
+  font-size:18px;
+}
+
+.cart-icon{
+  position:relative;
+}
+
+.cart-icon span{
+  position:absolute;
+  top:-6px;
+  right:-8px;
+  background:var(--primary);
+  color:#fff;
+  font-size:11px;
+  padding:2px 6px;
+  border-radius:50%;
+}
+
+/* ---------- Hero ---------- */
+
+.luxe-hero{
+  background:linear-gradient(135deg,#eef6f1,#fff5ee);
+  padding:90px 0;
+}
+
+.hero-content h1{
+  font-family:'Playfair Display',serif;
+  font-size:60px;
+}
+
+.hero-content span{
+  color:var(--primary);
+  font-style:italic;
+}
+
+.badge-pill{
+  background:#ffe3d5;
+  color:var(--primary);
+  padding:6px 18px;
+  border-radius:30px;
+  display:inline-block;
+  margin-bottom:20px;
+}
+
+.hero-model{
+  max-height:420px;
+  width:100%;
+  object-fit:contain;
+}
+
+.main-btn{
+  background:var(--dark);
+  color:#fff;
+  padding:14px 34px;
+  border-radius:30px;
+}
+
+.story-link{
+  margin-left:18px;
+  color:var(--dark);
+  font-weight:500;
+}
+
+/* ---------- Utility ---------- */
+
+.pill-btn{
+  padding:8px 18px;
+  border-radius:30px;
+  border:none;
+}
+
+.pill-btn.dark{background:var(--dark);color:#fff;}
+.pill-btn.orange{background:var(--primary);color:#fff;}
