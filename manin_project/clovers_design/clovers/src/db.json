@@ -1,0 +1,234 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Fresh Fruits",
+      "slug": "fruits",
+      "image": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 2,
+      "name": "Vegetables",
+      "slug": "vegetables",
+      "image": "https://images.unsplash.com/photo-1597362925123-77861d3fbac7?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 3,
+      "name": "Dairy & Eggs",
+      "slug": "dairy",
+      "image": "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 4,
+      "name": "Snacks",
+      "slug": "snacks",
+      "image": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 5,
+      "name": "Bakery",
+      "slug": "bakery",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 6,
+      "name": "Meat & Seafood",
+      "slug": "meat",
+      "image": "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 7,
+      "name": "Frozen Foods",
+      "slug": "frozen",
+      "image": "https://images.unsplash.com/photo-1628418606803-fe4f3e05e6bf?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 8,
+      "name": "Personal Care",
+      "slug": "personal-care",
+      "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 9,
+      "name": "Household Essentials",
+      "slug": "household",
+      "image": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=400&h=300&fit=crop"
+    }
+  ],
+
+  "products": [
+    { 
+      "id": 101, 
+      "name": "Fresh Apples", 
+      "price": 120, 
+      "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=400&h=400&fit=crop", 
+      "rating": 4.5, 
+      "stock": 50, 
+      "category_id": 1 
+    },
+    { 
+      "id": 102, 
+      "name": "Bananas", 
+      "price": 60, 
+      "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400&h=400&fit=crop", 
+      "rating": 4.2, 
+      "stock": 70, 
+      "category_id": 1 
+    },
+    { 
+      "id": 103, 
+      "name": "Tomatoes", 
+      "price": 40, 
+      "image": "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&h=400&fit=crop", 
+      "rating": 4.3, 
+      "stock": 100, 
+      "category_id": 2 
+    },
+    { 
+      "id": 104, 
+      "name": "Broccoli", 
+      "price": 90, 
+      "image": "https://images.unsplash.com/photo-1584270354949-1f31b8b3ef5a?w=400&h=400&fit=crop", 
+      "rating": 4.1, 
+      "stock": 40, 
+      "category_id": 2 
+    },
+    { 
+      "id": 105, 
+      "name": "Milk 1L", 
+      "price": 55, 
+      "image": "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400&h=400&fit=crop", 
+      "rating": 4.6, 
+      "stock": 60, 
+      "category_id": 3 
+    },
+    { 
+      "id": 106, 
+      "name": "Brown Bread", 
+      "price": 45, 
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=400&fit=crop", 
+      "rating": 4.4, 
+      "stock": 30, 
+      "category_id": 5 
+    },
+    { 
+      "id": 107, 
+      "name": "Potato Chips", 
+      "price": 30, 
+      "image": "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400&h=400&fit=crop", 
+      "rating": 4.0, 
+      "stock": 200, 
+      "category_id": 4 
+    },
+    { 
+      "id": 108, 
+      "name": "Chicken Breast", 
+      "price": 320, 
+      "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=400&fit=crop", 
+      "rating": 4.5, 
+      "stock": 25, 
+      "category_id": 6 
+    },
+    { 
+      "id": 109, 
+      "name": "Frozen Pizza", 
+      "price": 250, 
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=400&fit=crop", 
+      "rating": 4.3, 
+      "stock": 35, 
+      "category_id": 7 
+    },
+    { 
+      "id": 110, 
+      "name": "Face Wash", 
+      "price": 180, 
+      "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop", 
+      "rating": 4.4, 
+      "stock": 45, 
+      "category_id": 8 
+    },
+    { 
+      "id": 111, 
+      "name": "Floor Cleaner", 
+      "price": 210, 
+      "image": "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=400&h=400&fit=crop", 
+      "rating": 4.1, 
+      "stock": 55, 
+      "category_id": 9 
+    }
+  ],
+
+  "users": [
+    { "id": 1, "name": "Rahul Sharma", "email": "rahul@gmail.com" }
+  ],
+
+  "orders": [
+    { "id": 5001, "user_id": 1, "total": 380, "status": "Placed", "date": "2026-01-04" }
+  ],
+
+  "orderItems": [
+    { "id": 1, "order_id": 5001, "product_id": 101, "quantity": 2, "price": 120 },
+    { "id": 2, "order_id": 5001, "product_id": 107, "quantity": 1, "price": 30 }
+  ],
+
+  "promoBanners": [
+    {
+      "id": 1,
+      "page": "home",
+      "image": "https://static.wixstatic.com/media/c837a6_564931f091d34dd28dda690375e97842~mv2.jpg/v1/fill/w_731,h_564,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_564931f091d34dd28dda690375e97842~mv2.jpg",
+      "mini": "Taste of Italy",
+      "title": "Favorite Pastas",
+      "highlight": " on  Great Deals ",
+      "buttonText": "Shop Now",
+      "type": "pasta",
+      "showBadge": "Limited "
+    },
+    {
+      "id": 2,
+      "page": "home",
+      "image": "https://static.wixstatic.com/media/c837a6_dcb97d2296b34b98858649b8cb74b683~mv2.jpg",
+      "mini": "Deal of the Week",
+      "title": "  Favorite Cereal Brands",
+      "highlight": "   Get 30% off",
+      "subtitle": "",
+      "buttonText": "Shop Now",
+      "type": "cereal",
+      "showBadge": "Today's"
+    },
+    {
+      "id": 3,
+      "page": "food",
+      "type": "wine",
+      "image": "https://static.wixstatic.com/media/c837a6_6128c886f6c04d76b67065dee91cd206~mv2.jpg/v1/fill/w_975,h_646,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_6128c886f6c04d76b67065dee91cd206~mv2.jpg",
+      "mini": "It's Wine O'Clock",
+      "title": "Great Deals on",
+      "highlight": "Selected Wines",
+      "buttonText": "Shop Now",
+      "subtitle": "Crafted for Your Perfect Evenings. ",
+      "showBadge": "Super"
+    },
+    {
+      "id": 4,
+      "page": "food",
+      "type": "wine",
+      "image": "https://i.pinimg.com/736x/17/f9/70/17f970160419821bb2b4da79ed2891b4.jpg",
+      "mini": "It's Wine O'Clock",
+      "title": "Great Deals on",
+      "highlight": "Selected Wines",
+      "subtitle": "fresh varieties added on discounted prices",
+      "buttonText": "Shop Now",
+      "showBadge": "New"
+    }
+  ],
+
+  "wideBanners": [
+    {
+      "id": 1,
+      "page": "home",
+      "image": "https://static.wixstatic.com/media/c837a6_c6d9a1d20e71405b898602ee778d603f~mv2.jpg/v1/fill/w_1520,h_494,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_c6d9a1d20e71405b898602ee778d603f~mv2.jpg",
+      "title": "Save every day!",
+      "subtitle": "Help lower the cost of your shopping cart with our daily specials",
+      "buttonText": "Shop Deals"
+    }
+  ]
+}
