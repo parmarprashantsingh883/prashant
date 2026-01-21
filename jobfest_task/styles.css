@@ -1,0 +1,139 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+.level-menu {
+  height: 90px;
+}
+
+.level-menu .nav-item {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #ddd;
+}
+
+.level-menu .nav-item:last-child {
+  border-right: 1px solid #ddd;
+}
+
+.level-menu .nav-link {
+  padding: 0 45px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #222;
+  cursor: pointer;
+}
+
+/* Active tab */
+.level-menu .nav-item.active {
+  background-color: #f05454;
+}
+
+.level-menu .nav-item.active .nav-link {
+  color: #fff;
+}
+.level-menu {
+  height: 90px;
+}
+
+.level-menu .nav-item {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #ddd;
+}
+
+.level-menu .nav-item:last-child {
+  border-right: 1px solid #ddd;
+}
+
+.level-menu .nav-link {
+  padding: 0 45px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+  color: #222;
+}
+
+/* ACTIVE STATE */
+.level-menu .nav-item.active {
+  background-color: #f05454;
+}
+
+.level-menu .nav-item.active .nav-link {
+  color: #fff;
+}
+.hero-image{
+    background-image: url(images/bg-img-1.jpg);
+    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 450px;
+  
+  
+
+}
+
+    
+
+
+
+
+
+.help-section {
+  background: #f2555b; /* red */
+  padding: 30px 20px;
+  text-align: center;
+  color: #fff;
+
+  /* THE SHAPE */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 60%,
+    50% 100%,
+    0 60%
+  );
+}
+
+.help-section h1 {
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.help-section p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.subscribe-btn {
+  margin-top: 30px;
+  border: hidden;
+  padding: 14px 40px;
+  background: transparent;
+border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.subscribe-btn:hover{
+    background-color: #f9f3f3;
+    color: #f2555b;
+}
+
+.card{
+    transition: ease-in .3s;
+}
+.card:hover{
+    
+    transform: scale(1.2);
+     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
