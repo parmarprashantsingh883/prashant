@@ -129,11 +129,12 @@ border-top: 2px solid #fff;
     color: #f2555b;
 }
 
-.card{
+.card-cusmome{
     transition: ease-in .3s;
 }
 .card:hover{
     
-    transform: scale(1.2);
+    /* transform: scale(1.2); */
      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
+ 
