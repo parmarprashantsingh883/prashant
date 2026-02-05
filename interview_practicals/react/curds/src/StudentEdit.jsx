@@ -9,7 +9,8 @@ function StudentEdit() {
   const [data, setData] = useState({
     name: "",
     place: "",
-    phone: ""
+    phone: "",
+    pincode:""
   });
 
   // Fetch student
@@ -72,6 +73,15 @@ function StudentEdit() {
                   name="phone"
                   className="form-control"
                   value={data.phone}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="col-md-6 mb-3">
+                <label>Pincode</label>
+                <input
+                  name="pincode"
+                  className="form-control"
+                  value={data.pincode}
                   onChange={handleChange}
                 />
               </div>

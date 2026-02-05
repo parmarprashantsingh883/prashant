@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Better Table</title>
+
+<style>
+body{
+  font-family: Arial;
+}
+
+/* Fieldset */
+fieldset{
+  width: 800px;
+  margin: 40px auto;
+  padding: 15px;
+}
+
+/* Add button area */
+.top-bar{
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+/* Table */
+table{
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th{
+  background: #333;
+  color: white;
+  padding: 10px;
+}
+
+td{
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+tr:hover{
+  background: #f2f2f2;
+}
+
+tbody tr:nth-child(even){
+  background: #fafafa;
+}
+
+/* Buttons */
+button{
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.add-btn{ background:#0d6efd; }
+.edit-btn{ background:#ffc107; color:black;}
+.delete-btn{ background:#dc3545;}
+.view-btn{ background:#198754;}
+</style>
+
+</head>
+<body>
+
+<fieldset>
+  <legend>Student Details</legend>
+
+  <div class="top-bar">
+    <button class="add-btn">Add Student</button>
+  </div>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Sr.</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>City</th>
+        <th style="width:250px;">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>01</td>
+        <td>1</td>
+        <td>Prashant</td>
+        <td>9574028096</td>
+        <td>Ahmedabad</td>
+        <td>
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+          <button class="view-btn">View</button>
+          
+          
+        </td>
+      </tr>
+
+      <tr>
+        <td>02</td>
+        <td>2</td>
+        <td>Rahul</td>
+        <td>9876543210</td>
+        <td>Surat</td>
+        <td>
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+          <button class="view-btn">View</button>
+          
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</fieldset>
+
+</body>
+</html>

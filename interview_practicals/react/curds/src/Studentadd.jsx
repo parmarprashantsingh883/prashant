@@ -8,18 +8,24 @@ function StudentAdd() {
     id: "",
     name: "",
     place: "",
-    phone: ""
+    phone: "",
+    pincode:""
   });
 
   const navigate = useNavigate();
 
-  function handleChange(e) {
-    setData({
-      ...data,
+  // function handleChange(e) {
+  //   setData({
+  //     ...data,
+  //     [e.target.name]: e.target.value
+  //   });
+  // }
+   
+   function hadlechanges(e){
+    setData({...data,
       [e.target.name]: e.target.value
-    });
-  }
-
+    })
+   }
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -59,6 +65,10 @@ function StudentAdd() {
               <div className="col-md-6 mb-3">
                 <label>Phone</label>
                 <input name="phone" className="form-control" onChange={handleChange}/>
+              </div>
+              <div className="col-md-6 mb-3">
+                <label>Pincode</label>
+                <input name="pincode" className="form-control" onChange={handleChange}/>
               </div>
 
             </div>
