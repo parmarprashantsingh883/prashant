@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Responsive Cards</title>
+
+<style>
+
+/* container */
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  padding: 0;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* card */
+.card{
+  width:25%;
+  padding:10px;
+}
+
+.card-box{
+  border:1px solid #ccc;
+  padding:20px;
+  text-align:center;
+}
+
+/* image responsive */
+.card img{
+  width:100%;
+}
+
+/* ===== Tablet ===== */
+@media(max-width:768px){
+  .card{
+    width:50%;
+  }
+}
+
+/* ===== Mobile ===== */
+@media(max-width:480px){
+  .card{
+    width:100%;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="cards">
+
+  <div class="card">
+    <div class="card-box">
+      <img src="https://picsum.photos/300">
+      <h3>Product 1</h3>
+      <p>$100</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-box">
+      <img src="https://picsum.photos/301">
+      <h3>Product 2</h3>
+      <p>$100</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-box">
+      <img src="https://picsum.photos/302">
+      <h3>Product 3</h3>
+      <p>$100</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-box">
+      <img src="https://picsum.photos/303">
+      <h3>Product 4</h3>
+      <p>$100</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

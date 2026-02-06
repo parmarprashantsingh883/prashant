@@ -1,75 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShopEase</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop4U Dashboard</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  height:100%;
+  width:100%;
+  font-family:Arial;
+}
+
+/* Navbar */
+.nav{
+  height:90px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 100px;
+  background:white;
+  border:2px solid #ccc;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:black;
+  font-size:18px;
+}
+
+.nav-links a:hover{
+  color:crimson;
+}
+
+#menuBtn{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* Layout */
+.layout{
+  display:flex;
+  min-height:calc(100vh - 90px);
+}
+
+/* Sidebar */
+.sidebar{
+  width:200px;
+  background:#ba6c6c;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+  padding:30px 10px;
+}
+
+.sidebar button{
+  width:100%;
+}
+
+/* Main */
+main{
+  flex:1;
+  background:#cbe5f6;
+  display:flex;
+}
+
+.left-content,
+.right-content{
+  width:50%;
+  padding:20px;
+  position:relative;
+}
+
+/* Buttons */
+button{
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:crimson;
+  color:white;
+  cursor:pointer;
+}
+
+/* Forms */
+form{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+input, textarea{
+  margin:5px;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  width:220px;
+}
+
+/* Login & Contact popup */
+.login,
+.contact{
+  background:#dfeef4;
+  width:320px;
+  padding:15px;
+  border:1px solid black;
+  border-radius:10px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:none;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Footer */
+footer{
+  height:80px;
+  background:#838282;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+}
+
+/* Responsive */
+@media(max-width:650px){
+
+  .nav{
+    padding:0 20px;
+  }
+
+  .nav-links a{
+    display:none;
+  }
+
+  #menuBtn{
+    display:block;
+  }
+
+  .sidebar{
+    position:fixed;
+    left:-200px;
+    top:90px;
+    height:calc(100% - 90px);
+    transition:0.3s;
+  }
+
+  .sidebar.show{
+    left:0;
+  }
+
+  main{
+    flex-direction:column;
+  }
+
+  .left-content,
+  .right-content{
+    width:100%;
+  }
+}
+p {
+  word-wrap: break-word;
+}
+
+</style>
 </head>
+
 <body>
 
-  <!-- ========== NAVBAR ========== -->
-  <header class="navbar">
-    <div class="logo">ShopEase</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- Navbar -->
+<div class="nav">
+  <h1>Shope4U</h1>
 
-  <!-- ========== HERO SECTION ========== -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Discover Your Style</h1>
-      <p>Find the best deals on top fashion brands.</p>
-      <a href="#" class="btn">Shop Now</a>
-    </div>
-  </section>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Services</a>
+    <button id="menuBtn">☰</button>
+  </div>
+</div>
 
-  <!-- ========== PRODUCT SECTION ========== -->
-  <section class="products">
-    <h2>Featured Products</h2>
-    <div class="product-grid">
+<!-- Layout -->
+<div class="layout">
 
-      <div class="product-card">
-        <img src="https://via.placeholder.com/250x200" alt="Product 1">
-        <h3>Casual Shirt</h3>
-        <p>$25.00</p>
-        <button>Add to Cart</button>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <button onclick="toggleLogin()">Login</button>
+    <button onclick="toggleContact()">Contact</button>
+    <button>See More</button>
+  </div>
+
+  <!-- Main -->
+  <main>
+
+    <div class="left-content">
+
+      <!-- Login -->
+      <div class="login">
+        <h2>Login</h2>
+        <form>
+          <input type="text" placeholder="Enter name">
+          <input type="tel" placeholder="Phone">
+          <input type="email" placeholder="Email">
+          <button>Submit</button>
+        </form>
       </div>
 
-      <div class="product-card">
-        <img src="https://via.placeholder.com/250x200" alt="Product 2">
-        <h3>Denim Jacket</h3>
-        <p>$40.00</p>
-        <button>Add to Cart</button>
-      </div>
-
-      <div class="product-card">
-        <img src="https://via.placeholder.com/250x200" alt="Product 3">
-        <h3>Running Shoes</h3>
-        <p>$55.00</p>
-        <button>Add to Cart</button>
-      </div>
-
-      <div class="product-card">
-        <img src="https://via.placeholder.com/250x200" alt="Product 4">
-        <h3>Leather Bag</h3>
-        <p>$65.00</p>
-        <button>Add to Cart</button>
+      <!-- Contact -->
+      <div class="contact">
+        <h2>Contact</h2>
+        <form>
+          <input type="text" placeholder="First name">
+          <input type="text" placeholder="Last name">
+          <input type="tel" placeholder="Phone">
+          <input type="email" placeholder="Email">
+          <textarea rows="3" placeholder="Message"></textarea>
+          <button>Submit</button>
+        </form>
       </div>
 
     </div>
-  </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer>
-    <p>© 2025 ShopEase. All rights reserved.</p>
-  </footer>
+    <div class="right-content">
+      <h2>right Content Area</h2>
+    </div>
+
+  </main>
+</div>
+
+<footer>Footer Section</footer>
+
+<script>
+function toggleLogin(){
+  const box=document.querySelector(".login");
+  box.style.display =box.style.display=="flex" ? "none" : "flex"
+}
+
+function toggleContact(){
+  const box=document.querySelector(".contact");
+  box.style.display = box.style.display==="flex" ? "none" : "flex";
+}
+
+document.getElementById("menuBtn").onclick=function(){
+  document.getElementById("sidebar").classList.toggle("show");
+};
+</script>
 
 </body>
 </html>

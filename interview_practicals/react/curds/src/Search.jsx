@@ -30,7 +30,7 @@ function Search() {
         />
         {filtered.map(user=>(
             
-            ( <div 
+            <div 
             key={user.id}
             style={{
                 border:"2px solid black",
@@ -44,7 +44,7 @@ function Search() {
 </button>
 
             </div>
-            )
+            
         ))}
     </div>
   )

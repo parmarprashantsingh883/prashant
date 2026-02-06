@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Responsive Navbar</title>
+
+<style>
+/* Reset */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial;
+}
+
+/* Navbar */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#333;
+  padding:10px 20px;
+  color:white;
+}
+
+/* Logo */
+.logo{
+  font-size:20px;
+}
+
+/* Menu */
+.menu{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.menu li a{
+  color:white;
+  text-decoration:none;
+}
+
+/* Hamburger button */
+.menu-btn{
+  display:none;
+  font-size:24px;
+  cursor:pointer;
+}
+
+/* Mobile style */
+@media(max-width:768px){
+
+  .menu{
+    display:none;
+    flex-direction:column;
+    background:#333;
+    position:absolute;
+    top:50px;
+    left:0;
+    width:50%;
+    border: 2px solid red;
+    text-align:center;
+  }
+
+  .menu li{
+    padding:10px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  /* Show menu when active */
+  .menu.show{
+    display:flex;
+  }
+}
+.cards-section{
+  padding:40px 20px;
+  text-align:center;
+}
+
+.cards{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.card{
+
+  width:calc(25% - 10px);
+
+
+  padding:20px;
+  border:1px solid #ddd;
+  border-radius:5px;
+}
+
+.card button{
+  margin-top:10px;
+  padding:8px 15px;
+  border:none;
+  background:#333;
+  color:white;
+  cursor:pointer;
+}
+.card{
+  
+}
+
+@media(max-width:992px){
+ .card{
+ width:calc(50% - 10px);
+ }
+}
+
+@media(max-width:600px){
+ .card{
+ width:calc(100% - 10px);
+ }
+}
+
+.form-section{
+  padding:40px 20px;
+  text-align:center;
+}
+
+#contactForm{
+  max-width:400px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  border: 2px solid crimson;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+input, button{
+  padding:10px;
+  width:100%;
+}
+
+#error{
+  color:red;
+  margin-top:10px;
+}
+.table-container{
+  max-width: 500px;
+  overflow-x:auto;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:600px;
+}
+
+th, td{
+  padding:10px;
+  border:1px solid #ccc;
+  text-align:left;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">MySite</div>
+
+  <div class="menu-btn" id="menuBtn">
+    ☰
+  </div>
+
+  <ul class="menu" id="menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+<div class="main" style="width: 100%; background-color: yellow; padding: 100px;"> 
+    <div>
+        heloo
+    </div>
+</div>
+
+<!-- <script>
+let btn=document.getElementById("menuBtn");
+let menubar=getElementById("menu");
+btn.addEventListener("click", function(){
+ 
+    menubar.classList.toggle("show")
+})
+
+</script> -->
+<script>
+let btn = document.getElementById("menuBtn");
+let menubar = document.getElementById("menu");
+
+btn.addEventListener("click", function(){
+    menubar.classList.toggle("show");
+});
+
+// forms
+
+let form = document.getElementById("contactForm");
+let error = document.getElementById("error");
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let phone = document.getElementById("phone").value;
+
+  if(name === "" || email === "" || phone === ""){
+    error.textContent = "All fields are required!";
+    return;
+  }
+
+  error.textContent = "Form submitted successfully!";
+});
+
+
+</script>
+<section class="cards-section">
+  <h2>Our Services</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Web Design</h3>
+      <p>Modern and responsive designs.</p>
+      <button>Read More</button>
+    </div>
+     <div class="card">
+      <h3>Web Design</h3>
+      <p>Modern and responsive designs.</p>
+      <button>Read More</button>
+    </div>
+    
+
+    <div class="card">
+      <h3>Development</h3>
+      <p>High quality web development.</p>
+      <button>Read More</button>
+    </div>
+
+    <div class="card">
+      <h3>SEO</h3>
+      <p>Improve website ranking.</p>
+      <button>Read More</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="form-section">
+  <h2>Contact Form</h2>
+
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="email" id="email" placeholder="Enter Email">
+    <input type="text" id="phone" placeholder="Enter Phone">
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="error"></p>
+</section>
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>City</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>John</td>
+        <td>john@mail.com</td>
+        <td>MERN</td>
+        <td>Delhi</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+</body>
+</html>

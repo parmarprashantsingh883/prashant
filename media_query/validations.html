@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+
+<style>
+body{
+  font-family:Arial;
+  background:#f4f4f4;
+}
+
+form{
+  width:300px;
+  margin:50px auto;
+  padding:30px;
+  background:white;
+  border:1px solid #ccc;
+text-align: center;
+}
+
+input, button{
+  width:90%;
+  padding:10px;
+  margin:8px 0;
+}
+
+.error{
+  color:red;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<form onsubmit="return validateForm()">
+
+<h2>Signup Form</h2>
+
+<input type="text" id="name" placeholder="Full Name">
+<input type="text" id="email" placeholder="Email">
+<input type="text" id="phone" placeholder="Phone Number">
+<input type="password" id="password" placeholder="Password">
+<input type="password" id="confirm" placeholder="Confirm Password">
+
+<p id="error" class="error"></p>
+
+<button type="submit">Submit</button>
+
+</form>
+
+<script>
+function validateForm(){
+
+let name = document.getElementById("name").value.trim();
+let email = document.getElementById("email").value.trim();
+let phone = document.getElementById("phone").value.trim();
+let password = document.getElementById("password").value;
+let confirm = document.getElementById("confirm").value;
+
+let errorBox = document.getElementById("error");
+
+errorBox.innerText = "";
+
+/* Name check */
+if(name === ""){
+  errorBox.innerText = "Name is required";
+  return false;
+}
+
+/* Email pattern */
+let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if(!emailPattern.test(email)){
+  errorBox.innerText = "Invalid email";
+  return false;
+}
+
+/* Phone validation */
+if(phone.length !== 10 || isNaN(phone)){
+  errorBox.innerText = "Phone must be 10 digits";
+  return false;
+}
+
+/* Password length */
+if(password.length < 6){
+  errorBox.innerText = "Password must be at least 6 characters";
+  return false;
+}
+
+/* Confirm password */
+if(password !== confirm){
+  errorBox.innerText = "Passwords do not match";
+  return false;
+}
+
+alert("Form Submitted Successfully!");
+return true;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Form & Table</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+body{
+  padding:20px;
+  background:#f5f5f5;
+}
+
+/* Form Section */
+.form-section{
+  max-width:500px;
+  margin:auto;
+  background:white;
+  padding:20px;
+  border-radius:8px;
+  box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+input, button{
+  padding:10px;
+  width:100%;
+}
+
+button{
+  background:#333;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+/* Table Section */
+.table-section{
+  margin-top:40px;
+}
+
+/* Responsive Table Container */
+.table-container{
+  width:100%;
+  overflow-x:auto;
+  background:white;
+  padding:10px;
+  border-radius:8px;
+  box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Table */
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:600px;
+}
+
+th, td{
+  padding:10px;
+  border:1px solid #ccc;
+  text-align:left;
+  word-break:break-word;
+}
+
+.delete-btn{
+  background:red;
+  color:white;
+  border:none;
+  padding:5px 10px;
+  cursor:pointer;
+}
+
+/* Mobile tweaks */
+@media(max-width:600px){
+  body{
+    padding:10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Form -->
+<section class="form-section">
+<h2>Add Student</h2>
+
+<form id="studentForm">
+  <input type="text" id="name" placeholder="Enter Name">
+  <input type="email" id="email" placeholder="Enter Email">
+  <input type="text" id="course" placeholder="Enter Course">
+  <input type="text" id="city" placeholder="Enter City">
+  <button type="submit">Submit</button>
+</form>
+</section>
+
+<!-- Table -->
+<section class="table-section">
+<h2>Student List</h2>
+
+<div class="table-container">
+<table id="studentTable">
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Course</th>
+<th>City</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+</table>
+</div>
+
+</section>
+
+<script>
+let form = document.getElementById("studentForm");
+let tableBody = document.querySelector("#studentTable tbody");
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let course = document.getElementById("course").value;
+  let city = document.getElementById("city").value;
+
+  if(name==="" || email==="" || course==="" || city===""){
+    alert("Fill all fields");
+    return;
+  }
+
+  let row = document.createElement("tr");
+
+  row.innerHTML = `
+    <td>${name}</td>
+    <td>${email}</td>
+    <td>${course}</td>
+    <td>${city}</td>
+    <td><button class="delete-btn">Delete</button></td>
+  `;
+
+  row.querySelector(".delete-btn").onclick = () => row.remove();
+
+  tableBody.appendChild(row);
+
+  form.reset();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+  font-family: Arial;
+  padding:20px;
+}
+
+/* Form container */
+.form-container{
+  max-width:800px;
+  margin:auto;
+  background: #b56464;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Form row */
+.form-row{
+  display:flex;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+/* Inputs */
+input, select{
+  width:100%;
+  padding:10px;
+  box-sizing:border-box;
+}
+
+/* Button */
+button{
+  width:100%;
+  padding:12px;
+}
+.table-container{
+  max-width: 450px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:600px;
+}
+
+th, td{
+  border:1px solid #ccc;
+  padding:10px;
+}
+
+
+/* Mobile */
+@media(max-width:600px){
+  .form-row{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+  <h2>Responsive Form</h2>
+
+  <div class="form-row">
+    <input placeholder="First Name">
+    <input placeholder="Last Name">
+  </div>
+
+  <div class="form-row">
+    <input placeholder="Email">
+    <input placeholder="Phone">
+  </div>
+
+  <button>Submit</button>
+</div>
+
+
+<div class="table-container">
+<table>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>City</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>John</td>
+<td>john@mail.com</td>
+<td>New York</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Sam</td>
+<td>sam@mail.com</td>
+<td>London</td>
+</tr>
+</table>
+</div>
+
+</body>
+</html>
